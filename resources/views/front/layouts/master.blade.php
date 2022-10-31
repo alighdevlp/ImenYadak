@@ -21,7 +21,7 @@
     <link rel="stylesheet" href="{{ url('/front/css/vendor/fancybox.min.css') }}">
     <link rel="stylesheet" href="{{ url('/front/css/vendor/nice-select.css') }}">
     <link rel="stylesheet" href="{{ url('/front/css/vendor/nouislider.min.css') }}">
-    <!-- Main CSS File -->
+    {{--  <!-- Main CSS File -->  --}}
     <link rel="stylesheet" href="{{ url('/front/css/main.css') }}">
     <link rel="stylesheet" href="{{ url('/front/css/colors/default.css') }}" id="colorswitch">
 </head>

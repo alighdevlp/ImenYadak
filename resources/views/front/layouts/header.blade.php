@@ -594,7 +594,7 @@
             <div class="side-menu">
                 <div class="logo-nav-res dt-sl text-center">
                     <a href="#">
-                        <img src="assets/img/logo.png" alt="">
+                        <img src="{{ url('/front/img/logo.png') }}" alt="">
                     </a>
                 </div>
                 <div class="search-box-side-menu dt-sl text-center mt-2 mb-3">

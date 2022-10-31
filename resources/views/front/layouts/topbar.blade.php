@@ -4,7 +4,7 @@
             <div class="col-lg-2 col-md-3 col-6">
                 <div class="logo-area">
                     <a href="#">
-                        <img src="./assets/img/logo.png" alt="">
+                        <img src="{{ url('/front/img/logo.png') }}" alt="">
                     </a>
                 </div>
             </div>
