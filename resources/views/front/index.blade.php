@@ -839,6 +839,7 @@
     </div>
     <!-- End Banner -->
     <!-- Start Category-Section -->
+{{--      
     <div class="row mt-3 mb-5">
         <div class="col-12">
             <div class="category-section dt-sn dt-sl border">
@@ -915,7 +916,8 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div>  --}}
+
     <!-- End Category-Section -->
     <!-- Start Product-Slider -->
     <section class="slider-section dt-sl mb-5">
@@ -1303,7 +1305,8 @@
     </section>
     <!-- End Product-Slider -->
     <!-- Start Feature-Product -->
-    <section class="dt-sl dt-sn mb-5">
+
+    {{--  <section class="dt-sl dt-sn mb-5">
         <div class="row">
             <div class="col-12">
                 <div class="section-title text-sm-title title-wide no-after-title-wide">
@@ -1586,7 +1589,8 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section>  --}}
+
     <!-- End Feature-Product -->
     <!-- Start Brand-Slider -->
     <section class="slider-section dt-sl mb-5">
