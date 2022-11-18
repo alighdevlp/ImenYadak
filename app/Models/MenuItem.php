@@ -1,0 +1,17 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+
+class MenuItem extends Model
+{
+    use HasFactory;
+
+    protected $fillable = ['menuitem_name', 'menu_category_id', 'is_heading'];
+
+    public function menucategory() {
+        return $this->belongsTo(MenuCategory::class, 'menu_category_id', 'id');
+    }
+}

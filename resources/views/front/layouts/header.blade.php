@@ -260,82 +260,11 @@
                 </li>
 
 
-                <!-- mega menu 3 column -->
-                <li class="list-item list-item-has-children mega-menu mega-menu-col-3">
-                    <a class="nav-link" href="#">بهداشت و سلامت</a>
-                    <ul class="sub-menu nav">
-                        <li class="list-item list-item-has-children">
-                            <a class="nav-link" href="#">عنوان دسته</a>
-                            <ul class="sub-menu nav">
-                                <li class="list-item">
-                                    <a class="nav-link" href="#">زیر منو یک</a>
-                                </li>
-                                <li class="list-item">
-                                    <a class="nav-link" href="#">زیر منو دو</a>
-                                </li>
-                                <li class="list-item">
-                                    <a class="nav-link" href="#">زیر منو سه</a>
-                                </li>
-                                <li class="list-item">
-                                    <a class="nav-link" href="#">زیر منو چهار</a>
-                                </li>
-                                <li class="list-item">
-                                    <a class="nav-link" href="#">زیر منو پنج</a>
-                                </li>
-                                <li class="list-item">
-                                    <a class="nav-link" href="#">زیر منو شش</a>
-                                </li>
-                                <li class="list-item">
-                                    <a class="nav-link" href="#">زیر منو هفت</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="list-item list-item-has-children">
-                            <a class="nav-link" href="#">عنوان دسته</a>
-                            <ul class="sub-menu nav">
-                                <li class="list-item">
-                                    <a class="nav-link" href="#"><i class="mdi mdi-brightness-percent"></i>
-                                        زیر منو یک</a>
-                                </li>
-                                <li class="list-item">
-                                    <a class="nav-link" href="#"><i class="mdi mdi-brightness-percent"></i>
-                                        زیر منو دو</a>
-                                </li>
-                                <li class="list-item">
-                                    <a class="nav-link" href="#"><i class="mdi mdi-brightness-percent"></i>
-                                        زیر منو سه</a>
-                                </li>
-                                <li class="list-item">
-                                    <a class="nav-link" href="#"><i class="mdi mdi-brightness-percent"></i>
-                                        زیر منو چهار</a>
-                                </li>
-                                <li class="list-item">
-                                    <a class="nav-link" href="#"><i class="mdi mdi-brightness-percent"></i>
-                                        زیر منو پنج</a>
-                                </li>
-                                <li class="list-item">
-                                    <a class="nav-link" href="#"><i class="mdi mdi-brightness-percent"></i>
-                                        زیر منو شش</a>
-                                </li>
-                                <li class="list-item">
-                                    <a class="nav-link" href="#"><i class="mdi mdi-brightness-percent"></i>
-                                        زیر منو هفت</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="list-item">
-                            <a href="#">
-                                <img src="./assets/img/theme/mega-menu.jpg" alt="">
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-                <!-- mega menu 4 column -->
                 <li class="list-item list-item-has-children mega-menu mega-menu-col-4">
-                    <a class="nav-link" href="#">ابزار و اداری</a>
+                    <a class="nav-link" href="javascript:void(0)">ابزار و اداری</a>
                     <ul class="sub-menu nav">
                         <li class="list-item list-item-has-children">
-                            <a class="nav-link" href="#">عنوان دسته</a>
+                            {{--  <a class="nav-link" href="#">عنوان دسته</a>  --}}
                             <ul class="sub-menu nav">
                                 <li class="list-item">
                                     <a class="nav-link" href="#">زیر منو یک</a>
@@ -434,32 +363,7 @@
                         </li>
                     </ul>
                 </li>
-                <!-- dropdown-menu -->
-                <li class="list-item list-item-has-children menu-col-1">
-                    <a class="nav-link" href="#">خانه و آشپزخانه</a>
-                    <ul class="sub-menu nav">
-                        <li class="list-item">
-                            <a class="nav-link" href="#">زیر منو یک</a>
-                        </li>
-                        <li class="list-item">
-                            <a class="nav-link" href="#">زیر منو دو</a>
-                        </li>
-                        <li class="list-item list-item-has-children">
-                            <a class="nav-link" href="#">زیر منو سه</a>
-                            <ul class="sub-menu nav">
-                                <li class="list-item">
-                                    <a class="nav-link" href="#">زیر منو سه - یک</a>
-                                </li>
-                                <li class="list-item">
-                                    <a class="nav-link" href="#">زیر منو سه - دو</a>
-                                </li>
-                                <li class="list-item">
-                                    <a class="nav-link" href="#">زیر منو سه - سه</a>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
-                </li>
+
                 <li class="list-item">
                     <a class="nav-link" href="#">ورزش و سفر</a>
                 </li>

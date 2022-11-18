@@ -28,7 +28,7 @@
 
 <body>
     <div class="wrapper">
-        <!-- Start header -->
+        {{--  <!-- Start header -->  --}}
         <header class="main-header">
             <!-- Start ads -->
             <div class="ads-header-wrapper">
@@ -81,12 +81,13 @@
             <li data-path="./assets/css/colors/purple-color.css"><span style="background-color: #9c27b0;"></span></li>
         </ul>
     </div>
-    <!-- end colorPanel -->
-    <!-- Core JS Files -->
+
+    {{--  <!-- end colorPanel -->  --}}
+    {{--  <!-- Core JS Files -->  --}}
     <script src="{{ url('/front/js/vendor/jquery-3.4.1.min.js') }}"></script>
     <script src="{{ url('/front/js/vendor/popper.min.js') }}"></script>
     <script src="{{ url('/front/js/vendor/bootstrap.min.js') }}"></script>
-    <!-- Plugins -->
+    {{--  <!-- Plugins -->  --}}
     <script src="{{ url('/front/js/vendor/bootstrap-slider.min.js') }}"></script>
     <script src="{{ url('/front/js/vendor/owl.carousel.min.js') }}"></script>
     <script src="{{ url('/front/js/vendor/owl.carousel2.thumbs.min.js') }}"></script>
@@ -99,7 +100,7 @@
     <script src="{{ url('/front/js/vendor/wNumb.js') }}"></script>
     <script src="{{ url('/front/js/vendor/ResizeSensor.min.js') }}"></script>
     <script src="{{ url('/front/js/vendor/theia-sticky-sidebar.min.js') }}"></script>
-    <!-- Main JS File -->
+    {{--  <!-- Main JS File -->  --}}
     <script src="{{ url('/front/js/main.js') }}"></script>
 </body>
 
