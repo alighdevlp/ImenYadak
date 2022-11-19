@@ -23,14 +23,14 @@
                 </div>
                 <div class="card-body">
                     <div class="row">
-                        <div class="col-6 col-md-6">
-                            <h4 class="font-weight-semibold tx-15">ایکون:</h4>
-                            <img alt="Responsive image" class="img-thumbnail"
-                                src="{{ url('/upload/options/' . $option->icon) }}">
-                        </div>
+                            <div class="col-6 col-md-6">
+                                <h4 class="font-weight-semibold tx-15">ایکون:</h4>
+                                <img alt="Icon" class="img-thumbnail"
+                                    src="{{ url('/upload/options/' . $option->icon) }}">
+                            </div>
                         <div class="col-6 col-md-6">
                             <h4 class="font-weight-semibold tx-15">لوگو:</h4>
-                            <img alt="Responsive image" class="img-thumbnail"
+                            <img alt="Logo" class="img-thumbnail"
                                 src="{{ url('/upload/options/' . $option->logo) }}">
                         </div>
                     </div>

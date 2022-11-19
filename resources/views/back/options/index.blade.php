@@ -51,7 +51,7 @@
                             <tbody>
                                 <tr>
                                     <td>{{ $option->title }}</td>
-                                    @if ($option->icon == '#')
+                                    @if ($option->icon == '#' or null)
                                         <td>خالی</td>
                                     @else
                                         <td>
@@ -59,7 +59,7 @@
                                                 src="{{ url('/upload/options/' . $option->icon) }}">
                                         </td>
                                     @endif
-                                    @if ($option->logo == '#')
+                                    @if ($option->logo == '#' or null)
                                         <td>خالی</td>
                                     @else
                                         <td>
