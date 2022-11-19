@@ -75,13 +75,7 @@
                                         <a href="{{ route('admin.options.show') }}" class="btn btn-sm btn-primary">
                                             <i class="las la-eye"></i>
                                         </a>
-                                        {{--  <a href="#" class="btn btn-sm btn-info">
-                                            <i class="las la-pen"></i>
-                                        </a>
-                                        <a href="#" class="btn btn-sm btn-danger">
-                                            <i class="las la-trash"></i>
-                                        </a>  --}}
-                                    </td>
+                                    </td>                                        
                                 </tr>
                             </tbody>
                         </table>

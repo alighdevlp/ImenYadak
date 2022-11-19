@@ -63,6 +63,8 @@
     <link href="{{ url('/back/switcher/demo.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="{{ url('/back/plugins/sumoselect/sumoselect-rtl.css') }}">    
 
+    <link rel="stylesheet" href="{{ url('/back/chosen/chosen.min.css') }}">
+
     {{--  End Styles  --}}
 
     @livewireStyles
@@ -401,7 +403,12 @@
                 console.error( error );
             } );
     </script>
-    
+
+    <script src="{{ url('/back/chosen/chosen.jquery.min.js') }}"></script>
+    <script>
+        $(".chosen-select").chosen(); 
+    </script>
+
 
     {{--  End Scripts  --}}
 

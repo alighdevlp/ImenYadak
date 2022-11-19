@@ -18,6 +18,11 @@
 
 
 @section('content')
+
+<script>
+    $(".chosen-select").chosen({width: "95%"}); 
+</script>
+
 <div class="row row-sm">
     <div class="col-lg-12 col-xl-12 col-md-12 col-sm-12">
         <div class="card  box-shadow-0">

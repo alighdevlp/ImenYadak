@@ -34,7 +34,8 @@
 
         </aside>
         <div class="col-lg-8 col-md-12 order-1">
-            <!-- Start main-slider -->
+            {{--  <!-- Start main-slider -->  --}}
+
             <section id="main-slider"
                 class="main-slider main-slider-cs mt-1 carousel slide carousel-fade card hidden-sm"
                 data-ride="carousel">
@@ -91,6 +92,7 @@
                     <i class="mdi mdi-chevron-left"></i>
                 </a>
             </section>
+
             <section id="main-slider-res"
                 class="main-slider carousel slide carousel-fade card d-none show-sm" data-ride="carousel">
                 <ol class="carousel-indicators">
@@ -146,13 +148,13 @@
                     <i class="mdi mdi-chevron-left"></i>
                 </a>
             </section>
-            <!-- End main-slider -->
+            {{--  <!-- End main-slider -->  --}}
         </div>
     </div>
-    <!-- End Main-Slider -->
+    {{--  <!-- End Main-Slider -->  --}}
 </div>
 
-<!-- Start Product-Slider -->
+{{--  <!-- Start Product-Slider -->  --}}
 <section class="slider-section mb-5 amazing-section" style="background: #ef394e">
     <div class="container main-container">
         <div class="row mb-3">

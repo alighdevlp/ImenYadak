@@ -1,10 +1,12 @@
 <?php
 
+use App\Http\Controllers\back\CategoryController;
 use App\Http\Controllers\back\DashboardController;
 use App\Http\Controllers\back\MenuCategoryController;
 use App\Http\Controllers\back\MenuController;
 use App\Http\Controllers\back\MenuItemController;
 use App\Http\Controllers\back\OptionController;
+use App\Http\Controllers\back\ProductController;
 use App\Http\Controllers\back\ProfileController;
 use App\Http\Controllers\back\SettingController;
 use App\Http\Controllers\back\SubmenuController;
@@ -71,6 +73,24 @@ Route::prefix('/admin/menuitems')->middleware('checkrole')->group(function () {
 });
 
 
+Route::prefix('/admin/categories')->middleware('checkrole')->group(function () {
+    Route::get('/index', [CategoryController::class, 'index'])->name('admin.categories.index');
+    Route::get('/create', [CategoryController::class, 'create'])->name('admin.categories.create');
+    Route::post('/store', [CategoryController::class, 'store'])->name('admin.categories.store');
+    Route::get('/edit/{category}', [CategoryController::class, 'edit'])->name('admin.categories.edit');
+    Route::put('/update/{category}', [CategoryController::class, 'update'])->name('admin.categories.update');
+    Route::get('/destroy/{category}', [CategoryController::class, 'destroy'])->name('admin.categories.destroy');
+});
+
+
+Route::prefix('/admin/products')->middleware('checkrole')->group(function () {
+    Route::get('/index', [ProductController::class, 'index'])->name('admin.products.index');
+    Route::get('/create', [ProductController::class, 'create'])->name('admin.products.create');
+    Route::post('/store', [ProductController::class, 'store'])->name('admin.products.store');
+    Route::get('/edit/{product}', [ProductController::class, 'edit'])->name('admin.products.edit');
+    Route::put('/update/{product}', [ProductController::class, 'update'])->name('admin.products.update');
+    Route::get('/destroy/{product}', [ProductController::class, 'destroy'])->name('admin.products.destroy');
+});
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 

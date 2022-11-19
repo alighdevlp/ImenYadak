@@ -33,7 +33,7 @@
                         @csrf
 
                         <div class="form-group">
-                            <label class="form-label">نام ایتم منو: <span class="tx-danger">*</span></label>
+                            <label class="form-label">نام دسته بندی منو: <span class="tx-danger">*</span></label>
                             <select class="form-control" name="menu_category">
                                 @foreach ($menucategories as $menucategory)                                    
                                 <option value="{{ $menucategory->id }}">{{ $menucategory->menucategory_name }}</option>

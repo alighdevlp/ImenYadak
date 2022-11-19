@@ -3,7 +3,7 @@
         'name' => 'laravel/laravel',
         'pretty_version' => 'dev-ImenYadak',
         'version' => 'dev-ImenYadak',
-        'reference' => '3175b9072bf16569f4aaf9db44ec4cdd1adde22c',
+        'reference' => 'b87a5c2a3855be5277a69425f61d7791307b91b8',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -367,7 +367,7 @@
         'laravel/laravel' => array(
             'pretty_version' => 'dev-ImenYadak',
             'version' => 'dev-ImenYadak',
-            'reference' => '3175b9072bf16569f4aaf9db44ec4cdd1adde22c',
+            'reference' => 'b87a5c2a3855be5277a69425f61d7791307b91b8',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
