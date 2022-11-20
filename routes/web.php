@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\back\AttributeController;
 use App\Http\Controllers\back\BannerController;
 use App\Http\Controllers\back\BrandController;
 use App\Http\Controllers\back\CategoryController;
@@ -120,6 +121,15 @@ Route::prefix('/admin/brands')->middleware('checkrole')->group(function () {
     Route::get('/edit/{brand}', [BrandController::class, 'edit'])->name('admin.brands.edit');
     Route::put('/update/{brand}', [BrandController::class, 'update'])->name('admin.brands.update');
     Route::get('/destroy/{brand}', [BrandController::class, 'destroy'])->name('admin.brands.destroy');
+});
+
+Route::prefix('/admin/attributes')->middleware('checkrole')->group(function () {
+    Route::get('/index', [AttributeController::class, 'index'])->name('admin.attributes.index');
+    Route::get('/create', [AttributeController::class, 'create'])->name('admin.attributes.create');
+    Route::post('/store', [AttributeController::class, 'store'])->name('admin.attributes.store');
+    Route::get('/edit/{attribute}', [AttributeController::class, 'edit'])->name('admin.attributes.edit');
+    Route::put('/update/{attribute}', [AttributeController::class, 'update'])->name('admin.attributes.update');
+    Route::get('/destroy/{attribute}', [AttributeController::class, 'destroy'])->name('admin.attributes.destroy');
 });
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
