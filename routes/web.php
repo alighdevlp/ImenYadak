@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\back\BannerController;
+use App\Http\Controllers\back\BrandController;
 use App\Http\Controllers\back\CategoryController;
 use App\Http\Controllers\back\DashboardController;
 use App\Http\Controllers\back\MenuCategoryController;
@@ -110,6 +111,15 @@ Route::prefix('/admin/sliders')->middleware('checkrole')->group(function () {
     Route::get('/edit/{slider}', [SliderController::class, 'edit'])->name('admin.sliders.edit');
     Route::put('/update/{slider}', [SliderController::class, 'update'])->name('admin.sliders.update');
     Route::get('/destroy/{slider}', [SliderController::class, 'destroy'])->name('admin.sliders.destroy');
+});
+
+Route::prefix('/admin/brands')->middleware('checkrole')->group(function () {
+    Route::get('/index', [BrandController::class, 'index'])->name('admin.brands.index');
+    Route::get('/create', [BrandController::class, 'create'])->name('admin.brands.create');
+    Route::post('/store', [BrandController::class, 'store'])->name('admin.brands.store');
+    Route::get('/edit/{brand}', [BrandController::class, 'edit'])->name('admin.brands.edit');
+    Route::put('/update/{brand}', [BrandController::class, 'update'])->name('admin.brands.update');
+    Route::get('/destroy/{brand}', [BrandController::class, 'destroy'])->name('admin.brands.destroy');
 });
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
