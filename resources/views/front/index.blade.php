@@ -838,7 +838,6 @@
                 </a>
             </div>
         </div>
-    </div>
     <!-- End Banner -->
     <!-- Start Category-Section -->
 {{--      

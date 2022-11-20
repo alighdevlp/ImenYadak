@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\back\BannerController;
 use App\Http\Controllers\back\CategoryController;
 use App\Http\Controllers\back\DashboardController;
 use App\Http\Controllers\back\MenuCategoryController;
@@ -90,6 +91,15 @@ Route::prefix('/admin/products')->middleware('checkrole')->group(function () {
     Route::get('/edit/{product}', [ProductController::class, 'edit'])->name('admin.products.edit');
     Route::put('/update/{product}', [ProductController::class, 'update'])->name('admin.products.update');
     Route::get('/destroy/{product}', [ProductController::class, 'destroy'])->name('admin.products.destroy');
+});
+
+Route::prefix('/admin/banners')->middleware('checkrole')->group(function () {
+    Route::get('/index', [BannerController::class, 'index'])->name('admin.banners.index');
+    Route::get('/create', [BannerController::class, 'create'])->name('admin.banners.create');
+    Route::post('/store', [BannerController::class, 'store'])->name('admin.banners.store');
+    Route::get('/edit/{banner}', [BannerController::class, 'edit'])->name('admin.banners.edit');
+    Route::put('/update/{banner}', [BannerController::class, 'update'])->name('admin.banners.update');
+    Route::get('/destroy/{banner}', [BannerController::class, 'destroy'])->name('admin.banners.destroy');
 });
 
 Route::get('/', [HomeController::class, 'index'])->name('home');

@@ -155,6 +155,24 @@
             </li>
             {{--  End Category  --}}
 
+            {{--  Start Product  --}}
+            <li class="slide">
+                <a class="side-menu__item" data-bs-toggle="slide" href="###"><svg
+                        xmlns="http://www.w3.org/2000/svg" class="side-menu__icon" viewBox="0 0 24 24">
+                        <path
+                            d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" />
+                    </svg><span class="side-menu__label">بنر</span><i class="angle fe fe-chevron-down"></i></a>
+                <ul class="slide-menu">
+                    <li><a href="{{ route('admin.banners.index') }}" class="slide-item"
+                            href="chart-morris.html">لیست
+                            بنرها</a></li>
+                    <li><a href="{{ route('admin.banners.create') }}" class="slide-item"
+                            href="chart-flot.html">ایجاد
+                            بنر</a></li>
+                </ul>
+            </li>
+            {{--  End Category  --}}
+
             {{--  End Public Li  --}}
 
         </ul>
