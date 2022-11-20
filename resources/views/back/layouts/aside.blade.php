@@ -66,7 +66,7 @@
             </li>
             {{--  End Users  --}}
 
-            {{--  Start Menu  --}}
+            {{--  Start Menus  --}}
             <li class="slide">
                 <a class="side-menu__item" data-bs-toggle="slide" href="#"><svg xmlns="http://www.w3.org/2000/svg"
                         class="side-menu__icon" viewBox="0 0 24 24">
@@ -80,9 +80,9 @@
                             منو</a></li>
                 </ul>
             </li>
-            {{--  End Menu  --}}
+            {{--  End Menus  --}}
 
-            {{--  Start MenuCategory  --}}
+            {{--  Start MenuCategories  --}}
             <li class="slide">
                 <a class="side-menu__item" data-bs-toggle="slide" href="###"><svg xmlns="http://www.w3.org/2000/svg"
                         class="side-menu__icon" viewBox="0 0 24 24">
@@ -99,9 +99,9 @@
                             دسته بندی منو</a></li>
                 </ul>
             </li>
-            {{--  End MenuCategory  --}}
+            {{--  End MenuCategories  --}}
 
-            {{--  Start ItemCategory  --}}
+            {{--  Start ItemCategories  --}}
             <li class="slide">
                 <a class="side-menu__item" data-bs-toggle="slide" href="###"><svg
                         xmlns="http://www.w3.org/2000/svg" class="side-menu__icon" viewBox="0 0 24 24">
@@ -117,9 +117,9 @@
                             ایتم منو</a></li>
                 </ul>
             </li>
-            {{--  End ItemCategory  --}}
+            {{--  End ItemCategories  --}}
 
-            {{--  Start Category  --}}
+            {{--  Start Categories  --}}
             <li class="slide">
                 <a class="side-menu__item" data-bs-toggle="slide" href="###"><svg
                         xmlns="http://www.w3.org/2000/svg" class="side-menu__icon" viewBox="0 0 24 24">
@@ -135,9 +135,9 @@
                             دسته بندی</a></li>
                 </ul>
             </li>
-            {{--  End Category  --}}
+            {{--  End Categories  --}}
 
-            {{--  Start Product  --}}
+            {{--  Start Products  --}}
             <li class="slide">
                 <a class="side-menu__item" data-bs-toggle="slide" href="###"><svg
                         xmlns="http://www.w3.org/2000/svg" class="side-menu__icon" viewBox="0 0 24 24">
@@ -153,25 +153,25 @@
                             محصول</a></li>
                 </ul>
             </li>
-            {{--  End Category  --}}
+            {{--  End Products  --}}
 
-            {{--  Start Product  --}}
+            {{--  Start Sliders  --}}
             <li class="slide">
                 <a class="side-menu__item" data-bs-toggle="slide" href="###"><svg
                         xmlns="http://www.w3.org/2000/svg" class="side-menu__icon" viewBox="0 0 24 24">
                         <path
-                            d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" />
-                    </svg><span class="side-menu__label">بنر</span><i class="angle fe fe-chevron-down"></i></a>
+                        fill-rule="evenodd" d="M11.5 2a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zM9.05 3a2.5 2.5 0 0 1 4.9 0H16v1h-2.05a2.5 2.5 0 0 1-4.9 0H0V3h9.05zM4.5 7a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zM2.05 8a2.5 2.5 0 0 1 4.9 0H16v1H6.95a2.5 2.5 0 0 1-4.9 0H0V8h2.05zm9.45 4a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zm-2.45 1a2.5 2.5 0 0 1 4.9 0H16v1h-2.05a2.5 2.5 0 0 1-4.9 0H0v-1h9.05z" />
+                    </svg><span class="side-menu__label">اسلایدر</span><i class="angle fe fe-chevron-down"></i></a>
                 <ul class="slide-menu">
-                    <li><a href="{{ route('admin.banners.index') }}" class="slide-item"
+                    <li><a href="{{ route('admin.sliders.index') }}" class="slide-item"
                             href="chart-morris.html">لیست
-                            بنرها</a></li>
-                    <li><a href="{{ route('admin.banners.create') }}" class="slide-item"
+                            اسلایدرها</a></li>
+                    <li><a href="{{ route('admin.sliders.create') }}" class="slide-item"
                             href="chart-flot.html">ایجاد
-                            بنر</a></li>
+                            اسلاید</a></li>
                 </ul>
             </li>
-            {{--  End Category  --}}
+            {{--  End Sliders  --}}
 
             {{--  End Public Li  --}}
 

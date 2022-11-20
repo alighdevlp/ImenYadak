@@ -10,6 +10,7 @@ use App\Http\Controllers\back\OptionController;
 use App\Http\Controllers\back\ProductController;
 use App\Http\Controllers\back\ProfileController;
 use App\Http\Controllers\back\SettingController;
+use App\Http\Controllers\back\SliderController;
 use App\Http\Controllers\back\SubmenuController;
 use App\Http\Controllers\back\UserController;
 use App\Http\Controllers\front\HomeController;
@@ -100,6 +101,15 @@ Route::prefix('/admin/banners')->middleware('checkrole')->group(function () {
     Route::get('/edit/{banner}', [BannerController::class, 'edit'])->name('admin.banners.edit');
     Route::put('/update/{banner}', [BannerController::class, 'update'])->name('admin.banners.update');
     Route::get('/destroy/{banner}', [BannerController::class, 'destroy'])->name('admin.banners.destroy');
+});
+
+Route::prefix('/admin/sliders')->middleware('checkrole')->group(function () {
+    Route::get('/index', [SliderController::class, 'index'])->name('admin.sliders.index');
+    Route::get('/create', [SliderController::class, 'create'])->name('admin.sliders.create');
+    Route::post('/store', [SliderController::class, 'store'])->name('admin.sliders.store');
+    Route::get('/edit/{slider}', [SliderController::class, 'edit'])->name('admin.sliders.edit');
+    Route::put('/update/{slider}', [SliderController::class, 'update'])->name('admin.sliders.update');
+    Route::get('/destroy/{slider}', [SliderController::class, 'destroy'])->name('admin.sliders.destroy');
 });
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
