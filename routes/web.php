@@ -41,6 +41,7 @@ Route::prefix('/admin/users')->middleware('checkrole')->group(function () {
 Route::prefix('/admin/profile')->middleware('checkrole')->group(function () {
     Route::get('/', [ProfileController::class, 'index'])->name('admin.profile.index');
     Route::get('/edit', [ProfileController::class, 'edit'])->name('admin.profile.edit');
+    Route::put('/update', [ProfileController::class, 'update'])->name('admin.profile.update');
 });
 
 Route::prefix('/admin/options')->middleware('checkrole')->group(function () {

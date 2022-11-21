@@ -81,34 +81,8 @@
                     <div class="predefined_styles">
                         {{--  @livewire('web-status')  --}}
                         <livewire:web-status /> 
-                        <div class="swichermainleft border-bottom  text-center">
-                            <div class="p-3">
-                                <a href="index.html" class="btn btn-primary btn-block mt-0">نمایش نسخه </a>
-                                <a href="https://www.rtl-theme.com/valex-html-template/"
-                                    class="btn btn-secondary btn-block">خرید کن</a>
-                                <a href="https://www.rtl-theme.com/author/amir-h67/"
-                                    class="btn btn-info btn-block">نمونه کارها ما</a>
-                            </div>
-                        </div>
-                        <div class="swichermainleft border-bottom text-center">
-                            <h4>ورژن</h4>
-                        </div>
-                        <div class="swichermainleft border-bottom">
-                            <h4>سبک های ناوبری LTR</h4>
-                            <div class="ps-3 pe-3">
-                                <a href="https://laravel.spruko.com/valex/rtl/vertical-light"
-                                    class="btn btn-success btn-block mt-0">منو عمودی</a>
-                                <a href="https://laravel.spruko.com/valex/rtl/horizontal-light"
-                                    class="btn btn-info btn-block">منو افقی</a>
-                            </div>
-                        </div>
-                        <div class="swichermainleft border-bottom mb-4">
-                            <h4>سبک های ناوبری RTL</h4>
-                            <div class="ps-3 pe-3">
-                                <a class="btn btn-primary btn-block mt-0" href="index.html"> منو عمودی</a>
-                                <a class="btn btn-danger btn-block" href="horizontal-light.html"> منو افقی </a>
-                            </div>
-                        </div>
+
+
                         <div class="swichermainleft border-bottom">
                             <h4>تم طرح بندی منو </h4>
                             <div class="switch_section">
@@ -200,32 +174,10 @@
                                             <label for="myonoffswitch29" class="onoffswitch2-label"></label>
                                         </a>
                                     </div>
-                                    <div class="switch-toggle d-flex mt-2">
-                                        <span class="me-auto">متن آیکون</span>
-                                        <a href="index.html" target="_self" class="onoffswitch2"><input
-                                                type="radio" id="myonoffswitch30" name="onoffswitch4"
-                                                class="onoffswitch2-checkbox">
-                                            <label for="" class="onoffswitch2-label"></label>
-                                        </a>
-                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="swichermainleft border-bottom">
-                            <h4>تصویر منو بگراند </h4>
-                            <div class="skin-body light-pattern">
-                                <button type="button" id="leftmenuimage1"
-                                    class="bg1 wscolorcode1 blackborder"></button>
-                                <button type="button" id="leftmenuimage2"
-                                    class="bg2 wscolorcode1 blackborder"></button>
-                                <button type="button" id="leftmenuimage3"
-                                    class="bg3 wscolorcode1 blackborder"></button>
-                                <button type="button" id="leftmenuimage4"
-                                    class="bg4 wscolorcode1 blackborder"></button>
-                                <button type="button" id="leftmenuimage5"
-                                    class="bg5 wscolorcode1 blackborder"></button>
-                            </div>
-                        </div>
+
                         <div class="swichermainleft border-bottom">
                             <h4>سبک های منو</h4>
                             <div class="switch_section">
@@ -306,10 +258,6 @@
         </div>
         {{--  End Main  --}}
 
-
-        {{--  Start Sidebar  --}}
-        @include('back.layouts.sidebar')
-        {{--  End Sidebar  --}}
 
 
         {{--  Start Footer  --}}

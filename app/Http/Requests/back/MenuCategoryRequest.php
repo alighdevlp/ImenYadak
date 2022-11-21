@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Requests;
+namespace App\Http\Requests\back;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class MediaRequest extends FormRequest
+class MenuCategoryRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,8 +24,7 @@ class MediaRequest extends FormRequest
     public function rules()
     {
         return [
-            'icon' => 'required',
-            'url' => 'required'
+            //
         ];
     }
 }

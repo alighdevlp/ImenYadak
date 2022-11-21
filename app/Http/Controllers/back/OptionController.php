@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\back;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\OptionRequest;
+use App\Http\Requests\back\OptionRequest;
 use App\Models\Option;
 use Database\Seeders\OptionSeeder;
 use Illuminate\Http\Request;

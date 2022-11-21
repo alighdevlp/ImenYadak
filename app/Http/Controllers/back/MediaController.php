@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\back;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\MediaRequest;
+use App\Http\Requests\back\MediaRequest;
 use App\Models\Media;
 use Illuminate\Http\Request;
 

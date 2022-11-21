@@ -2,10 +2,10 @@
     <div class="container-fluid">
         <div class="main-header-left ">
             <div class="responsive-logo">
-                <a href="index.html"><img src="assets/img/brand/logo.png" class="logo-1" alt="لوگو"></a>
-                <a href="index.html"><img src="assets/img/brand/logo-white.png" class="dark-logo-1" alt="لوگو"></a>
-                <a href="index.html"><img src="assets/img/brand/favicon.png" class="logo-2" alt="لوگو"></a>
-                <a href="index.html"><img src="assets/img/brand/favicon.png" class="dark-logo-2" alt="لوگو"></a>
+                <a href="index.html"><img src="{{ url('/back/img/brand/logo.png') }}" class="logo-1" alt="لوگو"></a>
+                <a href="index.html"><img src="{{ url('/back/img/brand/logo-white.png') }}" class="dark-logo-1" alt="لوگو"></a>
+                <a href="index.html"><img src="{{ url('/back/img/brand/favicon.png') }}" class="logo-2" alt="لوگو"></a>
+                <a href="index.html"><img src="{{ url('/back/img/brand/favicon.png') }}" class="dark-logo-2" alt="لوگو"></a>
             </div>
             <div class="app-sidebar__toggle" data-bs-toggle="sidebar">
                 <a class="open-toggle" href="#"><i class="header-icon fe fe-align-left"></i></a>
@@ -241,20 +241,6 @@
                         <a class="dropdown-item" href="{{ route('logout') }}"><i class="bx bx-log-out"></i> خروج
                             از سیستم</a>
                     </div>
-                </div>
-                <div class="dropdown main-header-message right-toggle">
-                    <a class="nav-link pe-0" data-bs-toggle="sidebar-left" data-bs-target=".sidebar-left">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="header-icon-svgs" viewBox="0 0 24 24"
-                            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                            stroke-linejoin="round">
-                            <line x1="3" y1="12" x2="21" y2="12">
-                            </line>
-                            <line x1="3" y1="6" x2="21" y2="6">
-                            </line>
-                            <line x1="3" y1="18" x2="21" y2="18">
-                            </line>
-                        </svg>
-                    </a>
                 </div>
             </div>
         </div>

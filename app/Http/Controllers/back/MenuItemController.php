@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\back;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\MenuItemRequest;
+use App\Http\Requests\back\MenuItemRequest;
 use App\Models\MenuCategory;
 use App\Models\MenuItem;
 use Illuminate\Http\Request;

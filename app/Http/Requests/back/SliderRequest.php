@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Requests;
+namespace App\Http\Requests\back;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class MenuCategoryRequest extends FormRequest
+class SliderRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,7 +24,8 @@ class MenuCategoryRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'image' => 'required',
+            'priority' => 'required'
         ];
     }
 }
