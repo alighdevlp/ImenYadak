@@ -5,6 +5,7 @@ use App\Http\Controllers\back\BannerController;
 use App\Http\Controllers\back\BrandController;
 use App\Http\Controllers\back\CategoryController;
 use App\Http\Controllers\back\DashboardController;
+use App\Http\Controllers\back\MediaController;
 use App\Http\Controllers\back\MenuCategoryController;
 use App\Http\Controllers\back\MenuController;
 use App\Http\Controllers\back\MenuItemController;
@@ -130,6 +131,15 @@ Route::prefix('/admin/attributes')->middleware('checkrole')->group(function () {
     Route::get('/edit/{attribute}', [AttributeController::class, 'edit'])->name('admin.attributes.edit');
     Route::put('/update/{attribute}', [AttributeController::class, 'update'])->name('admin.attributes.update');
     Route::get('/destroy/{attribute}', [AttributeController::class, 'destroy'])->name('admin.attributes.destroy');
+});
+
+Route::prefix('/admin/medias')->middleware('checkrole')->group(function () {
+    Route::get('/index', [MediaController::class, 'index'])->name('admin.medias.index');
+    Route::get('/create', [MediaController::class, 'create'])->name('admin.medias.create');
+    Route::post('/store', [MediaController::class, 'store'])->name('admin.medias.store');
+    Route::get('/edit/{media}', [MediaController::class, 'edit'])->name('admin.medias.edit');
+    Route::put('/update/{media}', [MediaController::class, 'update'])->name('admin.medias.update');
+    Route::get('/destroy/{media}', [MediaController::class, 'destroy'])->name('admin.medias.destroy');
 });
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
