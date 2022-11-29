@@ -38,11 +38,11 @@
             <!-- End ads -->
 
             {{--  <!-- Start topbar -->  --}}
-                    @include('front.layouts.topbar')
+            @include('front.layouts.topbar')
             {{--  <!-- End topbar -->  --}}
 
             {{--  <!-- Start bottom-header -->  --}}
-                    @include('front.layouts.header')
+            @include('front.layouts.header')
             {{--  <!-- End bottom-header -->  --}}
         </header>
         <!-- End header -->
@@ -50,13 +50,15 @@
 
         {{--  Start Main Content  --}}
         <main class="main-content dt-sl mb-3">
+            <div class="container main-container">
                 @yield('content')
+            </div>
         </main>
         {{--  End Main Content  --}}
 
 
         {{--  <!-- Start footer -->  --}}
-                @include('front.layouts.footer')
+        @include('front.layouts.footer')
         {{--  <!-- End footer -->  --}}
 
     </div>

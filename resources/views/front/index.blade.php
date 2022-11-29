@@ -4,8 +4,7 @@
 
 
 @section('content')
-<div class="container main-container">
-    <!-- Start Main-Slider -->
+
     <div class="row mb-5">
         <aside class="sidebar col-lg-4 hidden-md order-2 pr-0 hidden-md">
 
@@ -151,8 +150,6 @@
             {{--  <!-- End main-slider -->  --}}
         </div>
     </div>
-    {{--  <!-- End Main-Slider -->  --}}
-</div>
 
 {{--  <!-- Start Product-Slider -->  --}}
 <section class="slider-section mb-5 amazing-section" style="background: #ef394e">

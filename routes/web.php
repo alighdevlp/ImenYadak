@@ -16,6 +16,7 @@ use App\Http\Controllers\back\SettingController;
 use App\Http\Controllers\back\SliderController;
 use App\Http\Controllers\back\SubmenuController;
 use App\Http\Controllers\back\UserController;
+use App\Http\Controllers\front\AccountController;
 use App\Http\Controllers\front\HomeController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -30,6 +31,8 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+// Start Back Routes
 
 Route::get('/admin/dashboard', [DashboardController::class, 'index'])->middleware('checkrole')->name('admin.dashboard.index');
 
@@ -143,7 +146,23 @@ Route::prefix('/admin/medias')->middleware('checkrole')->group(function () {
     Route::get('/destroy/{media}', [MediaController::class, 'destroy'])->name('admin.medias.destroy');
 });
 
+// End Back Routes
+
+
+// Start Front Route
+
 Route::get('/', [HomeController::class, 'index'])->name('home');
+
+Route::prefix('/account')->middleware('checkrole')->group(function() {
+    Route::get('/', [AccountController::class, 'index'])->name('account.index');
+    Route::get('/orders', [AccountController::class, 'OrderList'])->name('account.order');
+    Route::get('/edit', [AccountController::class, 'edit'])->name('account.edit');
+    Route::put('/update', [AccountController::class, 'update'])->name('account.update');
+});
+
+// End Front Route
+
+
 
 Auth::routes();
 
