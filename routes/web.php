@@ -97,9 +97,9 @@ Route::prefix('/admin/categories')->middleware('checkrole')->group(function () {
 
 Route::prefix('/admin/products')->middleware('checkrole')->group(function () {
     Route::get('/index', [ProductController::class, 'index'])->name('admin.products.index');
-    Route::get('/search', [ProductController::class, 'search'])->name('admin.products.search');
     Route::get('/create', [ProductController::class, 'create'])->name('admin.products.create');
     Route::post('/store', [ProductController::class, 'store'])->name('admin.products.store');
+    Route::get('/show/{product}', [ProductController::class, 'show'])->name('admin.products.show');
     Route::get('/edit/{product}', [ProductController::class, 'edit'])->name('admin.products.edit');
     Route::put('/update/{product}', [ProductController::class, 'update'])->name('admin.products.update');
     Route::get('/destroy/{product}', [ProductController::class, 'destroy'])->name('admin.products.destroy');

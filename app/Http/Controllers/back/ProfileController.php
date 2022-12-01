@@ -4,15 +4,18 @@ namespace App\Http\Controllers\back;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\back\ProfileRequest;
+use App\Models\Product;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
 class ProfileController extends Controller
 {
     public function index()
     {
-        return view('back.profile.index');
+        $products_count = Product::count();
+        return view('back.profile.index', compact('products_count'));
     }
 
     public function edit()
@@ -28,11 +31,13 @@ class ProfileController extends Controller
 
                $user->name = $request->name;
                $user->phone = $request->phone;
+               $user->address = $request->address;
                $user->email = $request->email;
                $user->password = $password;
         } else {
             $user->name = $request->name;
             $user->phone = $request->phone;
+            $user->address = $request->address;
             $user->email = $request->email;
         }
 

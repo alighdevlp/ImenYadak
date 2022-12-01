@@ -5,7 +5,7 @@ namespace App\Http\Livewire\Back\Product;
 use App\Models\Product;
 use Livewire\Component;
 
-class ChangePopular extends Component
+class ChangePopularProduct extends Component
 {
     public $pop;
 
@@ -17,6 +17,6 @@ class ChangePopular extends Component
 
     public function render()
     {
-        return view('livewire.back.product.change-popular');
+        return view('livewire.back.product.change-popular-product');
     }
 }

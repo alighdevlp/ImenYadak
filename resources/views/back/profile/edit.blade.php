@@ -92,11 +92,12 @@
                         @csrf
                         @method('PUT')
 
-                        <div class="mb-4 main-content-label">نام</div>
-                        <div class="form-group ">
+                        {{--  <div class="mb-4 main-content-label">نام</div>  --}}
+
+                        <div class="form-group">
                             <div class="row">
                                 <div class="col-md-3">
-                                    <label class="form-label">نام کاربری</label>
+                                    <label class="form-label">نام</label>
                                 </div>
                                 <div class="col-md-9">
                                     <input type="text" name="name" class="form-control @error('name') is-invalid @enderror" placeholder="نام کاربری"
@@ -109,7 +110,23 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="form-group ">
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <label class="form-label">نام خانوادگی</label>
+                                </div>
+                                <div class="col-md-9">
+                                    <input type="text" name="family" class="form-control @error('family') is-invalid @enderror" placeholder="نام کاربری"
+                                        value="{{ auth()->user()->family }}">
+                                        @error('family')                                            
+                                        <div class="text-danger mt-1">
+                                            {{ $message }}
+                                        </div>
+                                        @enderror
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
                             <div class="row">
                                 <div class="col-md-3">
                                     <label class="form-label">شماره تماس</label>
@@ -125,7 +142,23 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="form-group ">
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <label class="form-label">آدرس</label>
+                                </div>
+                                <div class="col-md-9">
+                                    <input type="text" name="address" class="form-control @error('address') is-invalid @enderror" placeholder="آدرس"
+                                        value="{{ auth()->user()->address }}">
+                                        @error('address')                                            
+                                        <div class="text-danger mt-1">
+                                            {{ $message }}
+                                        </div>
+                                        @enderror
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
                             <div class="row">
                                 <div class="col-md-3">
                                     <label class="form-label">ایمیل</label>
@@ -141,7 +174,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="form-group ">
+                        <div class="form-group">
                             <div class="row">
                                 <div class="col-md-3">
                                     <label class="form-label">رمز عبور</label>

@@ -172,7 +172,7 @@
             @if (count($products) > 0)
                 <div class="card">
                     <div class="card-body p-2">
-                        <form action="{{ route('admin.products.search') }}">
+                        <form action="">
                             <div class="input-group search">
                                 <input type="text" name="search" class="form-control" placeholder="جستجو کردن ..." value="{{ request('search') }}">
                                 <span class="input-group-append">
@@ -202,8 +202,8 @@
                                     </a>
                                 </div>
                                 <div class="text-center pt-3">
-                                    <h3 class="h6 mb-2 mt-4 font-weight-bold text-uppercase">{{ $product->title }}</h3>
-                                    <livewire:back.product.change-popular :pop="$product" />
+                                    <a href="{{ route('admin.products.show',$product->id) }}"><h3 class="h6 mb-2 mt-4 font-weight-bold text-uppercase">{{ $product->title }}</h3></a>
+                                    <livewire:back.product.change-popular-product :pop="$product" />
                                     <h4 class="h5 mb-0 mt-2 text-center font-weight-bold text-danger">{{ $product->price }}
                                         تومان</h4>
                                 </div>

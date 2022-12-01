@@ -7,6 +7,7 @@ use App\Http\Requests\back\ProductRequest;
 use App\Models\Category;
 use App\Models\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
 
 class ProductController extends Controller
@@ -62,6 +63,7 @@ class ProductController extends Controller
         }
 
        $product = Product::create([
+            'user_id' => Auth::user()->id,
             'title' => $request->title,
             'image' => $ImageUrl,
             'price' => $request->price,
@@ -81,9 +83,9 @@ class ProductController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Product $product)
     {
-        //
+        return view('back.products.show', compact('product'));
     }
 
     /**
@@ -116,6 +118,7 @@ class ProductController extends Controller
         }
 
         $product->update([
+            'user_id' => Auth::user()->id,
             'title' => $request->title,
             'image' => $ImageUrl,
             'price' => $request->price,
