@@ -7,6 +7,7 @@ use App\Http\Requests\back\ProductRequest;
 use App\Models\Category;
 use App\Models\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 
 class ProductController extends Controller
 {
@@ -17,8 +18,21 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $products = Product::all();
+        $products = Product::paginate(9);
+
         return view('back.products.index', compact('products'));
+    }
+
+    public function search() {
+        $products    = Product::query();
+
+        if($keyword = request('search')) {
+            $products->where('title' , 'LIKE' , "%$keyword%")->orWhere('price' , $keyword);
+        }
+
+        $products = $products->paginate(9);
+
+        return view('back.products.index',compact('products'));
     }
 
     /**
@@ -40,9 +54,18 @@ class ProductController extends Controller
      */
     public function store(ProductRequest $request)
     {
+        $file = $request->file('image');
+        if ($request->hasFile('image')) {
+            $ImageUrl = $this->uploadImage($file);
+        } else {
+            $ImageUrl = $request->image;
+        }
+
        $product = Product::create([
             'title' => $request->title,
-            'price' => $request->price
+            'image' => $ImageUrl,
+            'price' => $request->price,
+            'description' => $request->description
         ]);
 
         $product->categories()->attach($request->categories);
@@ -84,9 +107,19 @@ class ProductController extends Controller
      */
     public function update(ProductRequest $request, Product $product)
     {
+        $file = $request->file('image');
+        if ($request->hasFile('image')) {
+            File::delete('../public_html/upload/products/' . $product->image);
+            $ImageUrl = $this->uploadImage($file);
+        } else {
+            $ImageUrl = $request->image;
+        }
+
         $product->update([
             'title' => $request->title,
-            'price' => $request->price
+            'image' => $ImageUrl,
+            'price' => $request->price,
+            'description' => $request->description
         ]);
 
         $product->categories()->attach($request->categories);
@@ -105,5 +138,13 @@ class ProductController extends Controller
     {
         $product->delete();
         return redirect()->back();
+    }
+
+    public function uploadImage($file)
+    {
+        $sourcePath = "/upload/products";
+        $filename = $file->getClientOriginalName();
+        $file = $file->move('../public_html' . $sourcePath, $filename);
+        return $filename;
     }
 }

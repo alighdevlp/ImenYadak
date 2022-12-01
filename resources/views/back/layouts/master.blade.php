@@ -80,7 +80,7 @@
                 <div class="row">
                     <div class="predefined_styles">
                         {{--  @livewire('web-status')  --}}
-                        <livewire:web-status /> 
+                        <livewire:back.web-status /> 
 
 
                         <div class="swichermainleft border-bottom">

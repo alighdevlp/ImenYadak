@@ -11,6 +11,7 @@ use App\Http\Controllers\back\MenuController;
 use App\Http\Controllers\back\MenuItemController;
 use App\Http\Controllers\back\OptionController;
 use App\Http\Controllers\back\ProductController;
+use App\Http\Controllers\back\ProductImageController;
 use App\Http\Controllers\back\ProfileController;
 use App\Http\Controllers\back\SettingController;
 use App\Http\Controllers\back\SliderController;
@@ -18,6 +19,7 @@ use App\Http\Controllers\back\SubmenuController;
 use App\Http\Controllers\back\UserController;
 use App\Http\Controllers\front\AccountController;
 use App\Http\Controllers\front\HomeController;
+use App\Http\Controllers\front\ProductController as FrontProductController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -39,6 +41,7 @@ Route::get('/admin/dashboard', [DashboardController::class, 'index'])->middlewar
 
 Route::prefix('/admin/users')->middleware('checkrole')->group(function () {
     Route::get('/index', [UserController::class, 'index'])->name('admin.users.index');
+    Route::get('/change-role/{user}', [UserController::class, 'ChangeRole'])->name('admin.users.changerole');
 });
 
 Route::prefix('/admin/profile')->middleware('checkrole')->group(function () {
@@ -94,11 +97,21 @@ Route::prefix('/admin/categories')->middleware('checkrole')->group(function () {
 
 Route::prefix('/admin/products')->middleware('checkrole')->group(function () {
     Route::get('/index', [ProductController::class, 'index'])->name('admin.products.index');
+    Route::get('/search', [ProductController::class, 'search'])->name('admin.products.search');
     Route::get('/create', [ProductController::class, 'create'])->name('admin.products.create');
     Route::post('/store', [ProductController::class, 'store'])->name('admin.products.store');
     Route::get('/edit/{product}', [ProductController::class, 'edit'])->name('admin.products.edit');
     Route::put('/update/{product}', [ProductController::class, 'update'])->name('admin.products.update');
     Route::get('/destroy/{product}', [ProductController::class, 'destroy'])->name('admin.products.destroy');
+});
+
+Route::prefix('/admin/product-images')->middleware('checkrole')->group(function () {
+    Route::get('/index', [ProductImageController::class, 'index'])->name('admin.productimages.index');
+    Route::get('/create', [ProductImageController::class, 'create'])->name('admin.productimages.create');
+    Route::post('/store', [ProductImageController::class, 'store'])->name('admin.productimages.store');
+    Route::get('/edit/{productImage}', [ProductImageController::class, 'edit'])->name('admin.productimages.edit');
+    Route::put('/update/{productImage}', [ProductImageController::class, 'update'])->name('admin.productimages.update');
+    Route::get('/destroy/{productImage}', [ProductImageController::class, 'destroy'])->name('admin.productimages.destroy');
 });
 
 Route::prefix('/admin/banners')->middleware('checkrole')->group(function () {
@@ -159,6 +172,9 @@ Route::prefix('/account')->middleware('checkrole')->group(function() {
     Route::get('/edit', [AccountController::class, 'edit'])->name('account.edit');
     Route::put('/update', [AccountController::class, 'update'])->name('account.update');
 });
+
+Route::get('/product', [FrontProductController::class, 'show'])->name('product.show');
+
 
 // End Front Route
 

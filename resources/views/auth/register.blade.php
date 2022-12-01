@@ -47,11 +47,19 @@
                                 @csrf
 
                                 <div class="form-row-title">
-                                    <h3>نام کاربری</h3>
+                                    <h3>نام</h3>
                                 </div>
                                 <div class="form-row with-icon">
                                     <input type="text" class="input-ui pr-2"
-                                       name="name" placeholder="نام کاربری خود را وارد نمایید">
+                                       name="name" value="{{ old('name') }}" placeholder="نام خود را وارد نمایید">
+                                    <i class="mdi mdi-email"></i>
+                                </div>
+                                <div class="form-row-title">
+                                    <h3>نام خانوادگی</h3>
+                                </div>
+                                <div class="form-row with-icon">
+                                    <input type="text" class="input-ui pr-2"
+                                       name="family" value="{{ old('family') }}" placeholder="نام خانوادگی خود را وارد نمایید">
                                     <i class="mdi mdi-email"></i>
                                 </div>
                                 <div class="form-row-title">
@@ -59,7 +67,7 @@
                                 </div>
                                 <div class="form-row with-icon">
                                     <input type="email" class="input-ui pr-2"
-                                       name="email" placeholder="ایمیل خود را وارد نمایید">
+                                       name="email" value="{{ old('email') }}" placeholder="ایمیل خود را وارد نمایید">
                                     <i class="mdi mdi-email"></i>
                                 </div>
                                 <div class="form-row-title">
@@ -67,7 +75,7 @@
                                 </div>
                                 <div class="form-row with-icon">
                                     <input type="text" class="input-ui pr-2"
-                                       name="phone" placeholder="شماره تماس خود را وارد نمایید">
+                                       name="phone" value="{{ old('phone') }}" placeholder="شماره تماس خود را وارد نمایید">
                                     <i class="mdi mdi-phone"></i>
                                 </div>
                                 <div class="form-row-title">

@@ -29,29 +29,61 @@
                     <h4 class="card-title mb-1">فرم ویرایش محصول</h4>
                 </div>
                 <div class="card-body pt-0">
-                    <form action="{{ route('admin.products.update', $product->id) }}" class="form-horizontal" method="POST">
+                    <form action="{{ route('admin.products.update', $product->id) }}" class="form-horizontal" enctype="multipart/form-data" method="POST">
                         @csrf
-                        @method('PUT')
+                        @method('put')
 
                         <div class="form-group">
-                            <label class="form-label">نام دسته بندی: <span class="tx-danger">*</span></label>
+                            <label class="form-label">عنوان محصول: <span class="tx-danger">*</span></label>
                             <input type="text" class="form-control" name="title" value="{{ $product->title }}">
+                            @error('title')
+                                <div class="alert alert-danger">
+                                    {{ $message }}
+                                </div>
+                            @enderror
                         </div>
                         <div class="form-group">
-                            <label class="form-label">نام مستعار دسته بندی: </label>
+                            <label class="form-label">عکس محصول: <span class="tx-danger">*</span></label>
+                            <input type="hidden" name="image" value="{{ $product->image }}">
+                            <input type="file" class="form-control" name="image">
+                            @error('image')
+                                <div class="alert alert-danger">
+                                    {{ $message }}
+                                </div>
+                            @enderror
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">قیمت محصول: <span class="tx-danger">*</span></label>
                             <input type="number" class="form-control" name="price" value="{{ $product->price }}">
+                            @error('price')
+                                <div class="alert alert-danger">
+                                    {{ $message }}
+                                </div>
+                            @enderror
                         </div>
                         <div class="form-group">
+                            <label class="form-label">توضیحات محصول: <span class="tx-danger">*</span></label>
+                            <textarea name="description" id="editor">{{ $product->description }}</textarea>
+                            @error('description')
+                                <div class="alert alert-danger">
+                                    {{ $message }}
+                                </div>
+                            @enderror
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">دسته بندی محصول: <span class="tx-danger">*</span></label>
                             <select class="chosen-select form-select" name="categories[]" multiple>
-                                @foreach ($categories as $category)                                    
-                                <option value="{{ $category->id }}">{{ $category->name }}</option>
+                                @foreach ($categories as $category)
+                                    <option value="{{ $category->id }}" @if ($product->categories->id == $category->id) selected @endif>
+                                        {{ $category->name }}</option>
                                 @endforeach
-                              </select>
+                            </select>
                         </div>
                         <div class="form-group mb-0 mt-3 justify-content-end">
                             <div>
                                 <button type="submit" class="btn btn-primary">ثبت</button>
-                                <a href="{{ route('admin.products.index') }}" type="submit" class="btn btn-secondary">لغو</a>
+                                <a href="{{ route('admin.products.index') }}" type="submit"
+                                    class="btn btn-secondary">لغو</a>
                             </div>
                         </div>
                     </form>

@@ -355,7 +355,7 @@
                                         <h5 class="product-title">
                                             <a href="shop-single.html">مانتو زنانه</a>
                                         </h5>
-                                        <a class="product-meta" href="shop-categories.html">لباس زنانه</a>
+                                        {{--  <a class="product-meta" href="shop-categories.html">لباس زنانه</a>  --}}
                                         <span class="product-price">157,000 تومان</span>
                                     </div>
                                 </div>
@@ -917,6 +917,7 @@
     </div>  --}}
 
     <!-- End Category-Section -->
+
     <!-- Start Product-Slider -->
     <section class="slider-section dt-sl mb-5">
         <div class="row mb-3">
@@ -1104,6 +1105,7 @@
         </div>
     </section>
     <!-- End Product-Slider -->
+
     <!-- Start Banner -->
     <div class="row mt-3 mb-5">
         <div class="col-12">
@@ -1115,7 +1117,8 @@
         </div>
     </div>
     <!-- End Banner -->
-    <!-- Start Product-Slider -->
+
+    {{--  <!-- Start Product-Slider -->
     <section class="slider-section dt-sl mb-5">
         <div class="row mb-3">
             <div class="col-12">
@@ -1301,7 +1304,8 @@
 
         </div>
     </section>
-    <!-- End Product-Slider -->
+    <!-- End Product-Slider -->  --}}
+
     <!-- Start Feature-Product -->
 
     {{--  <section class="dt-sl dt-sn mb-5">

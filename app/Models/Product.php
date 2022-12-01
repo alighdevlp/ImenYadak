@@ -9,9 +9,13 @@ class Product extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['title', 'price'];
+    protected $fillable = ['title', 'image', 'price', 'popular', 'suggest', 'description'];
 
     public function categories() {
         return $this->belongsToMany(Category::class);
+    }
+
+    public function product_images() {
+        return $this->hasMany(ProductImage::class);
     }
 }

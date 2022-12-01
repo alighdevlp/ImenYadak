@@ -50,11 +50,11 @@
                                         </td>
                                         @switch($user->role)
                                             @case(0)
-                                                <td><button class="btn btn-danger">کاربر</button></td>
+                                                <td><a href="{{ route('admin.users.changerole',$user->id) }}" class="btn btn-danger">کاربر</a></td>
                                             @break
 
                                             @case(1)
-                                                <td><button class="btn btn-success">ادمین</button></td>
+                                                <td><a href="{{ route('admin.users.changerole',$user->id) }}" class="btn btn-success">ادمین</a></td>
                                             @break
                                         @endswitch
                                         <td>{{ $user->phone }}</td>
