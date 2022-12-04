@@ -4,6 +4,7 @@ use App\Http\Controllers\back\AttributeController;
 use App\Http\Controllers\back\BannerController;
 use App\Http\Controllers\back\BrandController;
 use App\Http\Controllers\back\CategoryController;
+use App\Http\Controllers\back\CommentController;
 use App\Http\Controllers\back\DashboardController;
 use App\Http\Controllers\back\MediaController;
 use App\Http\Controllers\back\MenuCategoryController;
@@ -112,6 +113,11 @@ Route::prefix('/admin/product-images')->middleware('checkrole')->group(function 
     Route::get('/edit/{productImage}', [ProductImageController::class, 'edit'])->name('admin.productimages.edit');
     Route::put('/update/{productImage}', [ProductImageController::class, 'update'])->name('admin.productimages.update');
     Route::get('/destroy/{productImage}', [ProductImageController::class, 'destroy'])->name('admin.productimages.destroy');
+});
+
+Route::prefix('/admin/comments')->middleware('checkrole')->group(function () {
+    Route::get('/index', [CommentController::class, 'index'])->name('admin.comments.index');
+    Route::get('/show/{comment}', [CommentController::class, 'show'])->name('admin.comments.show');
 });
 
 Route::prefix('/admin/banners')->middleware('checkrole')->group(function () {

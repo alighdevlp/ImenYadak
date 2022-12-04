@@ -8,17 +8,16 @@ use Livewire\Component;
 class ChangeSuggest extends Component
 {
 
-    public $prod;
+    public $product;
 
-    public function Change($prod) {
-        $product = Product::find($prod);
-        if($product->suggest == 0) {
-            $product->suggest = 1;
+    public function Change() {
+        if($this->product->suggest == 0) {
+            $this->product->suggest = 1;
         } else {
-            $product->suggest = 0;
+            $this->product->suggest = 0;
         }
 
-        $product->save();
+        $this->product->save();
     }
 
     public function render()

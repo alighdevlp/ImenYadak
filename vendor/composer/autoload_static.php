@@ -19,9 +19,10 @@ class ComposerStaticInit8ecd1579f53406579c4ab342a7172edd
         'a4a119a56e50fbb293281d9a48007e0e' => __DIR__ . '/..' . '/symfony/polyfill-php80/bootstrap.php',
         '3bd81c9b8fcc150b69d8b63b4d2ccf23' => __DIR__ . '/..' . '/spatie/flare-client-php/src/helpers.php',
         '23c18046f52bef3eea034657bafda50f' => __DIR__ . '/..' . '/symfony/polyfill-php81/bootstrap.php',
+        'a1105708a18b76903365ca1c4aa61b02' => __DIR__ . '/..' . '/symfony/translation/Resources/functions.php',
         '7b11c4dc42b3b3023073cb14e519683c' => __DIR__ . '/..' . '/ralouphie/getallheaders/src/getallheaders.php',
         '09f6b20656683369174dd6fa83b7e5fb' => __DIR__ . '/..' . '/symfony/polyfill-uuid/bootstrap.php',
-        'a1105708a18b76903365ca1c4aa61b02' => __DIR__ . '/..' . '/symfony/translation/Resources/functions.php',
+        'a4ecaeafb8cfb009ad0e052c90355e98' => __DIR__ . '/..' . '/beberlei/assert/lib/Assert/functions.php',
         'c964ee0ededf28c96ebd9db5099ef910' => __DIR__ . '/..' . '/guzzlehttp/promises/src/functions_include.php',
         '6124b4c8570aa390c21fafd04a26c69f' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/deep_copy.php',
         '35a6ad97d21e794e7e22a17d806652e4' => __DIR__ . '/..' . '/nunomaduro/termwind/src/Functions.php',
@@ -33,6 +34,7 @@ class ComposerStaticInit8ecd1579f53406579c4ab342a7172edd
         'f0906e6318348a765ffb6eb24e0d0938' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Foundation/helpers.php',
         '58571171fd5812e6e447dce228f52f4d' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Support/helpers.php',
         '40275907c8566c390185147049ef6e5d' => __DIR__ . '/..' . '/livewire/livewire/src/helpers.php',
+        'e4e590a9b5afe940db71ee1662c02677' => __DIR__ . '/..' . '/morilog/jalali/src/helpers.php',
         'ec07570ca5a812141189b1fa81503674' => __DIR__ . '/..' . '/phpunit/phpunit/src/Framework/Assert/Functions.php',
         '320163ac6b93aebe3dc25b60a0533d56' => __DIR__ . '/..' . '/spatie/laravel-ignition/src/helpers.php',
     );
@@ -110,6 +112,7 @@ class ComposerStaticInit8ecd1579f53406579c4ab342a7172edd
         ),
         'M' => 
         array (
+            'Morilog\\Jalali\\' => 15,
             'Monolog\\' => 8,
         ),
         'L' => 
@@ -169,6 +172,7 @@ class ComposerStaticInit8ecd1579f53406579c4ab342a7172edd
         ),
         'A' => 
         array (
+            'Assert\\' => 7,
             'App\\' => 4,
         ),
     );
@@ -371,6 +375,10 @@ class ComposerStaticInit8ecd1579f53406579c4ab342a7172edd
         array (
             0 => __DIR__ . '/..' . '/nunomaduro/collision/src',
         ),
+        'Morilog\\Jalali\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/morilog/jalali/src',
+        ),
         'Monolog\\' => 
         array (
             0 => __DIR__ . '/..' . '/monolog/monolog/src/Monolog',
@@ -503,6 +511,10 @@ class ComposerStaticInit8ecd1579f53406579c4ab342a7172edd
         array (
             0 => __DIR__ . '/..' . '/brick/math/src',
         ),
+        'Assert\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/beberlei/assert/lib/Assert',
+        ),
         'App\\' => 
         array (
             0 => __DIR__ . '/../..' . '/app',
@@ -534,6 +546,7 @@ class ComposerStaticInit8ecd1579f53406579c4ab342a7172edd
         'App\\Http\\Controllers\\back\\BannerController' => __DIR__ . '/../..' . '/app/Http/Controllers/back/BannerController.php',
         'App\\Http\\Controllers\\back\\BrandController' => __DIR__ . '/../..' . '/app/Http/Controllers/back/BrandController.php',
         'App\\Http\\Controllers\\back\\CategoryController' => __DIR__ . '/../..' . '/app/Http/Controllers/back/CategoryController.php',
+        'App\\Http\\Controllers\\back\\CommentController' => __DIR__ . '/../..' . '/app/Http/Controllers/back/CommentController.php',
         'App\\Http\\Controllers\\back\\DashboardController' => __DIR__ . '/../..' . '/app/Http/Controllers/back/DashboardController.php',
         'App\\Http\\Controllers\\back\\MediaController' => __DIR__ . '/../..' . '/app/Http/Controllers/back/MediaController.php',
         'App\\Http\\Controllers\\back\\MenuCategoryController' => __DIR__ . '/../..' . '/app/Http/Controllers/back/MenuCategoryController.php',
@@ -541,12 +554,20 @@ class ComposerStaticInit8ecd1579f53406579c4ab342a7172edd
         'App\\Http\\Controllers\\back\\MenuItemController' => __DIR__ . '/../..' . '/app/Http/Controllers/back/MenuItemController.php',
         'App\\Http\\Controllers\\back\\OptionController' => __DIR__ . '/../..' . '/app/Http/Controllers/back/OptionController.php',
         'App\\Http\\Controllers\\back\\ProductController' => __DIR__ . '/../..' . '/app/Http/Controllers/back/ProductController.php',
+        'App\\Http\\Controllers\\back\\ProductImageController' => __DIR__ . '/../..' . '/app/Http/Controllers/back/ProductImageController.php',
         'App\\Http\\Controllers\\back\\ProfileController' => __DIR__ . '/../..' . '/app/Http/Controllers/back/ProfileController.php',
         'App\\Http\\Controllers\\back\\SliderController' => __DIR__ . '/../..' . '/app/Http/Controllers/back/SliderController.php',
         'App\\Http\\Controllers\\back\\UserController' => __DIR__ . '/../..' . '/app/Http/Controllers/back/UserController.php',
         'App\\Http\\Controllers\\front\\AccountController' => __DIR__ . '/../..' . '/app/Http/Controllers/front/AccountController.php',
         'App\\Http\\Controllers\\front\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/front/HomeController.php',
+        'App\\Http\\Controllers\\front\\ProductController' => __DIR__ . '/../..' . '/app/Http/Controllers/front/ProductController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
+        'App\\Http\\Livewire\\Back\\Comment\\ChangeAllReadComment' => __DIR__ . '/../..' . '/app/Http/Livewire/Back/Comment/ChangeAllReadComment.php',
+        'App\\Http\\Livewire\\Back\\Comment\\ChangeReadComment' => __DIR__ . '/../..' . '/app/Http/Livewire/Back/Comment/ChangeReadComment.php',
+        'App\\Http\\Livewire\\Back\\Comment\\ChangeStatusComment' => __DIR__ . '/../..' . '/app/Http/Livewire/Back/Comment/ChangeStatusComment.php',
+        'App\\Http\\Livewire\\Back\\Product\\ChangePopularProduct' => __DIR__ . '/../..' . '/app/Http/Livewire/Back/Product/ChangePopularProduct.php',
+        'App\\Http\\Livewire\\Back\\Product\\ChangePopularShowProduct' => __DIR__ . '/../..' . '/app/Http/Livewire/Back/Product/ChangePopularShowProduct.php',
+        'App\\Http\\Livewire\\Back\\Product\\ChangeSuggest' => __DIR__ . '/../..' . '/app/Http/Livewire/Back/Product/ChangeSuggest.php',
         'App\\Http\\Livewire\\Back\\WebStatus' => __DIR__ . '/../..' . '/app/Http/Livewire/Back/WebStatus.php',
         'App\\Http\\Middleware\\Authenticate' => __DIR__ . '/../..' . '/app/Http/Middleware/Authenticate.php',
         'App\\Http\\Middleware\\CheckRole' => __DIR__ . '/../..' . '/app/Http/Middleware/CheckRole.php',
@@ -568,6 +589,7 @@ class ComposerStaticInit8ecd1579f53406579c4ab342a7172edd
         'App\\Http\\Requests\\back\\MenuItemRequest' => __DIR__ . '/../..' . '/app/Http/Requests/back/MenuItemRequest.php',
         'App\\Http\\Requests\\back\\MenuRequest' => __DIR__ . '/../..' . '/app/Http/Requests/back/MenuRequest.php',
         'App\\Http\\Requests\\back\\OptionRequest' => __DIR__ . '/../..' . '/app/Http/Requests/back/OptionRequest.php',
+        'App\\Http\\Requests\\back\\ProductImageRequest' => __DIR__ . '/../..' . '/app/Http/Requests/back/ProductImageRequest.php',
         'App\\Http\\Requests\\back\\ProductRequest' => __DIR__ . '/../..' . '/app/Http/Requests/back/ProductRequest.php',
         'App\\Http\\Requests\\back\\ProfileRequest' => __DIR__ . '/../..' . '/app/Http/Requests/back/ProfileRequest.php',
         'App\\Http\\Requests\\back\\SliderRequest' => __DIR__ . '/../..' . '/app/Http/Requests/back/SliderRequest.php',
@@ -576,6 +598,7 @@ class ComposerStaticInit8ecd1579f53406579c4ab342a7172edd
         'App\\Models\\Banner' => __DIR__ . '/../..' . '/app/Models/Banner.php',
         'App\\Models\\Brand' => __DIR__ . '/../..' . '/app/Models/Brand.php',
         'App\\Models\\Category' => __DIR__ . '/../..' . '/app/Models/Category.php',
+        'App\\Models\\Comment' => __DIR__ . '/../..' . '/app/Models/Comment.php',
         'App\\Models\\Media' => __DIR__ . '/../..' . '/app/Models/Media.php',
         'App\\Models\\Menu' => __DIR__ . '/../..' . '/app/Models/Menu.php',
         'App\\Models\\MenuCategory' => __DIR__ . '/../..' . '/app/Models/MenuCategory.php',
@@ -591,6 +614,13 @@ class ComposerStaticInit8ecd1579f53406579c4ab342a7172edd
         'App\\Providers\\BroadcastServiceProvider' => __DIR__ . '/../..' . '/app/Providers/BroadcastServiceProvider.php',
         'App\\Providers\\EventServiceProvider' => __DIR__ . '/../..' . '/app/Providers/EventServiceProvider.php',
         'App\\Providers\\RouteServiceProvider' => __DIR__ . '/../..' . '/app/Providers/RouteServiceProvider.php',
+        'Assert\\Assert' => __DIR__ . '/..' . '/beberlei/assert/lib/Assert/Assert.php',
+        'Assert\\Assertion' => __DIR__ . '/..' . '/beberlei/assert/lib/Assert/Assertion.php',
+        'Assert\\AssertionChain' => __DIR__ . '/..' . '/beberlei/assert/lib/Assert/AssertionChain.php',
+        'Assert\\AssertionFailedException' => __DIR__ . '/..' . '/beberlei/assert/lib/Assert/AssertionFailedException.php',
+        'Assert\\InvalidArgumentException' => __DIR__ . '/..' . '/beberlei/assert/lib/Assert/InvalidArgumentException.php',
+        'Assert\\LazyAssertion' => __DIR__ . '/..' . '/beberlei/assert/lib/Assert/LazyAssertion.php',
+        'Assert\\LazyAssertionException' => __DIR__ . '/..' . '/beberlei/assert/lib/Assert/LazyAssertionException.php',
         'Attribute' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/Attribute.php',
         'Brick\\Math\\BigDecimal' => __DIR__ . '/..' . '/brick/math/src/BigDecimal.php',
         'Brick\\Math\\BigInteger' => __DIR__ . '/..' . '/brick/math/src/BigInteger.php',
@@ -3432,6 +3462,8 @@ class ComposerStaticInit8ecd1579f53406579c4ab342a7172edd
         'Monolog\\SignalHandler' => __DIR__ . '/..' . '/monolog/monolog/src/Monolog/SignalHandler.php',
         'Monolog\\Test\\TestCase' => __DIR__ . '/..' . '/monolog/monolog/src/Monolog/Test/TestCase.php',
         'Monolog\\Utils' => __DIR__ . '/..' . '/monolog/monolog/src/Monolog/Utils.php',
+        'Morilog\\Jalali\\CalendarUtils' => __DIR__ . '/..' . '/morilog/jalali/src/CalendarUtils.php',
+        'Morilog\\Jalali\\Jalalian' => __DIR__ . '/..' . '/morilog/jalali/src/Jalalian.php',
         'Nette\\ArgumentOutOfRangeException' => __DIR__ . '/..' . '/nette/utils/src/exceptions.php',
         'Nette\\DeprecatedException' => __DIR__ . '/..' . '/nette/utils/src/exceptions.php',
         'Nette\\DirectoryNotFoundException' => __DIR__ . '/..' . '/nette/utils/src/exceptions.php',

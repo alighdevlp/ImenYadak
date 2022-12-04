@@ -193,7 +193,7 @@
                             <div class="card-body">
                                 <div class="pro-img-box">
                                     {{--  Start Suggest Button  --}}
-                                    <livewire:back.product.change-suggest :prod="$product" />
+                                    <livewire:back.product.change-suggest :product="$product" />
                                     {{--  End Suggest Button  --}}
                                     <img class="w-100" src="{{ url('/upload/products/' . $product->image) }}"
                                         alt="تصویر محصول">
@@ -203,7 +203,7 @@
                                 </div>
                                 <div class="text-center pt-3">
                                     <a href="{{ route('admin.products.show',$product->id) }}"><h3 class="h6 mb-2 mt-4 font-weight-bold text-uppercase">{{ $product->title }}</h3></a>
-                                    <livewire:back.product.change-popular-product :pop="$product" />
+                                    <livewire:back.product.change-popular-product :product="$product" />
                                     <h4 class="h5 mb-0 mt-2 text-center font-weight-bold text-danger">{{ $product->price }}
                                         تومان</h4>
                                 </div>

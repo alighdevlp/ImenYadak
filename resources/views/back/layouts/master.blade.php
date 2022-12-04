@@ -357,6 +357,7 @@
         $(".chosen-select").chosen(); 
     </script>
 
+    <script src="{{ url('/back/js/check-all-mail.js') }}"></script>
 
     {{--  End Scripts  --}}
 
