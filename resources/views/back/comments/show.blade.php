@@ -35,7 +35,7 @@
                                 alt="آواتار">
                             <div class="media-body">
                                 <div class="float-left d-none d-md-flex fs-15">
-                                    <span class="ms-3">{{ jdate()->forge('today')->format('%A, %d %B') }}</span>
+                                    <span class="ms-3">{{ jdate()->forge('today')->format('%A, %d %B %Y') }}</span>
 
 
                                     <small class="ms-3"><i class="bx bx-reply tx-18" data-toggle="tooltip" title=""
@@ -45,15 +45,17 @@
                                 <div class="media-title  font-weight-bold mt-3">{{ $comment->name }} <span
                                         class="text-muted">({{ $comment->email }})</span></div>
                                 {{--  <p class="mb-0">به آدام کوتر ({{ $comment->email }}) </p>  --}}
-                                <small class="mr-2 d-md-none">13 دسامبر 2018 12:45 بعد از ظهر</small>
+                                {{--  <small class="mr-2 d-md-none">13 دسامبر 2018 12:45 بعد از ظهر</small>
                                 <small class="mr-2 d-md-none"><i class="fe fe-star text-muted" data-toggle="tooltip"
                                         title="" data-original-title="امتیاز"></i></small>
                                 <small class="mr-2 d-md-none"><i class="fa fa-reply text-muted" data-toggle="tooltip"
-                                        title="" data-original-title="پاسخ"></i></small>
+                                        title="" data-original-title="پاسخ"></i></small>  --}}
                             </div>
                         </div>
                     </div>
                     <div class="eamil-body mt-5">
+                        <h2>محصول: {{ $comment->product->title }}</h2>
+                        <hr>
                         <p>{{ $comment->message }}</p>
                     </div>
                 </div>

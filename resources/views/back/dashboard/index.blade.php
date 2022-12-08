@@ -10,7 +10,8 @@
                 <p class="mg-b-0">نظارت بر فروش داشبورد فروش.</p>
             </div>
         </div>
-        <div class="main-dashboard-header-right">
+        
+        {{--  <div class="main-dashboard-header-right">
             <div>
                 <label class="tx-13">رتبه بندی مشتری</label>
                 <div class="main-star">
@@ -27,7 +28,8 @@
                 <label class="tx-13">فروش آفلاین</label>
                 <h5>783,675</h5>
             </div>
-        </div>
+        </div>  --}}
+
     </div>
 @endsection
 
@@ -126,7 +128,7 @@
     {{--  <!-- row closed -->  --}}
 
     {{--  <!-- row opened -->  --}}
-    <div class="row row-sm">
+    {{--  <div class="row row-sm">
         <div class="col-md-12 col-lg-12 col-xl-7">
             <div class="card">
                 <div class="card-header bg-transparent pd-b-0 pd-t-20 bd-b-0">
@@ -166,11 +168,11 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div>  --}}
     {{--  <!-- row closed -->  --}}
 
     {{--  <!-- row opened -->  --}}
-    <div class="row row-sm">
+    {{--  <div class="row row-sm">
         <div class="col-xl-4 col-md-12 col-lg-12">
             <div class="card">
                 <div class="card-header pb-1">
@@ -374,44 +376,12 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div>  --}}
     {{--  <!-- row close -->  --}}
 
     {{--  <!-- row opened -->  --}}
     <div class="row row-sm row-deck">
-        <div class="col-md-12 col-lg-4 col-xl-4">
-            <div class="card card-dashboard-eight pb-2">
-                <h6 class="card-title">کشورهای برتر شما</h6><span class="d-block mg-b-10 text-muted tx-12">درآمد عملکرد
-                    فروش براساس کشور</span>
-                <div class="list-group">
-                    <div class="list-group-item border-top-0">
-                        <i class="flag-icon flag-icon-us flag-icon-squared"></i>
-                        <p>ایالات متحده</p><span>1،671,010 تومان</span>
-                    </div>
-                    <div class="list-group-item">
-                        <i class="flag-icon flag-icon-nl flag-icon-squared"></i>
-                        <p>هلند</p><span>1064075 تومان</span>
-                    </div>
-                    <div class="list-group-item">
-                        <i class="flag-icon flag-icon-gb flag-icon-squared"></i>
-                        <p>انگلستان</p><span>1055098 تومان</span>
-                    </div>
-                    <div class="list-group-item">
-                        <i class="flag-icon flag-icon-ca flag-icon-squared"></i>
-                        <p>کانادا</p><span>1045049 تومان</span>
-                    </div>
-                    <div class="list-group-item">
-                        <i class="flag-icon flag-icon-in flag-icon-squared"></i>
-                        <p>هند</p><span>1930012 تومان</span>
-                    </div>
-                    <div class="list-group-item border-bottom-0 mb-0">
-                        <i class="flag-icon flag-icon-au flag-icon-squared"></i>
-                        <p>استرالیا</p><span>1042000 تومان</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-12 col-lg-8 col-xl-8">
+        <div class="col-md-12 col-lg-12 col-xl-12">
             <div class="card card-table-two">
                 <div class="d-flex justify-content-between">
                     <h4 class="card-title mb-1">آخرین درآمد شما</h4>

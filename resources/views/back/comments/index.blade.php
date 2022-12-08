@@ -78,7 +78,7 @@
                                     <a href="#"><i class="typcn typcn-ti"></i></a>
                                 </div>
                                 <div class="main-mail-date">
-                                    11:30 صبح
+                                    {{ jdate()->forge('today')->format('%A, %d %B %Y') }}
                                 </div>
                             </div>
                         @endforeach

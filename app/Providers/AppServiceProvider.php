@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Models\Comment;
 use App\Models\Setting;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\ServiceProvider;
@@ -16,7 +17,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        $this->app->bind('path.public', function () {
+            return base_path('public_html');
+        });
     }
 
     /**
@@ -27,5 +30,11 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         Schema::defaultStringLength(191);
+
+        $count_unread_comments = Comment::where('read', 0)->count();
+        view()->share('count_unread_comments', $count_unread_comments);
+
+        $un_comments = Comment::where('read', 0)->get();
+        view()->share('un_comments', $un_comments);
     }
 }

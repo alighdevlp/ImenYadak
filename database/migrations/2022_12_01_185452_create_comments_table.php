@@ -19,7 +19,6 @@ return new class extends Migration
             $table->string('email');
             $table->string('profile')->default("users-default.png");
             $table->text('message');
-            $table->integer('user_id');
             $table->integer('product_id');
             $table->integer('status')->default(0);
             $table->integer('read')->default(0);
