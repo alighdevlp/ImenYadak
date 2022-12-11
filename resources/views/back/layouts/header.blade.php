@@ -104,11 +104,11 @@
                                 {{--  <span class="badge rounded-pill bg-warning ms-auto my-auto float-end">علامت
                                     گذاری همه</span>  --}}
                             </div>
-                            <p class="dropdown-title-text subtext mb-0 text-white op-6 pb-0 tx-12 ">شما 4
-                                اعلان خوانده نشده دارید</p>
+                            {{--  <p class="dropdown-title-text subtext mb-0 text-white op-6 pb-0 tx-12 ">شما 4
+                                اعلان خوانده نشده دارید</p>  --}}
                         </div>
                         <div class="main-notification-list Notification-scroll">
-                            <a class="d-flex p-3 border-bottom" href="#">
+                            {{--  <a class="d-flex p-3 border-bottom" href="#">
                                 <div class="notifyimg bg-pink">
                                     <i class="la la-file-alt text-white"></i>
                                 </div>
@@ -119,8 +119,9 @@
                                 <div class="mr-auto">
                                     <i class="las la-angle-left text-left text-muted"></i>
                                 </div>
-                            </a>
-                            <a class="d-flex p-3" href="#">
+                            </a>  --}}
+
+                            {{--  <a class="d-flex p-3" href="#">
                                 <div class="notifyimg bg-purple">
                                     <i class="la la-gem text-white"></i>
                                 </div>
@@ -132,6 +133,8 @@
                                     <i class="las la-angle-left text-left text-muted"></i>
                                 </div>
                             </a>
+                              --}}
+
                             <a class="d-flex p-3 border-bottom" href="#">
                                 <div class="notifyimg bg-success">
                                     <i class="la la-shopping-basket text-white"></i>
@@ -144,7 +147,8 @@
                                     <i class="las la-angle-left text-left text-muted"></i>
                                 </div>
                             </a>
-                            <a class="d-flex p-3 border-bottom" href="#">
+
+                            {{--  <a class="d-flex p-3 border-bottom" href="#">
                                 <div class="notifyimg bg-warning">
                                     <i class="la la-envelope-open text-white"></i>
                                 </div>
@@ -155,8 +159,9 @@
                                 <div class="mr-auto">
                                     <i class="las la-angle-left text-left text-muted"></i>
                                 </div>
-                            </a>
-                            <a class="d-flex p-3 border-bottom" href="#">
+                            </a>  --}}
+
+                            {{--  <a class="d-flex p-3 border-bottom" href="#">
                                 <div class="notifyimg bg-danger">
                                     <i class="la la-user-check text-white"></i>
                                 </div>
@@ -167,8 +172,9 @@
                                 <div class="mr-auto">
                                     <i class="las la-angle-left text-left text-muted"></i>
                                 </div>
-                            </a>
-                            <a class="d-flex p-3 border-bottom" href="#">
+                            </a>  --}}
+
+                            {{--  <a class="d-flex p-3 border-bottom" href="#">
                                 <div class="notifyimg bg-primary">
                                     <i class="la la-check-circle text-white"></i>
                                 </div>
@@ -179,7 +185,7 @@
                                 <div class="mr-auto">
                                     <i class="las la-angle-left text-left text-muted"></i>
                                 </div>
-                            </a>
+                            </a>  --}}
                         </div>
                         <div class="dropdown-footer">
                             <a href="#">مشاهده همه</a>

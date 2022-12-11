@@ -48,15 +48,11 @@
                                             <img alt="ایکون" class="rounded-circle avatar-md mr-2"
                                                 src="{{ url('/upload/users/' . $user->profile) }}">
                                         </td>
-                                        @switch($user->role)
-                                            @case(0)
-                                                <td><a href="{{ route('admin.users.changerole',$user->id) }}" class="btn btn-danger">کاربر</a></td>
-                                            @break
 
-                                            @case(1)
-                                                <td><a href="{{ route('admin.users.changerole',$user->id) }}" class="btn btn-success">ادمین</a></td>
-                                            @break
-                                        @endswitch
+                                        {{--  Start Role Button  --}}
+                                            <livewire:back.user.change-role :user="$user">
+                                        {{--  End Role Button  --}}
+
                                         <td>{{ $user->phone }}</td>
                                         <td>{{ $user->email }}</td>
                                         <td>{{ $user->score }}</td>

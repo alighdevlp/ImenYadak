@@ -45,28 +45,34 @@
                                 </div>
                                 <div class="col-md-6 col-sm-12">
                                     <div class="label-info">
-                                        <span>کد ملی:</span>
+                                        <span>آدرس:</span>
                                     </div>
                                     <div class="value-info">
-                                        <span>-</span>
+                                        @empty(auth()->user()->address)
+                                            <span>-</span>                                            
+                                            @else
+                                        <span>{{ auth()->user()->address }}</span>
+                                        @endempty
                                     </div>
                                 </div>
-                                <div class="col-md-6 col-sm-12">
+
+                                {{-- <div class="col-md-6 col-sm-12">
                                     <div class="label-info">
                                         <span>دریافت خبرنامه:</span>
                                     </div>
                                     <div class="value-info">
                                         <span>خیر</span>
                                     </div>
-                                </div>
-                                <div class="col-md-6 col-sm-12">
+                                </div>  --}}
+
+                                {{--  <div class="col-md-6 col-sm-12">
                                     <div class="label-info">
                                         <span>شماره کارت:</span>
                                     </div>
                                     <div class="value-info">
                                         <span>-</span>
                                     </div>
-                                </div>
+                                </div>  --}}
                             </div>
                             <div class="profile-section-link">
                                 <a href="{{ route('account.edit') }}" class="border-bottom-dt">
