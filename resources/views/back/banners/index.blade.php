@@ -59,7 +59,11 @@
                                             @break
 
                                             @case(1)
-                                                <td>پایین</td>
+                                                <td>وسط</td>
+                                            @break
+
+                                            @case(2)
+                                            <td>پایین</td>
                                             @break
                                         @endswitch
                                         <td>{{ $banner->priority }}</td>

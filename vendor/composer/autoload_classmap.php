@@ -70,6 +70,7 @@ return array(
     'App\\Models\\Attribute' => $baseDir . '/app/Models/Attribute.php',
     'App\\Models\\Banner' => $baseDir . '/app/Models/Banner.php',
     'App\\Models\\Brand' => $baseDir . '/app/Models/Brand.php',
+    'App\\Models\\Cart' => $baseDir . '/app/Models/Cart.php',
     'App\\Models\\Category' => $baseDir . '/app/Models/Category.php',
     'App\\Models\\Comment' => $baseDir . '/app/Models/Comment.php',
     'App\\Models\\Media' => $baseDir . '/app/Models/Media.php',

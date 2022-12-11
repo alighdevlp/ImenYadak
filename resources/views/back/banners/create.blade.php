@@ -61,6 +61,10 @@
                                 </div>
                                 <div class="col-lg-3">
                                     <label class="rdiobox"><input type="radio" name="position" value="1">
+                                        <span>وسط</span></label>
+                                </div>
+                                <div class="col-lg-3">
+                                    <label class="rdiobox"><input type="radio" name="position" value="2">
                                         <span>پایین</span></label>
                                 </div>
                             </div>

@@ -58,11 +58,15 @@
                             <label class="form-label">موقعیت بنر: <span class="tx-danger">*</span></label>
                             <div class="row mg-t-10">
                                 <div class="col-lg-3 mg-t-20 mg-lg-t-0">
-                                    <label class="rdiobox"><input type="radio" name="position" value="0" {{ $banner->position ? '' : 'checked'}}>
+                                    <label class="rdiobox"><input type="radio" name="position" value="0" @if($banner->position == 0) checked @endif>
                                         <span>بالا</span></label>
                                 </div>
                                 <div class="col-lg-3">
-                                    <label class="rdiobox"><input type="radio" name="position" value="1" {{ $banner->position ? 'checked' : ''}}>
+                                    <label class="rdiobox"><input type="radio" name="position" value="1" @if($banner->position == 1) checked @endif>
+                                        <span>وسط</span></label>
+                                </div>
+                                <div class="col-lg-3">
+                                    <label class="rdiobox"><input type="radio" name="position" value="2" @if($banner->position == 2) checked @endif>
                                         <span>پایین</span></label>
                                 </div>
                             </div>

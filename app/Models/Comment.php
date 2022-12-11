@@ -9,7 +9,7 @@ class Comment extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['title', 'user_id', 'product_id', 'status'];
+    protected $fillable = ['name', 'email', 'profile', 'user_id', 'product_id', 'status'];
 
     public function product() {
         return $this->belongsTo(Product::class);
