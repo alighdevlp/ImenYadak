@@ -25,7 +25,7 @@
                     <div class="card-header border-bottom pt-3 pb-3 mb-0 font-weight-bold text-uppercase">دسته بندی</div>
                     <div class="card-body pb-0">
                         <div class="form-group">
-                            <label class="form-label">مردانه</label>
+                            <label class="form-label">شرکت</label>
                             <select name="beast" id="select-beast" class="form-control  nice-select  custom-select">
                                 <option value="0">--انتخاب کنید--</option>
                                 <option value="1">سایش پا</option>
@@ -35,32 +35,9 @@
                                 <option value="5">تجهیزات جانبی</option>
                             </select>
                         </div>
+
                         <div class="form-group mt-2">
-                            <label class="form-label">زنان</label>
-                            <select name="beast" id="select-beast1" class="form-control  nice-select  custom-select">
-                                <option value="0">--انتخاب کنید--</option>
-                                <option value="1">لباس غربی</option>
-                                <option value="2">سایش پا</option>
-                                <option value="3">سایش بالا</option>
-                                <option value="4">سایش پایه</option>
-                                <option value="5">بوتی گرومینگ</option>
-                                <option value="6">تجهیزات جانبی</option>
-                                <option value="7">جواهرات</option>
-                            </select>
-                        </div>
-                        <div class="form-group mt-2">
-                            <label class="form-label">کودک و بچه ها</label>
-                            <select name="beast" id="select-beast2" class="form-control  nice-select  custom-select">
-                                <option value="0">--انتخاب کنید--</option>
-                                <option value="1">لباس پسرانه</option>
-                                <option value="2">لباس دخترانه</option>
-                                <option value="3">اسباب بازی ها</option>
-                                <option value="4">مراقبت کودک</option>
-                                <option value="5">کفش بچه گانه</option>
-                            </select>
-                        </div>
-                        <div class="form-group mt-2">
-                            <label class="form-label">الکترونیک</label>
+                            <label class="form-label">دسته بندی</label>
                             <select name="beast" id="select-beast3" class="form-control  nice-select  custom-select">
                                 <option value="0">--انتخاب کنید--</option>
                                 <option value="1">موبایل ها</option>
@@ -69,42 +46,8 @@
                                 <option value="4">لوازم بهداشتی</option>
                             </select>
                         </div>
-                        <div class="form-group mt-2">
-                            <label class="form-label">ورزش ، کتاب و موارد دیگر </label>
-                            <select name="beast" id="select-beast4" class="form-control  nice-select  custom-select">
-                                <option value="0">--انتخاب کنید--</option>
-                                <option value="1">لوازم التحریر</option>
-                                <option value="2">کتابها</option>
-                                <option value="3">بازی کردن</option>
-                                <option value="4">موسیقی</option>
-                                <option value="5">ورزش و تناسب اندام</option>
-                            </select>
-                        </div>
                     </div>
-                    <div class="card-header border-bottom border-top pt-3 pb-3 mb-0 font-weight-bold text-uppercase">فیلتر
-                    </div>
-                    <div class="card-body">
-                        <form role="form product-form">
-                            <div class="form-group">
-                                <label>نام تجاری</label>
-                                <select class="form-control nice-select">
-                                    <option>برند</option>
-                                    <option>برند</option>
-                                    <option>برند</option>
-                                    <option>برند</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <label>نوع</label>
-                                <select class="form-control nice-select">
-                                    <option>کم اهمیت</option>
-                                    <option>متوسط</option>
-                                    <option>بزرگ</option>
-                                    <option>فوق العاده بزرگ</option>
-                                </select>
-                            </div>
-                        </form>
-                    </div>
+
                     <div class="card-header border-bottom border-top pt-3 pb-3 mb-0 font-weight-bold text-uppercase">رتبه
                         بندی</div>
                     <div class="py-2 px-3">
@@ -208,6 +151,7 @@
                                         تومان</h4>
                                 </div>
                             </div>
+                            <a href="{{ route('admin.products.edit',$product->id) }}" class="btn btn-primary">ویرایش</a>
                         </div>
                     </div>
                 @endforeach

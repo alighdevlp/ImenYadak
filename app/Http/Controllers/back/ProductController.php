@@ -67,6 +67,7 @@ class ProductController extends Controller
             'title' => $request->title,
             'image' => $ImageUrl,
             'price' => $request->price,
+            'count' => $request->count,
             'description' => $request->description
         ]);
 
@@ -122,6 +123,7 @@ class ProductController extends Controller
             'title' => $request->title,
             'image' => $ImageUrl,
             'price' => $request->price,
+            'count' => $request->count,
             'description' => $request->description
         ]);
 

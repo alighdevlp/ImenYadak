@@ -21,54 +21,30 @@
                                 <thead>
                                     <tr>
                                         <th>#</th>
-                                        <th>شماره سفارش</th>
+                                        <th>محصول</th>
+                                        <th>کد سفارش</th>
+                                        <th>مبلغ</th>
                                         <th>تاریخ ثبت سفارش</th>
-                                        <th>مبلغ قابل پرداخت</th>
-                                        <th>مبلغ کل</th>
-                                        <th>عملیات پرداخت</th>
+                                        <th>وضعیت سفارش</th>
                                         <th>جزییات</th>
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    @foreach (auth()->user()->orders as $item)
                                     <tr>
-                                        <td>1</td>
-                                        <td>DDC-57456951</td>
-                                        <td>۳۱ مرداد ۱۳۹۸</td>
-                                        <td>۰</td>
-                                        <td>۹,۹۸۹,۰۰۰ تومان</td>
-                                        <td>لغو شده</td>
+                                        <td>{{ $item->id }}</td>
+                                        <td>{{ $item->product->title }}</td>
+                                        <td>{{ $item->code }}</td>
+                                        <td>{{ $item->product->price }} تومان</td>
+                                        <td>{{ jdate()->forge($item->created_at)->format('%d %B %Y') }}</td>
+                                        <td>درحال بررسی</td>
                                         <td class="details-link">
-                                            <a href="#">
+                                            <a href="{{ route('account.order.details',$item->code) }}">
                                                 <i class="mdi mdi-chevron-left"></i>
                                             </a>
                                         </td>
                                     </tr>
-                                    <tr>
-                                        <td>2</td>
-                                        <td>DKC-45173498</td>
-                                        <td>۱۰ خرداد ۱۳۹۸</td>
-                                        <td>۰</td>
-                                        <td>۱۸,۰۴۹,۰۰۰ تومان</td>
-                                        <td>لغو شده</td>
-                                        <td class="details-link">
-                                            <a href="#">
-                                                <i class="mdi mdi-chevron-left"></i>
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>3</td>
-                                        <td>DDC-58976951</td>
-                                        <td>۲۱ مرداد ۱۳۹۸</td>
-                                        <td>۰</td>
-                                        <td>۹,۱۸۹,۰۰۰ تومان</td>
-                                        <td>لغو شده</td>
-                                        <td class="details-link">
-                                            <a href="#">
-                                                <i class="mdi mdi-chevron-left"></i>
-                                            </a>
-                                        </td>
-                                    </tr>
+                                    @endforeach
                                 </tbody>
                             </table>
                         </div>

@@ -52,7 +52,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="{{ route('account.order') }}">
+                            <a href="{{ route('account.orders') }}">
                                 <i class="mdi mdi-basket"></i>
                                 همه سفارش ها
                             </a>

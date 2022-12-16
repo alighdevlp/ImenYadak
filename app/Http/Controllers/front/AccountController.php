@@ -4,6 +4,7 @@ namespace App\Http\Controllers\front;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\front\AccountRequest;
+use App\Models\Order;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -16,6 +17,10 @@ class AccountController extends Controller
 
     public function OrderList() {
         return view('front.account.orders');
+    }
+
+    public function OrderDetails(Order $order) {
+        return view('front.account.order-details', compact('order'));
     }
 
     public function edit() {

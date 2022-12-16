@@ -60,6 +60,15 @@
                             @enderror
                         </div>
                         <div class="form-group">
+                            <label class="form-label">تعداد محصول: <span class="tx-danger">*</span></label>
+                            <input type="number" class="form-control" name="count">
+                            @error('count')
+                                <div class="alert alert-danger">
+                                    {{ $message }}
+                                </div>
+                            @enderror
+                        </div>
+                        <div class="form-group">
                             <label class="form-label">توضیحات محصول: <span class="tx-danger">*</span></label>
                             <textarea name="description" id="editor"></textarea>
                             @error('description')

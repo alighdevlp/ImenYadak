@@ -11,6 +11,7 @@ use App\Http\Controllers\back\MenuCategoryController;
 use App\Http\Controllers\back\MenuController;
 use App\Http\Controllers\back\MenuItemController;
 use App\Http\Controllers\back\OptionController;
+use App\Http\Controllers\back\OrderController;
 use App\Http\Controllers\back\ProductController;
 use App\Http\Controllers\back\ProductImageController;
 use App\Http\Controllers\back\ProfileController;
@@ -42,7 +43,6 @@ Route::get('/admin/dashboard', [DashboardController::class, 'index'])->middlewar
 
 Route::prefix('/admin/users')->middleware('checkrole')->group(function () {
     Route::get('/index', [UserController::class, 'index'])->name('admin.users.index');
-    Route::get('/change-role/{user}', [UserController::class, 'ChangeRole'])->name('admin.users.changerole');
 });
 
 Route::prefix('/admin/profile')->middleware('checkrole')->group(function () {
@@ -120,6 +120,11 @@ Route::prefix('/admin/comments')->middleware('checkrole')->group(function () {
     Route::get('/show/{comment}', [CommentController::class, 'show'])->name('admin.comments.show');
 });
 
+Route::prefix('/admin/orders')->middleware('checkrole')->group(function () {
+    Route::get('/index', [OrderController::class, 'index'])->name('admin.orders.index');
+    Route::get('/ChangeStatus/{order}', [OrderController::class, 'ChangeStatus'])->name('admin.orders.changestatus');
+});
+
 Route::prefix('/admin/banners')->middleware('checkrole')->group(function () {
     Route::get('/index', [BannerController::class, 'index'])->name('admin.banners.index');
     Route::get('/create', [BannerController::class, 'create'])->name('admin.banners.create');
@@ -174,7 +179,16 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 
 Route::prefix('/account')->middleware('checkrole')->group(function() {
     Route::get('/', [AccountController::class, 'index'])->name('account.index');
-    Route::get('/orders', [AccountController::class, 'OrderList'])->name('account.order');
+    Route::get('/orders', [AccountController::class, 'OrderList'])->name('account.orders');
+    Route::get('/order/{order:code}', [AccountController::class, 'OrderDetails'])->name('account.order.details');
+    Route::get('/edit', [AccountController::class, 'edit'])->name('account.edit');
+    Route::put('/update', [AccountController::class, 'update'])->name('account.update');
+});
+
+Route::prefix('/cart')->middleware('checkrole')->group(function() {
+    Route::get('/checkout', [AccountController::class, 'index'])->name('cart.index');
+    Route::get('/orders', [AccountController::class, 'OrderList'])->name('account.orders');
+    Route::get('/order/{order:code}', [AccountController::class, 'OrderDetails'])->name('account.order.details');
     Route::get('/edit', [AccountController::class, 'edit'])->name('account.edit');
     Route::put('/update', [AccountController::class, 'update'])->name('account.update');
 });

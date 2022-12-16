@@ -321,13 +321,13 @@
 <div class="container main-container">
     <!-- Start Product-Slider -->
     <div class="row">
-        <div class="col-xl-10 col-lg-12">
+        <div class="col-xl-12 col-lg-12">
             <section class="slider-section dt-sl mb-5">
                 <div class="row mb-3">
                     <div class="col-12">
                         <div class="section-title text-sm-title title-wide no-after-title-wide">
                             <h2>پر فروش ترینها</h2>
-                            <a href="#">مشاهده همه</a>
+                            {{--  <a href="#">مشاهده همه</a>  --}}
                         </div>
                     </div>
 
@@ -508,7 +508,8 @@
                 </div>
             </section>
         </div>
-        <div class="col-xl-2 col-lg-3 hidden-lg pr-0">
+
+        {{--  <div class="col-xl-2 col-lg-3 hidden-lg pr-0">
             <div class="widget-suggestion dt-sn border pt-3 mt-3">
                 <div class="widget-suggestion-title">
                     <img src="{{ url('/front/img/theme/suggestion-title.png') }}" alt="">
@@ -614,7 +615,8 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div>  --}}
+
     </div>
     <!-- End Product-Slider -->
     <!-- Start Banner -->
@@ -924,7 +926,7 @@
             <div class="col-12">
                 <div class="section-title text-sm-title title-wide no-after-title-wide">
                     <h2>پر فروش ترینها</h2>
-                    <a href="#">مشاهده همه</a>
+                    {{--  <a href="#">مشاهده همه</a>  --}}
                 </div>
             </div>
 

@@ -38,7 +38,8 @@
                 </div>
             </div>
         </div>
-        <div class="footer-widgets">
+
+        {{--  <div class="footer-widgets">
             <div class="row">
                 <div class="col-12 col-md-6 col-lg-3">
                     <div class="widget-menu widget card">
@@ -79,6 +80,7 @@
                         </ul>
                     </div>
                 </div>
+
                 <div class="col-12 col-md-6 col-lg-3">
                     <div class="widget-menu widget card">
                         <header class="card-header">
@@ -103,6 +105,7 @@
                         </ul>
                     </div>
                 </div>
+                
                 <div class="col-12 col-md-6 col-lg-3">
                     <div class="newsletter">
                         <p>از تخفیف‌ها و جدیدترین‌های فروشگاه باخبر شوید:</p>
@@ -125,7 +128,9 @@
                     </div>
                 </div>
             </div>
-        </div>
+
+        </div>  --}}
+        
         <div class="info">
             <div class="row">
                 <div class="col-12 text-right">

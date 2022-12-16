@@ -43,7 +43,7 @@
                                         <div class="form-row">
                                             <input type="text" name="family" class="input-ui pl-2 text-right dir-rtl"
                                                 placeholder="نام خانوادگی خود را وارد نمایید"
-                                                value="{{ auth()->user()->name }}">
+                                                value="{{ auth()->user()->family }}">
                                             @error('family')
                                                 <div class="text-danger mt-1">
                                                     {{ $message }}
@@ -111,7 +111,11 @@
                                             <h3>آدرس</h3>
                                         </div>
                                         <div class="form-row">
+                                            @empty(auth()->user()->address)
                                             <textarea name="address" class="input-ui pl-2 text-right dir-rtl" cols="30" rows="10">آدرس خود را وارد نمایید</textarea>
+                                            @else
+                                            <textarea name="address" class="input-ui pl-2 text-right dir-rtl" cols="30" rows="10">{{ auth()->user()->address }}</textarea>
+                                            @endempty
                                         </div>
                                     </div>
                                     {{--  <div class="col-12 mb-3">

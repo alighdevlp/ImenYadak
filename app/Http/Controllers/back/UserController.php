@@ -12,16 +12,4 @@ class UserController extends Controller
         $users = User::all();
         return view('back.users.index', compact('users'));
     }
-
-    public function ChangeRole(User $user) {
-
-        if($user->role == 0) {
-            $user->role = 1;
-        } else {
-            $user->role = 0;
-        }
-
-        $user->save();
-        return redirect()->back();
-    }
 }

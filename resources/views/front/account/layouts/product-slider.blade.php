@@ -3,7 +3,7 @@
         <div class="col-12">
             <div class="section-title text-sm-title title-wide no-after-title-wide">
                 <h2>محصولات پیشنهادی برای شما</h2>
-                <a href="#">مشاهده همه</a>
+                {{--  <a href="#">مشاهده همه</a>  --}}
             </div>
         </div>
 
