@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('title');
             $table->string('logo');
             $table->string('icon');
+            $table->string('discount_image');
             $table->string('footer_title');
             $table->text('footer_description');
             $table->text('footer_copyright');

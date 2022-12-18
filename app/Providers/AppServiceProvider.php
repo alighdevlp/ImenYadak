@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use App\Models\Comment;
+use App\Models\Menu;
 use App\Models\Setting;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\ServiceProvider;
@@ -36,5 +37,14 @@ class AppServiceProvider extends ServiceProvider
 
         $un_comments = Comment::where('read', 0)->get();
         view()->share('un_comments', $un_comments);
+
+        
+        $menu_categories = Menu::where('menu_mode', 1)->get();
+        view()->share('menu_categories', $menu_categories);
+
+
+        $menus = Menu::where('menu_mode', 0)->get();
+        view()->share('menus', $menus);
+
     }
 }

@@ -63,10 +63,18 @@ class OptionController extends Controller
             $IconUrl = $request->icon;
         }
 
+        $file = $request->file('discount_image');
+        if ($request->hasFile('discount_image')) {
+            $DiscountImageUrl = $this->uploadImage($file);
+        } else {
+            $DiscountImageUrl = $request->discount_image;
+        }
+
         $option = Option::UpdateOrCreate(['id' => [1,2]], [
             'title' => $request->title,
             'logo' => $LogoUrl,
             'icon' => $IconUrl,
+            'discount_image' => $DiscountImageUrl,
             'footer_title' => $request->footer_title,
             'footer_description' => $request->footer_description,
             'footer_copyright' => $request->footer_copyright

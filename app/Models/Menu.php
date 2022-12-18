@@ -9,5 +9,9 @@ class Menu extends Model
 {
     use HasFactory;
     
-    protected $fillable = ['menu_name', 'menu_url', 'menu_mode'];
+    protected $fillable = ['menu_name', 'menu_url', 'menu_order', 'menu_mode'];
+
+    public function menu_categories() {
+        return $this->hasMany(MenuCategory::class);
+    }
 }

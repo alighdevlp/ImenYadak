@@ -19,6 +19,7 @@ class OptionSeeder extends Seeder
             'title' => '#',
             'logo' => '#',
             'icon' => '#',
+            'discount_image' => '#',
             'footer_title' => '#',
             'footer_description' => '#',
             'footer_copyright' => '#'

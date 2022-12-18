@@ -48,7 +48,7 @@
                             {{--  <p class="text-muted tx-13 mb-1">پیراهن معمولی قرمز و خاکستری مردانه</p>  --}}
                             <div class="rating mb-1">
                                 {{--  Start Start  --}}
-                                    <livewire:back.product.change-popular-show-product :pop="$product" />
+                                    <livewire:back.product.change-popular-show-product :product="$product" />
                                 {{--  End Star  --}}
                                 {{--  <span class="review-no">41 بررسی</span>  --}}
                             </div>

@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('menu_name');
             $table->string('menu_url')->nullable();
+            $table->integer('menu_order');
             $table->integer('menu_mode')->default(0);
             $table->timestamps();
         });

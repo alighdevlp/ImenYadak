@@ -42,6 +42,7 @@ class MenuController extends Controller
             'menu_title' => $request->menu_title,
             'menu_name' => $request->menu_name,
             'menu_url' => $request->menu_url,
+            'menu_order' => $request->menu_order,
             'menu_mode' => $request->menu_mode
         ]);
 
@@ -83,6 +84,7 @@ class MenuController extends Controller
             'menu_title' => $request->menu_title,
             'menu_name' => $request->menu_name,
             'menu_url' => $request->menu_url,
+            'menu_order' => $request->menu_order,
             'menu_mode' => $request->menu_mode
         ]);
 

@@ -33,6 +33,7 @@
                                 <tr>
                                     <th class="wd-lg-8p"><span>نام منو</span></th>
                                     <th class="wd-lg-20p"><span>ادرس منو</span></th>
+                                    <th class="wd-lg-20p"><span>ترتیب منو</span></th>
                                     <th class="wd-lg-20p"><span>نوع منو</span></th>
                                     <th class="wd-lg-20p"><span>عمل</span></th>
                                 </tr>
@@ -42,6 +43,7 @@
                                     <tr>
                                         <td>{{ $menu->menu_name }}</td>
                                         <td>{{ $menu->menu_url }}</td>
+                                        <td>{{ $menu->menu_order }}</td>
                                         @switch($menu->menu_mode)
                                             @case(0)
                                                 <td>منو ساده</td>

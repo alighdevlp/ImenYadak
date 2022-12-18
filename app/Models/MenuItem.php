@@ -9,7 +9,7 @@ class MenuItem extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['menuitem_name', 'menu_category_id', 'is_heading'];
+    protected $fillable = ['menuitem_name', 'menu_category_id', 'menu_class'];
 
     public function menucategory() {
         return $this->belongsTo(MenuCategory::class, 'menu_category_id', 'id');

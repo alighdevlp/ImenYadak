@@ -42,7 +42,7 @@ class MenuItemController extends Controller
     {
         MenuItem::create([
             'menuitem_name' => $request->menuitem_name,
-            'is_heading' => $request->is_heading,
+            'menu_class' => $request->menu_class,
             'menu_category_id' => $request->menu_category
         ]);
 
@@ -83,7 +83,7 @@ class MenuItemController extends Controller
     {
         $menuitem->update([
             'menuitem_name' => $request->menuitem_name,
-            'is_heading' => $request->is_heading,
+            'menu_class' => $request->menu_class,
             'menu_category_id' => $request->menu_category
         ]);
 

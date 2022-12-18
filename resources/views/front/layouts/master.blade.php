@@ -33,7 +33,7 @@
             <!-- Start ads -->
             <div class="ads-header-wrapper">
                 <a href="#" class="ads-header hidden-sm" target="_blank"
-                    style="background-image: url(/front/img/banner/large-ads.jpg)"></a>
+                    style="background-image: url('/front/img/banner/large-ads.jpg')"></a>
             </div>
             <!-- End ads -->
 

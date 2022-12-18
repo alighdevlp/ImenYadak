@@ -7,12 +7,11 @@ use Livewire\Component;
 
 class ChangePopularShowProduct extends Component
 {
-    public $pop;
+    public $product;
 
-    public function ChangePopular($id, $num) {
-        $product = Product::find($id);
-        $product->popular = $num;
-        $product->save();
+    public function ChangePopular($num) {
+        $this->product->popular = $num;
+        $this->product->save();
     }
 
     public function render()

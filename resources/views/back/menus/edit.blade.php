@@ -39,7 +39,11 @@
                         </div>
                         <div class="form-group">
                             <label class="form-label">ادرس منو: </label>
-                            <input type="title" class="form-control" name="menu_url" value="{{ $menu->menu_url }}">
+                            <input type="text" class="form-control" name="menu_url" value="{{ $menu->menu_url }}">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">ترتیب منو: </label>
+                            <input type="number" class="form-control" name="menu_order" value="{{ $menu->menu_order }}">
                         </div>
                         <div class="form-group">
                             <div class="row mg-t-10">

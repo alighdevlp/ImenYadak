@@ -259,7 +259,7 @@
             {{--  End Attributes  --}}
 
             {{--  Start Medias  --}}
-            <li class="slide">
+            {{--  <li class="slide">
                 <a class="side-menu__item" data-bs-toggle="slide" href="###"><svg
                         xmlns="http://www.w3.org/2000/svg" class="side-menu__icon" viewBox="0 0 24 24">
                         <path
@@ -271,7 +271,7 @@
                     <li><a href="{{ route('admin.medias.create') }}" class="slide-item" href="chart-flot.html">ایجاد
                             رسانه</a></li>
                 </ul>
-            </li>
+            </li>  --}}
             {{--  End Medias  --}}
 
             {{--  End Public Li  --}}

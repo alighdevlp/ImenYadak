@@ -3,74 +3,25 @@
         <!-- Start Main-Menu -->
         <nav class="main-menu d-flex justify-content-md-between justify-content-end dt-sl">
             <ul class="list hidden-sm">
+
+                @foreach ($menu_categories as $mc)
                 <li class="list-item category-list">
-                    <a href="#"><i class="fal fa-bars ml-1"></i>دسته بندی کالاها</a>
+                    <a href="#"><i class="fal fa-bars ml-1"></i>{{ $mc->menu_name }}</a>
                     <ul>
+
+                        @foreach ($mc->menu_categories as $menucategories)                            
                         <li>
-                            <a href="#">کالای دیجیتال</a>
+                            <a href="#">{{ $menucategories->menucategory_name }}</a>
                             <ul class="row">
-                                <li class="sublist--title"><a href="#">لوازم جانبی گوشی</a></li>
-                                <li class="sublist--item"><a href="#">کیف و کاور گوشی</a></li>
+                                @foreach ($menucategories->menuitems as $menuitem)
+                                <li class="sublist{{ $menuitem->menu_class }}"><a href="#">{{ $menuitem->menuitem_name }}</a></li>
+                                {{--  <li class="sublist--item"><a href="#">کیف و کاور گوشی</a></li>
                                 <li class="sublist--item"><a href="#">پاور بانک (شارژر همراه)</a></li>
-                                <li class="sublist--item"><a href="#">پایه نگهدارنده گوشی</a></li>
-                                
-                                {{--  <li class="sublist--title"><a href="#">گوشی موبایل</a></li>
-                                <li class="sublist--item"><a href="#">سامسونگ</a></li>
-                                <li class="sublist--item"><a href="#">هوآوی</a></li>
-                                <li class="sublist--item"><a href="#">اپل</a></li>
-                                <li class="sublist--item"><a href="#">شیائومی</a></li>
-                                <li class="sublist--item"><a href="#">آنر</a></li>
-                                <li class="sublist--item"><a href="#">نوکیا</a></li>
-                                <li class="sublist--title"><a href="#">واقعیت مجازی</a></li>
-                                <li class="sublist--title"><a href="#">مچ‌بند و ساعت هوشمند</a></li>
-                                <li class="sublist--title"><a href="#">هدفون، هدست، هندزفری</a></li>
-                                <li class="sublist--title"><a href="#">اسپیکر بلوتوث و با سیم</a></li>
-                                <li class="sublist--title"><a href="#">هارد، فلش و SSD</a></li>
-                                <li class="sublist--title"><a href="#">دوربین</a></li>
-                                <li class="sublist--item"><a href="#">دوربین عکاسی دیجیتال</a></li>
-                                <li class="sublist--item"><a href="#">دوربین‌ ورزشی و فیلم برداری</a></li>
-                                <li class="sublist--item"><a href="#">دوربین‌ چاپ سریع</a></li>
-                                <li class="sublist--title"><a href="#">لوازم جانبی دوربین</a></li>
-                                <li class="sublist--item"><a href="#">لنز</a></li>
-                                <li class="sublist--item"><a href="#">کیف</a></li>
-                                <li class="sublist--item"><a href="#">کارت حافظه</a></li>
-                                <li class="sublist--item"><a href="#">کاغذ چاپ عکس</a></li>
-                                <li class="sublist--item"><a href="#">دوربین دوچشمی و شکاری</a></li>
-                                <li class="sublist--title"><a href="#">لوازم جانبی گوشی</a></li>
-                                <li class="sublist--item"><a href="#">کیف و کاور گوشی</a></li>
-                                <li class="sublist--item"><a href="#">پاور بانک (شارژر همراه)</a></li>
-                                <li class="sublist--item"><a href="#">پایه نگهدارنده گوشی</a></li>
-                                <li class="sublist--title"><a href="#">گوشی موبایل</a></li>
-                                <li class="sublist--item"><a href="#">سامسونگ</a></li>
-                                <li class="sublist--item"><a href="#">هوآوی</a></li>
-                                <li class="sublist--item"><a href="#">اپل</a></li>
-                                <li class="sublist--item"><a href="#">شیائومی</a></li>
-                                <li class="sublist--item"><a href="#">آنر</a></li>
-                                <li class="sublist--item"><a href="#">نوکیا</a></li>
-                                <li class="sublist--title"><a href="#">واقعیت مجازی</a></li>
-                                <li class="sublist--title"><a href="#">مچ‌بند و ساعت هوشمند</a></li>
-                                <li class="sublist--title"><a href="#">هدفون، هدست، هندزفری</a></li>
-                                <li class="sublist--title"><a href="#">برندها</a></li>
-                                <li class="sublist--title"><a href="#">هدفون، هدست، هندزفری</a></li>
-                                <li class="sublist--title"><a href="#">اسپیکر بلوتوث و با سیم</a></li>
-                                <li class="sublist--title"><a href="#">هارد، فلش و SSD</a></li>
-                                <li class="sublist--title"><a href="#">دوربین</a></li>
-                                <li class="sublist--item"><a href="#">دوربین عکاسی دیجیتال</a></li>
-                                <li class="sublist--item"><a href="#">دوربین‌ ورزشی و فیلم برداری</a></li>
-                                <li class="sublist--item"><a href="#">دوربین‌ چاپ سریع</a></li>
-                                <li class="sublist--title"><a href="#">لوازم جانبی دوربین</a></li>
-                                <li class="sublist--item"><a href="#">لنز</a></li>
-                                <li class="sublist--item"><a href="#">کیف</a></li>
-                                <li class="sublist--item"><a href="#">کارت حافظه</a></li>
-                                <li class="sublist--item"><a href="#">کاغذ چاپ عکس</a></li>
-                                <li class="sublist--item"><a href="#">دوربین دوچشمی و شکاری</a></li>
-                                <li class="sublist--title"><a href="#">لوازم جانبی گوشی</a></li>
-                                <li class="sublist--item"><a href="#">کیف و کاور گوشی</a></li>
-                                <li class="sublist--item"><a href="#">پاور بانک (شارژر همراه)</a></li>
-                                <li class="sublist--item"><a href="#">پایه نگهدارنده گوشی</a></li>
-                                <li class="sublist--title"><a href="#">گوشی موبایل</a></li>  --}}
+                                <li class="sublist--item"><a href="#">پایه نگهدارنده گوشی</a></li>  --}}
+                                @endforeach
                             </ul>
                         </li>
+                        @endforeach
 
                         {{--  <li>
                             <a href="#">خودرو، ابزار و تجهیزات صنعتی</a>
@@ -258,13 +209,13 @@
 
                     </ul>
                 </li>
+                @endforeach
 
-
-                <li class="list-item list-item-has-children mega-menu mega-menu-col-4">
+                {{--  <li class="list-item list-item-has-children mega-menu mega-menu-col-4">
                     <a class="nav-link" href="javascript:void(0)">ابزار و اداری</a>
                     <ul class="sub-menu nav">
                         <li class="list-item list-item-has-children">
-                            {{--  <a class="nav-link" href="#">عنوان دسته</a>  --}}
+                            <a class="nav-link" href="#">عنوان دسته</a>
                             <ul class="sub-menu nav">
                                 <li class="list-item">
                                     <a class="nav-link" href="#">زیر منو یک</a>
@@ -362,7 +313,7 @@
                             </ul>
                         </li>
                     </ul>
-                </li>
+                </li>  --}}
 
                 <li class="list-item">
                     <a class="nav-link" href="#">ورزش و سفر</a>

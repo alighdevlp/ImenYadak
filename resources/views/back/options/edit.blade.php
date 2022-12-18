@@ -53,6 +53,11 @@
                         <input type="file" class="form-control" name="logo">
                     </div>
                     <div class="form-group">
+                        <label class="form-label">عکس تخفیف: <span class="tx-danger">*</span></label>
+                        <input type="hidden" name="logo" value="@if($option->discount_image != null){{ $option->discount_image }}@endif">
+                        <input type="file" class="form-control" name="discount_image">
+                    </div>                    
+                    <div class="form-group">
                         <label class="form-label">عنوان فوتر: <span class="tx-danger">*</span></label>
                         <input type="title" class="form-control" name="footer_title" value="@if($option->footer_title != null){{ $option->footer_title }}@endif">
                     </div>

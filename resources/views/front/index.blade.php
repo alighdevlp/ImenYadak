@@ -1109,15 +1109,15 @@
     <!-- End Product-Slider -->
 
     <!-- Start Banner -->
-    <div class="row mt-3 mb-5">
+    {{--  <div class="row mt-3 mb-5">
         <div class="col-12">
             <div class="widget-banner">
                 <a href="#">
-                    <img src="./assets/img/banner/large-banner.jpg" alt="">
+                    <img src="{{ url('/front/img/banner/large-banner.jpg') }}" alt="">
                 </a>
             </div>
         </div>
-    </div>
+    </div>  --}}
     <!-- End Banner -->
 
     {{--  <!-- Start Product-Slider -->

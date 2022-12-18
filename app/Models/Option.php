@@ -9,5 +9,5 @@ class Option extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['title', 'logo', 'icon', 'footer_title', 'footer_description', 'footer_copyright'];
+    protected $fillable = ['title', 'logo', 'icon', 'discount_image', 'footer_title', 'footer_description', 'footer_copyright'];
 }

@@ -38,7 +38,11 @@
                         </div>
                         <div class="form-group">
                             <label class="form-label">ادرس منو: </label>
-                            <input type="title" class="form-control" name="menu_url">
+                            <input type="text" class="form-control" name="menu_url">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">ترتیب منو: </label>
+                            <input type="number" class="form-control" name="menu_order">
                         </div>
                         <div class="form-group">
                             <label class="form-label">نوع منو: <span class="tx-danger">*</span></label>
