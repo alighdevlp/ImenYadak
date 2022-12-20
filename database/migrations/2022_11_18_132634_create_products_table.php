@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->integer('user_id');
             $table->string('title');
+            $table->string('slug');
             $table->string('image');
             $table->string('price');
             $table->string('count');

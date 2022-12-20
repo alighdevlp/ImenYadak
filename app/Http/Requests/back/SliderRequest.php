@@ -25,7 +25,7 @@ class SliderRequest extends FormRequest
     {
         return [
             'image' => 'required',
-            'priority' => 'required'
+            'order' => 'required'
         ];
     }
 }

@@ -24,7 +24,7 @@ class MenuCategoryRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'menucategory_name' => 'required'
         ];
     }
 }

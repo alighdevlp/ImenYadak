@@ -40,11 +40,7 @@ class MenuItemController extends Controller
      */
     public function store(MenuItemRequest $request)
     {
-        MenuItem::create([
-            'menuitem_name' => $request->menuitem_name,
-            'menu_class' => $request->menu_class,
-            'menu_category_id' => $request->menu_category
-        ]);
+        MenuItem::create(array_merge($request->all(),['menu_category_id' => $request->menu_category]));
 
         return redirect()->route('admin.menuitems.index');
     }
@@ -81,11 +77,7 @@ class MenuItemController extends Controller
      */
     public function update(MenuItemRequest $request, MenuItem $menuitem)
     {
-        $menuitem->update([
-            'menuitem_name' => $request->menuitem_name,
-            'menu_class' => $request->menu_class,
-            'menu_category_id' => $request->menu_category
-        ]);
+        $menuitem->update(array_merge($request->all(),['menu_category_id' => $request->menu_category]));
 
         return redirect()->route('admin.menuitems.index');
     }

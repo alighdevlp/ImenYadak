@@ -36,6 +36,11 @@
                         <div class="form-group">
                             <label class="form-label">نام زیر منو: <span class="tx-danger">*</span></label>
                             <input type="text" class="form-control" name="menucategory_name" value="{{ $menucategory->menucategory_name }}">
+                            @error('menucategory_name')
+                            <div class="alert alert-danger">
+                                {{ $message }}
+                            </div>
+                            @enderror
                         </div>
                         <div class="form-group mb-0 mt-3 justify-content-end">
                             <div>

@@ -16,7 +16,7 @@ class MenuController extends Controller
      */
     public function index()
     {
-        $menus = Menu::all();
+        $menus = Menu::where('id','!=',1)->get();
         return view('back.menus.index', compact('menus'));
     }
 

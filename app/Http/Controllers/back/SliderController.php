@@ -49,7 +49,7 @@ class SliderController extends Controller
         Slider::create([
             'image' => $ImageUrl,
             'status' => $request->status,
-            'priority' => $request->priority
+            'order' => $request->order
         ]);
 
         return redirect()->route('admin.sliders.index');
@@ -96,7 +96,7 @@ class SliderController extends Controller
         $slider->update([
             'image' => $ImageUrl,
             'status' => $request->status,
-            'priority' => $request->priority
+            'order' => $request->order
         ]);
 
         return redirect()->route('admin.sliders.index');

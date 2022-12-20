@@ -43,16 +43,21 @@
                         <div class="form-group">
                             <label class="form-label">نام ایتم منو: <span class="tx-danger">*</span></label>
                             <input type="text" class="form-control" name="menuitem_name">
+                            @error('menuitem_name')
+                            <div class="alert alert-danger">
+                                {{ $message }}
+                            </div>
+                            @enderror
                         </div>
                         <div class="form-group">
                             <label class="form-label">نوع ایتم منو: <span class="tx-danger">*</span></label>
                             <div class="row mg-t-10">
                                 <div class="col-lg-3 mg-t-20 mg-lg-t-0">
-                                    <label class="rdiobox"><input type="radio" name="is_heading" value="0">
+                                    <label class="rdiobox"><input type="radio" name="menu_class" value="--item" checked>
                                         <span>ساده</span></label>
                                 </div>
                                 <div class="col-lg-3">
-                                    <label class="rdiobox"><input type="radio" name="is_heading" value="1"> <span>سرتیتر</span></label>
+                                    <label class="rdiobox"><input type="radio" name="menu_class" value="--title"> <span>سرتیتر</span></label>
                                 </div>
                             </div>
                         </div>

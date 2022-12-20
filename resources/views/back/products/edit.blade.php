@@ -43,6 +43,15 @@
                             @enderror
                         </div>
                         <div class="form-group">
+                            <label class="form-label">عنوان محصول: <span class="tx-danger">*</span></label>
+                            <input type="text" class="form-control" name="slug" value="{{ $product->slug }}">
+                            @error('slug')
+                                <div class="alert alert-danger">
+                                    {{ $message }}
+                                </div>
+                            @enderror
+                        </div>
+                        <div class="form-group">
                             <label class="form-label">عکس محصول: <span class="tx-danger">*</span></label>
                             <input type="hidden" name="image" value="{{ $product->image }}">
                             <input type="file" class="form-control" name="image">
@@ -83,10 +92,17 @@
                             <label class="form-label">دسته بندی محصول: <span class="tx-danger">*</span></label>
                             <select class="chosen-select form-select" name="categories[]" multiple>
                                 @foreach ($categories as $category)
-                                    <option value="{{ $category->id }}" @if ($product->categories->id == $category->id) selected @endif>
+                                    <option value="{{ $category->id }}">
                                         {{ $category->name }}</option>
                                 @endforeach
                             </select>
+                            {{--  <script>
+                                $('#slug').on('input',function(){
+                                    var title = $('#slug').val();
+                                    var slug = title.replace(/\s+/g, '-')';
+                                    $('#slug_hidden').val(slug);
+                                });
+                            </script>  --}}
                         </div>
                         <div class="form-group mb-0 mt-3 justify-content-end">
                             <div>

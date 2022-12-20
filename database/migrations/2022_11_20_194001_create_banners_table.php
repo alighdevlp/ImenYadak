@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('image');
             $table->integer('status');
             $table->integer('position');
-            $table->integer('priority');
+            $table->integer('order');
             $table->timestamps();
         });
     }

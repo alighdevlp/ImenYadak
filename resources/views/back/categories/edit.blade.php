@@ -36,10 +36,20 @@
                         <div class="form-group">
                             <label class="form-label">نام دسته بندی: <span class="tx-danger">*</span></label>
                             <input type="text" class="form-control" name="name" value="{{ $category->name }}">
+                            @error('name')
+                            <div class="alert alert-danger">
+                                {{ $message }}
+                            </div>
+                            @enderror
                         </div>
                         <div class="form-group">
                             <label class="form-label">نام مستعار دسته بندی: </label>
                             <input type="text" class="form-control" name="slug" value="{{ $category->slug }}">
+                            @error('slug')
+                            <div class="alert alert-danger">
+                                {{ $message }}
+                            </div>
+                            @enderror
                         </div>
                         <div class="form-group mb-0 mt-3 justify-content-end">
                             <div>

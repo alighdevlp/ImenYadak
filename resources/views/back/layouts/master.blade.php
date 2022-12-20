@@ -103,46 +103,6 @@
                             </div>
                         </div>
                         <div class="swichermainleft border-bottom">
-                            <h4>حالت های پوستی</h4>
-                            <div class="switch_section">
-                                <div class="switch-toggle d-flex">
-                                    <span class="me-auto">بدنه پیش فرض</span>
-                                    <div class="onoffswitch2"><input type="radio" name="onoffswitch6"
-                                            id="myonoffswitch7" class="onoffswitch2-checkbox" checked>
-                                        <label for="myonoffswitch7" class="onoffswitch2-label"></label>
-                                    </div>
-                                </div>
-                                <div class="switch-toggle d-flex">
-                                    <span class="me-auto">بدنه سبک 1</span>
-                                    <div class="onoffswitch2"><input type="radio" name="onoffswitch6"
-                                            id="myonoffswitch6" class="onoffswitch2-checkbox">
-                                        <label for="myonoffswitch6" class="onoffswitch2-label"></label>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swichermainleft border-bottom">
-                            <h4 class="fs-14 font-weight-semibold">سبک های عرض طرح بندی منو</h4>
-                            <div class="skin-body">
-                                <div class="switch_section">
-                                    <div class="switch-toggle d-flex mt-4">
-                                        <span class="me-auto">نوار کناری پیش فرض</span>
-                                        <a class="onoffswitch2"><input type="radio" name="onoffswitch5"
-                                                id="myonoffswitch18" class="onoffswitch2-checkbox" checked>
-                                            <label for="myonoffswitch18" class="onoffswitch2-label"></label>
-                                        </a>
-                                    </div>
-                                    <div class="switch-toggle d-flex mt-2">
-                                        <span class="me-auto">جعبه</span>
-                                        <a class="onoffswitch2"><input type="radio" name="onoffswitch5"
-                                                id="myonoffswitch19" class="onoffswitch2-checkbox">
-                                            <label for="myonoffswitch19" class="onoffswitch2-label"></label>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swichermainleft border-bottom">
                             <h4 class="fs-14 font-weight-semibold">نسخه های طرح بندی منو</h4>
                             <div class="skin-body">
                                 <div class="switch_section">

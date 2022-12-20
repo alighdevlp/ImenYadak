@@ -41,12 +41,12 @@
                                     <tr>
                                         <td>{{ $menuitem->menuitem_name }}</td>
                                         <td>{{ $menuitem->menucategory->menucategory_name }}</td>
-                                        @switch($menuitem->is_heading)
-                                            @case(0)
+                                        @switch($menuitem->menu_class)
+                                            @case('--item')
                                             <td>ساده</td>
                                             @break
 
-                                            @case(1)
+                                            @case('--title')
                                             <td>سرتیتر</td>
                                             @break
                                         @endswitch

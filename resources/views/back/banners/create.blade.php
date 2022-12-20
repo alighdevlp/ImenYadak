@@ -35,6 +35,11 @@
                         <div class="form-group">
                             <label class="form-label">عکس بنر: <span class="tx-danger">*</span></label>
                             <input type="file" class="form-control" name="image">
+                            @error('image')
+                            <div class="alert alert-danger">
+                                {{ $message }}
+                            </div>
+                            @enderror
                         </div>
                         <div class="form-group">
                             <label class="form-label">وضعیت بنر: <span class="tx-danger">*</span></label>
@@ -44,19 +49,19 @@
                             </select>
                         </div>
                         <div class="form-group">
-                            <label class="form-label">اولویت بنر: <span class="tx-danger">*</span></label>
-                            <select name="priority" class="form-control">
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                            </select>
+                            <label class="form-label">ترتیب بنر: <span class="tx-danger">*</span></label>
+                            <input type="number" class="form-control" name="order">
+                            @error('order')
+                            <div class="alert alert-danger">
+                                {{ $message }}
+                            </div>
+                            @enderror
                         </div>
                         <div class="form-group">
                             <label class="form-label">موقعیت بنر: <span class="tx-danger">*</span></label>
                             <div class="row mg-t-10">
                                 <div class="col-lg-3 mg-t-20 mg-lg-t-0">
-                                    <label class="rdiobox"><input type="radio" name="position" value="0">
+                                    <label class="rdiobox"><input type="radio" name="position" value="0" checked>
                                         <span>بالا</span></label>
                                 </div>
                                 <div class="col-lg-3">

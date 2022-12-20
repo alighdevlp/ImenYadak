@@ -36,6 +36,11 @@
                         <div class="form-group">
                             <label class="form-label">نام منو: <span class="tx-danger">*</span></label>
                             <input type="text" class="form-control" name="menu_name" value="{{ $menu->menu_name }}">
+                            @error('menu_name')
+                            <div class="alert alert-danger">
+                                {{ $message }}
+                            </div>
+                            @enderror
                         </div>
                         <div class="form-group">
                             <label class="form-label">ادرس منو: </label>
@@ -44,20 +49,11 @@
                         <div class="form-group">
                             <label class="form-label">ترتیب منو: </label>
                             <input type="number" class="form-control" name="menu_order" value="{{ $menu->menu_order }}">
-                        </div>
-                        <div class="form-group">
-                            <div class="row mg-t-10">
-                                <div class="col-lg-3">
-                                    <label class="rdiobox"><input
-                                            @if ($menu->menu_mode == 0) checked @else  @endif
-                                            name="menu_mode" value="0" type="radio"> <span>ساده</span></label>
-                                </div>
-                                <div class="col-lg-3 mg-t-20 mg-lg-t-0">
-                                    <label class="rdiobox"><input type="radio"
-                                            @if ($menu->menu_mode == 1) checked @else  @endif
-                                            name="menu_mode" value="1"> <span>دسته بندی</span></label>
-                                </div>
+                            @error('menu_order')
+                            <div class="alert alert-danger">
+                                {{ $message }}
                             </div>
+                            @enderror
                         </div>
                         <div class="form-group mb-0 mt-3 justify-content-end">
                             <div>

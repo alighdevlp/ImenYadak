@@ -161,15 +161,6 @@ Route::prefix('/admin/attributes')->middleware('checkrole')->group(function () {
     Route::get('/destroy/{attribute}', [AttributeController::class, 'destroy'])->name('admin.attributes.destroy');
 });
 
-Route::prefix('/admin/medias')->middleware('checkrole')->group(function () {
-    Route::get('/index', [MediaController::class, 'index'])->name('admin.medias.index');
-    Route::get('/create', [MediaController::class, 'create'])->name('admin.medias.create');
-    Route::post('/store', [MediaController::class, 'store'])->name('admin.medias.store');
-    Route::get('/edit/{media}', [MediaController::class, 'edit'])->name('admin.medias.edit');
-    Route::put('/update/{media}', [MediaController::class, 'update'])->name('admin.medias.update');
-    Route::get('/destroy/{media}', [MediaController::class, 'destroy'])->name('admin.medias.destroy');
-});
-
 // End Back Routes
 
 
@@ -187,12 +178,14 @@ Route::prefix('/account')->middleware('checkrole')->group(function() {
 
 Route::prefix('/cart')->middleware('checkrole')->group(function() {
     Route::get('/checkout', [AccountController::class, 'index'])->name('cart.index');
-    Route::get('/orders', [AccountController::class, 'OrderList'])->name('account.orders');
-    Route::get('/order/{order:code}', [AccountController::class, 'OrderDetails'])->name('account.order.details');
-    Route::get('/edit', [AccountController::class, 'edit'])->name('account.edit');
-    Route::put('/update', [AccountController::class, 'update'])->name('account.update');
+    // Route::get('/orders', [AccountController::class, 'OrderList'])->name('account.orders');
+    // Route::get('/order/{order:code}', [AccountController::class, 'OrderDetails'])->name('account.order.details');
+    // Route::get('/edit', [AccountController::class, 'edit'])->name('account.edit');
+    // Route::put('/update', [AccountController::class, 'update'])->name('account.update');
 });
 
+
+Route::get('/category-products', [FrontProductController::class, 'ShowByCategory'])->name('product.show.by.category');
 Route::get('/product', [FrontProductController::class, 'show'])->name('product.show');
 
 

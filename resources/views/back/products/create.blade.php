@@ -42,6 +42,15 @@
                             @enderror
                         </div>
                         <div class="form-group">
+                            <label class="form-label">نام مستعار محصول: <span class="tx-danger">*</span></label>
+                            <input type="text" class="form-control" name="slug">
+                            @error('slug')
+                                <div class="alert alert-danger">
+                                    {{ $message }}
+                                </div>
+                            @enderror
+                        </div>
+                        <div class="form-group">
                             <label class="form-label">عکس محصول: <span class="tx-danger">*</span></label>
                             <input type="file" class="form-control" name="image">
                             @error('image')

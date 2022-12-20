@@ -35,6 +35,11 @@
                         <div class="form-group">
                             <label class="form-label">نام منو: <span class="tx-danger">*</span></label>
                             <input type="text" class="form-control" name="menu_name">
+                            @error('menu_name')
+                            <div class="alert alert-danger">
+                                {{ $message }}
+                            </div>
+                            @enderror
                         </div>
                         <div class="form-group">
                             <label class="form-label">ادرس منو: </label>
@@ -43,20 +48,13 @@
                         <div class="form-group">
                             <label class="form-label">ترتیب منو: </label>
                             <input type="number" class="form-control" name="menu_order">
-                        </div>
-                        <div class="form-group">
-                            <label class="form-label">نوع منو: <span class="tx-danger">*</span></label>
-                            <div class="row mg-t-10">
-                                <div class="col-lg-3 mg-t-20 mg-lg-t-0">
-                                    <label class="rdiobox"><input type="radio" name="menu_mode" value="0">
-                                        <span>ساده</span></label>
-                                </div>
-                                <div class="col-lg-3">
-                                    <label class="rdiobox"><input type="radio" name="menu_mode" value="1"> <span>دسته
-                                            بندی</span></label>
-                                </div>
+                            @error('menu_order')
+                            <div class="alert alert-danger">
+                                {{ $message }}
                             </div>
+                            @enderror
                         </div>
+
                         <div class="form-group mb-0 mt-3 justify-content-end">
                             <div>
                                 <button type="submit" class="btn btn-primary">ثبت</button>

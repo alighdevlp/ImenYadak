@@ -88,7 +88,7 @@
                     </div>
                 </div>
 
-                <div class="dropdown nav-item main-header-notification">
+                {{--  <div class="dropdown nav-item main-header-notification">
                     <a class="new nav-link" href="#">
                         <svg xmlns="http://www.w3.org/2000/svg" class="header-icon-svgs" viewBox="0 0 24 24"
                             fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
@@ -101,39 +101,14 @@
                             <div class="d-flex">
                                 <h6 class="dropdown-title mb-1 tx-15 text-white font-weight-semibold">
                                     اطلاعیه</h6>
-                                {{--  <span class="badge rounded-pill bg-warning ms-auto my-auto float-end">علامت
-                                    گذاری همه</span>  --}}
+                                <span class="badge rounded-pill bg-warning ms-auto my-auto float-end">علامت
+                                    گذاری همه</span>
                             </div>
-                            {{--  <p class="dropdown-title-text subtext mb-0 text-white op-6 pb-0 tx-12 ">شما 4
-                                اعلان خوانده نشده دارید</p>  --}}
+                            <p class="dropdown-title-text subtext mb-0 text-white op-6 pb-0 tx-12 ">شما 4
+                                اعلان خوانده نشده دارید</p>
                         </div>
                         <div class="main-notification-list Notification-scroll">
-                            {{--  <a class="d-flex p-3 border-bottom" href="#">
-                                <div class="notifyimg bg-pink">
-                                    <i class="la la-file-alt text-white"></i>
-                                </div>
-                                <div class="ms-3">
-                                    <h5 class="notification-label mb-1">پرونده های جدید موجود است</h5>
-                                    <div class="notification-subtext">10 ساعت پیش</div>
-                                </div>
-                                <div class="mr-auto">
-                                    <i class="las la-angle-left text-left text-muted"></i>
-                                </div>
-                            </a>  --}}
 
-                            {{--  <a class="d-flex p-3" href="#">
-                                <div class="notifyimg bg-purple">
-                                    <i class="la la-gem text-white"></i>
-                                </div>
-                                <div class="ms-3">
-                                    <h5 class="notification-label mb-1">به روزرسانی های موجود</h5>
-                                    <div class="notification-subtext">2 روز قبل</div>
-                                </div>
-                                <div class="mr-auto">
-                                    <i class="las la-angle-left text-left text-muted"></i>
-                                </div>
-                            </a>
-                              --}}
 
                             <a class="d-flex p-3 border-bottom" href="#">
                                 <div class="notifyimg bg-success">
@@ -148,50 +123,13 @@
                                 </div>
                             </a>
 
-                            {{--  <a class="d-flex p-3 border-bottom" href="#">
-                                <div class="notifyimg bg-warning">
-                                    <i class="la la-envelope-open text-white"></i>
-                                </div>
-                                <div class="ms-3">
-                                    <h5 class="notification-label mb-1">بررسی جدید دریافت شد</h5>
-                                    <div class="notification-subtext">1 روز پیش</div>
-                                </div>
-                                <div class="mr-auto">
-                                    <i class="las la-angle-left text-left text-muted"></i>
-                                </div>
-                            </a>  --}}
 
-                            {{--  <a class="d-flex p-3 border-bottom" href="#">
-                                <div class="notifyimg bg-danger">
-                                    <i class="la la-user-check text-white"></i>
-                                </div>
-                                <div class="ms-3">
-                                    <h5 class="notification-label mb-1">22 ثبت نام تایید شده</h5>
-                                    <div class="notification-subtext">2 ساعت پیش</div>
-                                </div>
-                                <div class="mr-auto">
-                                    <i class="las la-angle-left text-left text-muted"></i>
-                                </div>
-                            </a>  --}}
-
-                            {{--  <a class="d-flex p-3 border-bottom" href="#">
-                                <div class="notifyimg bg-primary">
-                                    <i class="la la-check-circle text-white"></i>
-                                </div>
-                                <div class="ms-3">
-                                    <h5 class="notification-label mb-1">پروژه تصویب شده است</h5>
-                                    <div class="notification-subtext">4 ساعت پیش</div>
-                                </div>
-                                <div class="mr-auto">
-                                    <i class="las la-angle-left text-left text-muted"></i>
-                                </div>
-                            </a>  --}}
                         </div>
                         <div class="dropdown-footer">
                             <a href="#">مشاهده همه</a>
                         </div>
                     </div>
-                </div>
+                </div>  --}}
 
                 <div class="nav-item full-screen fullscreen-button">
                     <a class="new nav-link full-screen-link" href="#"><svg xmlns="http://www.w3.org/2000/svg"

@@ -37,22 +37,27 @@
                                 <label class="form-label">عکس بنر: <span class="tx-danger">*</span></label>
                                 <input type="hidden" name="image" value="@if($banner->image != null){{ $banner->image }}@endif">
                                 <input type="file" class="form-control" name="image">
-                        </div>
-                        <div class="form-group">
-                            <label class="form-label">وضعیت بنر: <span class="tx-danger">*</span></label>
-                            <select name="status" class="form-control">
-                                <option value="0" {{ $banner->status ? '' : 'selected'}}>نمایش داده نشود</option>
-                                <option value="1" {{ $banner->status ? 'selected' : ''}}>نمایش داده شود</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label class="form-label">اولویت بنر: <span class="tx-danger">*</span></label>
-                            <select name="priority" class="form-control">
-                                <option value="1" @if($banner->priority == 1) selected @endif>1</option>
-                                <option value="2" @if($banner->priority == 2) selected @endif>2</option>
-                                <option value="3" @if($banner->priority == 3) selected @endif>3</option>
-                                <option value="4" @if($banner->priority == 4) selected @endif>4</option>
-                            </select>
+                                @error('order')
+                                <div class="alert alert-danger">
+                                    {{ $message }}
+                                </div>
+                                @enderror
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">وضعیت بنر: <span class="tx-danger">*</span></label>
+                                <select name="status" class="form-control">
+                                    <option value="0" {{ $banner->status ? '' : 'selected'}}>نمایش داده نشود</option>
+                                    <option value="1" {{ $banner->status ? 'selected' : ''}}>نمایش داده شود</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">ترتیب بنر: <span class="tx-danger">*</span></label>
+                                <input type="number" class="form-control" name="order">
+                                @error('order')
+                                <div class="alert alert-danger">
+                                    {{ $message }}
+                                </div>
+                                @enderror
                         </div>
                         <div class="form-group">
                             <label class="form-label">موقعیت بنر: <span class="tx-danger">*</span></label>

@@ -62,8 +62,10 @@
         {{--  <!-- End footer -->  --}}
 
     </div>
-    <!-- colorPanel -->
-    <div id="colorswitch-option">
+
+    {{--  Start ColorPanel  --}}
+
+    {{--  <div id="colorswitch-option">
         <button><i class="mdi mdi-settings"></i></button>
         <ul>
             <li class="active" data-path="./assets/css/colors/default.css"><span
@@ -82,7 +84,9 @@
             <li data-path="./assets/css/colors/teal-color.css"><span style="background-color: #009688;"></span></li>
             <li data-path="./assets/css/colors/purple-color.css"><span style="background-color: #9c27b0;"></span></li>
         </ul>
-    </div>
+    </div>  --}}
+
+    {{--  End ColorPanel  --}}
 
     {{--  <!-- end colorPanel -->  --}}
     {{--  <!-- Core JS Files -->  --}}

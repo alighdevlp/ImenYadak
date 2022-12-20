@@ -44,6 +44,11 @@
                         <div class="form-group">
                             <label class="form-label">نام ایتم منو: <span class="tx-danger">*</span></label>
                             <input type="text" class="form-control" name="menuitem_name" value="{{ $menuitem->menuitem_name }}">
+                            @error('menuitem_name')
+                            <div class="alert alert-danger">
+                                {{ $message }}
+                            </div>
+                            @enderror
                         </div>
                         <div class="form-group">
                             <label class="form-label">نوع ایتم منو: <span class="tx-danger">*</span></label>
