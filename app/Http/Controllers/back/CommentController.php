@@ -18,6 +18,8 @@ class CommentController extends Controller
 
 
     public function show(Comment $comment) {
+        $comment->read = 1;
+        $comment->save();
         return view('back.comments.show', compact('comment'));
     }
 }

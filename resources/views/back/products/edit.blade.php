@@ -96,13 +96,6 @@
                                         {{ $category->name }}</option>
                                 @endforeach
                             </select>
-                            {{--  <script>
-                                $('#slug').on('input',function(){
-                                    var title = $('#slug').val();
-                                    var slug = title.replace(/\s+/g, '-')';
-                                    $('#slug_hidden').val(slug);
-                                });
-                            </script>  --}}
                         </div>
                         <div class="form-group mb-0 mt-3 justify-content-end">
                             <div>

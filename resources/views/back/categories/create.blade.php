@@ -43,12 +43,20 @@
                         </div>
                         <div class="form-group">
                             <label class="form-label">نام مستعار دسته بندی: <span class="tx-danger">*</span></label>
-                            <input type="text" class="form-control" name="slug">
+                            <input type="text" class="form-control" id="slug" name="slug">
+                            <input type="hidden" class="form-control" id="slug_hidden" name="slug_hidden">
                             @error('slug')
                             <div class="alert alert-danger">
                                 {{ $message }}
                             </div>
                             @enderror
+                            <script>
+                                $('#slug').on('input',function(){
+                                    var title = $('#slug').val();
+                                    var slug = title.replace(/\s+/g, '-')';
+                                    $('#slug_hidden').val(slug);
+                                });                                
+                            </script>
                         </div>
                         <div class="form-group mb-0 mt-3 justify-content-end">
                             <div>
@@ -61,5 +69,4 @@
             </div>
         </div>
     </div>
-
 @endsection

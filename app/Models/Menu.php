@@ -13,7 +13,6 @@ class Menu extends Model
         'menu_name', 
         'menu_url', 
         'menu_order', 
-        'menu_mode'
     ];
 
     public function menu_categories() {

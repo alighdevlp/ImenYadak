@@ -166,10 +166,16 @@
                                     @endforeach
 
         
+                                    @if(count(auth()->user()->orders) > 0)
                                     <tr>
                                         <td class="link-to-orders" colspan="7"><a href="{{ route('account.orders') }}">مشاهده لیست سفارش
                                                 ها</a></td>
                                     </tr>
+                                    @else
+                                    <tr>
+                                        <td class="link-to-orders" colspan="7">سفارشی موجود نیست</td>
+                                    </tr>
+                                    @endif
                                 </tbody>
                             </table>
                         </div>

@@ -1,10 +1,10 @@
 @extends('front.layouts.master')
 
-@section('title', 'Test')
+@section('title', $product->title)
 
 @section('content')
 {{-- Start title - breadcrumb  --}}
-<div class="title-breadcrumb-special dt-sl mb-3">
+{{--  <div class="title-breadcrumb-special dt-sl mb-3">
     <div class="breadcrumb dt-sl">
         <nav>
             <a href="#">موبایل</a>
@@ -12,7 +12,7 @@
             <a href="#">مدل Galaxy A50 SM-A505F/DS</a>
         </nav>
     </div>
-</div>
+</div>  --}}
 {{-- End title - breadcrumb --}}
 
 {{-- Start Product --}}
@@ -21,13 +21,13 @@
         <!-- Product Gallery-->
         <div class="col-lg-4 col-md-6 ps-relative">
             <!-- Product Options-->
-            <ul class="gallery-options">
+            {{--  <ul class="gallery-options">
                 <li>
                     <button class="add-favorites"><i class="mdi mdi-heart"></i></button>
                     <span class="tooltip-option">افزودن به علاقمندی</span>
                 </li>
-            </ul>
-            <div class="product-timeout position-relative pt-5 mb-3">
+            </ul>  --}}
+            {{--  <div class="product-timeout position-relative pt-5 mb-3">
                 <div class="promotion-badge">
                     فروش ویژه
                 </div>
@@ -37,66 +37,48 @@
                     <span data-minutes>0</span>:
                     <span data-seconds>0</span>
                 </div>
-            </div>
+            </div>  --}}
             <div class="product-gallery">
-                <span class="badge">پر فروش</span>
+                {{--  <span class="badge">پر فروش</span>  --}}
                 <div class="product-carousel owl-carousel" data-slider-id="1">
                     <div class="item">
-                        <a class="gallery-item" href="./assets/img/single-product/thumbnail-1.jpg"
+                        <a class="gallery-item" href="{{ url('/upload/products/' . $product->image) }}"
                             data-fancybox="gallery1">
-                            <img src="./assets/img/single-product/thumbnail-1.jpg" alt="Product">
+                            <img src="{{ url('/upload/products/' . $product->image) }}" alt="Product">
                         </a>
                     </div>
+                    @foreach ($product->products_image as $product_image)                        
                     <div class="item">
-                        <a class="gallery-item" href="./assets/img/single-product/thumbnail-2.jpg"
+                        <a class="gallery-item" href="{{ url('/upload/product-images/' . $product_image->image) }}"
                             data-fancybox="gallery1">
-                            <img src="./assets/img/single-product/thumbnail-2.jpg" alt="Product">
+                            <img src="{{ url('/upload/product-images/' . $product_image->image) }}" alt="Product">
                         </a>
                     </div>
-                    <div class="item">
-                        <a class="gallery-item" href="./assets/img/single-product/thumbnail-3.jpg"
-                            data-fancybox="gallery1">
-                            <img src="./assets/img/single-product/thumbnail-3.jpg" alt="Product">
-                        </a>
-                    </div>
-                    <div class="item">
-                        <a class="gallery-item" href="./assets/img/single-product/thumbnail-4.jpg"
-                            data-fancybox="gallery1">
-                            <img src="./assets/img/single-product/thumbnail-4.jpg" alt="Product">
-                        </a>
-                    </div>
+                    @endforeach
                 </div>
                 <div class="d-flex justify-content-center flex-wrap">
                     <ul class="product-thumbnails owl-thumbs ml-2" data-slider-id="1">
                         <li class="owl-thumb-item active">
                             <a href="">
-                                <img src="./assets/img/single-product/thumbnail-1.jpg" alt="Product">
+                                <img src="{{ url('/upload/products/' . $product->image) }}" alt="Product">
                             </a>
                         </li>
-                        <li class="owl-thumb-item">
-                            <a href="">
-                                <img src="./assets/img/single-product/thumbnail-2.jpg" alt="Product">
-                            </a>
-                        </li>
-                        <li class="owl-thumb-item">
-                            <a href="">
-                                <img src="./assets/img/single-product/thumbnail-3.jpg" alt="Product">
-                            </a>
-                        </li>
-                        <li class="owl-thumb-item">
-                            <a href="">
-                                <img src="./assets/img/single-product/thumbnail-4.jpg" alt="Product">
-                            </a>
-                        </li>
+                        @foreach ($product->products_image as $product_image)
+                            <li class="owl-thumb-item">
+                                <a href="">
+                                    <img src="{{ url('/upload/product-images/' . $product_image->image) }}" alt="Product">
+                                </a>
+                            </li>
+                        @endforeach
                     </ul>
-                    <ul class="product-thumbnails">
+                    {{--  <ul class="product-thumbnails">
                         <li>
                             <a class="navi-link text-sm" href="./assets/video/download.mp4"
                                 data-fancybox data-width="960" data-height="640">
                                 <i class="mdi mdi-video text-lg d-block mb-1"></i>
                             </a>
                         </li>
-                    </ul>
+                    </ul>  --}}
                 </div>
             </div>
         </div>
@@ -104,13 +86,14 @@
         <div class="col-lg-8 col-md-6 py-2">
             <div class="product-info dt-sl">
                 <div class="product-title dt-sl">
-                    <h1>گوشی موبایل سامسونگ مدل Galaxy A50 SM-A505F/DS دو سیم کارت ظرفیت 128گیگابایت
+                    <h1>
+                        {{ $product->title }}
                     </h1>
                     {{--  <h3>Samsung Galaxy A50 SM-A505F/DS Dual SIM 128GB Mobile Phone</h3>  --}}
                 </div>
 
                 {{--  Start Color Section  --}}
-                {{--  <div class="product-variant dt-sl">
+                <div class="product-variant dt-sl">
                     <div class="section-title text-sm-title title-wide no-after-title-wide mb-0">
                         <h2>انتخاب رنگ:</h2>
                     </div>
@@ -138,11 +121,11 @@
                             </label>
                         </li>
                     </ul>
-                </div>  --}}
+                </div>
                 {{--  End Color Section  --}}
 
                 {{--  Start Property Section  --}}
-                {{--  <div class="product-params dt-sl">
+                <div class="product-params dt-sl">
                     <ul data-title="ویژگی‌های محصول">
                         <li>
                             <span>حافظه داخلی: </span>
@@ -178,30 +161,30 @@
                             - بستن
                         </span>
                     </div>
-                </div>  --}}
+                </div>
                 {{--  End Property Section  --}}
 
                 {{--  Start ProductCode Section  --}}
-                {{--  <div class="section-title text-sm-title title-wide no-after-title-wide mb-0 dt-sl">
+                <div class="section-title text-sm-title title-wide no-after-title-wide mb-0 dt-sl">
                     <h2>کد محصول:225566</h2>
-                </div>  --}}
+                </div>
                 {{--  End ProductCode Section  --}}
 
                 <div class="section-title text-sm-title title-wide no-after-title-wide mt-3 mb-0 dt-sl">
-                    <h2>قیمت : <span class="price">۳,۵۶۰,۰۰۰ تومان</span> </h2>
+                    <h2>قیمت : <span class="price">{{ $product->price }} تومان</span> </h2>
                 </div>
                 <div class="dt-sl mt-4">
-                    <a href="#" class="btn-primary-cm btn-with-icon">
-                        <img src="./assets/img/theme/shopping-cart.png" alt="">
+                    <a href="{{ route('product.add.to.cart',$product->id) }}" class="btn-primary-cm btn-with-icon">
+                        <img src="{{ url('/front/img/theme/shopping-cart.png') }}" alt="">
                         افزودن به سبد خرید
                     </a>
                 </div>
             </div>
         </div>
     </div>
-    <div class="mb-add-to-cart-btn-wrapper">
-        <a href="#" class="mb-add-to-cart-btn">افزودن به سبد خرید</a>
-    </div>
+    {{--  <div class="mb-add-to-cart-btn-wrapper" wire:poll>
+        <button class="mb-add-to-cart-btn" wire:click="Test()">افزودن به سبد خرید</button>
+    </div>  --}}
 </div>
 
 <div class="dt-sn mb-5 px-0 dt-sl pt-0">
@@ -211,11 +194,10 @@
             <div class="ah-tab dt-sl">
                 <a class="ah-tab-item" data-ah-tab-active="true" href=""><i
                         class="mdi mdi-glasses"></i>نقد و بررسی</a>
-                <a class="ah-tab-item" href=""><i class="mdi mdi-format-list-checks"></i>مشخصات</a>
-                <a class="ah-tab-item" href=""><i
-                        class="mdi mdi-comment-text-multiple-outline"></i>نظرات کاربران</a>
-                <a class="ah-tab-item" href=""><i class="mdi mdi-comment-question-outline"></i>پرسش و
-                    پاسخ</a>
+                {{--  <a class="ah-tab-item" href=""><i class="mdi mdi-format-list-checks"></i>مشخصات</a>  --}}
+                {{--  <a class="ah-tab-item" href=""><i
+                        class="mdi mdi-comment-text-multiple-outline"></i>نظرات کاربران</a>  --}}
+                <a class="ah-tab-item" href=""><i class="mdi mdi-comment-text-multiple-outline"></i>نظرات کاربران</a>
             </div>
         </div>
         <div class="ah-tab-content-wrapper product-info px-4 dt-sl">
@@ -224,44 +206,17 @@
                     <h2>نقد و بررسی</h2>
                 </div>
                 <div class="product-title dt-sl">
-                    <h1>گوشی موبایل سامسونگ مدل Galaxy A50 SM-A505F/DS دو سیم کارت ظرفیت 128گیگابایت
+                    <h1>
+                        {{ $product->title }}
                     </h1>
-                    <h3>Samsung Galaxy A50 SM-A505F/DS Dual SIM 128GB Mobile Phone</h3>
+                    {{--  <h3>Samsung Galaxy A50 SM-A505F/DS Dual SIM 128GB Mobile Phone</h3>  --}}
                 </div>
                 <div class="description-product dt-sl mt-3 mb-3">
                     <div class="container">
-                        <p>سامسونگ سال 2019 را با متنوع کردن هرچند بیشتر سری گوشی‌های A خود آغاز کرد.
-                            این سری از تولیدات سامسونگ به داشتن صفحه‌نمایش بسیار با کیفیت AMOLED و
-                            دوربین‌هایی با امکانات بالا شهرت دارند. در این میان به نظر می‌رسد گوشی
-                            «Galaxy A50» حرف‌های زیادی در هر دوی این زمینه‌ها داشته باشد. گوشی موبایل
-                            Galaxy A50 با صفحه‌نمایش سوپر آمولد طراحی شده است و ظاهر زیبایی دارد.
-                            سامسونگ تلاش کرده است حاشیه را در این تولید جدید خود تا حد امکان کم کند. این
-                            گوشی قاب پشتی از جنس پلاستیک دارد و قاب جلویی آن را شیشه پوشانده که البته
-                            جلوه‌ی زیبایی به گوشی داده است. این محصول سامسونگ با جدیدترین نسخه از
-                            سیستم‌عامل اندروید (Pie) روانه بازار شده است تا از هر نظر گوشی مدرن به‌حساب
-                            بیاید. صفحه‌نمایش استفاده‌شده در این گوشی 6.4 اینچ با رزولوشن FullHD+ است که
-                            با استفاده از فناوری Super AMOLED و پنل OLED تصاویر شفاف و بی‌نظیری را به
-                            نمایش می‌گذارد. این صفحه‌نمایش در هر اینچ 403 پیکسل را نشان می‌دهد که این
-                            یعنی جزئیات و وضوح تصویر عالی است. همچنین روکش این نمایشگر لایه‌ی محافظ
-                            Corning Gorilla Glass است که از خط‌وخش و ضربه جلوگیری می‌کند. تراشه‌ی این
-                            محصول، Exynos 9610 از تراشه‌های 10 نانومتری سامسونگ است که به همراه 4
-                            گیگابایت رم عرضه می‌شود. این تراشه یکی از قوی‌ترین تراشه‌های موجود در حال
-                            حاضر است و برای انجام بازی‌های سنگین و بازکردن چندین برنامه به صورت هم‌زمان
-                            و تماشای ویدئو کاملا مناسب است و کم نمی‌آورد. تراشه‌ی گرافیکی Mali-G72 MP3
-                            هم برای پخش ویدئو و بازی مناسب است. این گوشی در دو ظرفیت 64 و 128 گیگابایتی
-                            عرضه شده است و با استفاده از یک کارت حافظه‌ی جانبی قادر خواهید بود حافظه
-                            داخلی را تا یک ترابایت دیگر هم افزایش دهید. دوربین اصلی A50 سنسور
-                            25مگاپیکسلی دارد و از نوع عریض (Wide) است. دو سنسور 8 و 5 مگاپیکسلی دیگر هم
-                            در کنار این دوربین اصلی مجموعه دوربین‌های قاب پشتی A50 را تشکیل داده‌اند.
-                            دوربین سلفی 25مگاپیکسلی هم در قاب جلویی این گوشی به کار گرفته شده است. باتری
-                            4000 میلی‌آمپرساعتی، پشتیبانی از فناوری شارژ سریع 15 واتی، درگاه USB Type-C
-                            و حسگر اثرانگشت در زیر قاب اصلی هم از دیگر ویژگی‌های این تازه‌وارد است.
-                            سامسونگ در ساخت این گوشی از جدیدترین فناوری‌های ساخت گوشی استفاده کرده است
-                            تا میان‌رده‌ای با قابلیت‌های نزدیک به یک بالارده خوش‌ساخت را روانه بازار
-                            کند.</p>
+                        <p>{!! $product->description !!}</p>
                     </div>
                 </div>
-                <div class="accordion dt-sl accordion-product" id="accordionExample">
+                {{--  <div class="accordion dt-sl accordion-product" id="accordionExample">
                     <div class="card">
                         <div class="card-header" id="headingOne">
                             <h5 class="mb-0">
@@ -444,8 +399,9 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div>  --}}
             </div>
+{{--  
             <div class="ah-tab-content params dt-sl">
                 <div class="section-title text-sm-title title-wide no-after-title-wide mb-0 dt-sl">
                     <h2>مشخصات فنی</h2>
@@ -546,7 +502,8 @@
                         </li>
                     </ul>
                 </section>
-            </div>
+            </div>  --}}
+{{--  
             <div class="ah-tab-content comments-tab dt-sl">
                 <div class="section-title title-wide no-after-title-wide mb-0 dt-sl">
                     <h2>امتیاز کاربران به:</h2>
@@ -937,160 +894,66 @@
                         </ol>
                     </div>
                 </div>
-            </div>
+            </div>  --}}
+
             <div class="ah-tab-content dt-sl">
+                @auth
                 <div class="section-title title-wide no-after-title-wide dt-sl">
-                    <h2>پرسش و پاسخ</h2>
-                    <p class="count-comment">پرسش خود را در مورد محصول مطرح نمایید</p>
+                    <h2>نظرات کاربران</h2>
+                    <p class="count-comment">نظر خود را در مورد محصول مطرح نمایید</p>
                 </div>
+
                 <div class="form-question-answer dt-sl mb-3">
-                    <form action="">
-                        <textarea class="form-control mb-3" rows="5"></textarea>
-                        <button class="btn btn-dark float-right ml-3" disabled="">ثبت پرسش</button>
-                        <div class="custom-control custom-checkbox float-right mt-2">
+                    <form action="{{ route('comment.store',$product->id) }}" method="POST">
+                        @csrf
+
+                        <label for="message">پیام: </label>
+                        <textarea name="message" class="form-control mb-3" rows="5"></textarea>
+                        <button type="submit" class="btn btn-dark float-right ml-3">ثبت پرسش</button>
+                        {{--  <div class="custom-control custom-checkbox float-right mt-2">
                             <input type="checkbox" class="custom-control-input" id="customCheck3">
                             <label class="custom-control-label" for="customCheck3">اولین پاسخی که به
                                 پرسش من داده شد، از طریق ایمیل به من اطلاع دهید.</label>
-                        </div>
+                        </div>  --}}
                     </form>
+                    </div>
+                @else
+                <div class="section-title title-wide no-after-title-wide dt-sl">
+                    <h2>نظرات کاربران</h2>
+                    <p class="count-comment">برای ارسال نظر باید وارد حساب خود شوید</p>
                 </div>
+                @endauth
                 <div class="comments-area default">
                     <div
                         class="section-title text-sm-title title-wide no-after-title-wide mt-5 mb-0 dt-sl">
-                        <h2>پرسش ها و پاسخ ها</h2>
-                        <p class="count-comment">123 پرسش</p>
+                        <h2>نظرات</h2>
+                        <p class="count-comment">{{ $comment_count }} نظر</p>
                     </div>
                     <ol class="comment-list">
-                        <!-- #comment-## -->
+                        {{--  Comment Lists  --}}
+                        @foreach ($comments as $comment)
                         <li>
                             <div class="comment-body">
                                 <div class="comment-author">
                                     <span class="icon-comment">?</span>
-                                    <cite class="fn">حسن</cite>
+                                    <cite class="fn">{{ $comment->name }}</cite>
                                     <span class="says">گفت:</span>
                                     <div class="commentmetadata">
                                         <a href="#">
-                                            اسفند ۲۰, ۱۳۹۶ در ۹:۴۱ ب.ظ
+                                            {{ jdate()->forge($comment->created_at)->format('%A, %d %B %Y') }}
                                         </a>
                                     </div>
                                 </div>
 
 
 
-                                <p>لورم ایپسوم متن ساختگی</p>
+                                <p>{{ $comment->message }}</p>
 
-                                <div class="reply"><a class="comment-reply-link" href="#">پاسخ</a></div>
+                                {{--  <div class="reply"><a class="comment-reply-link" href="#">پاسخ</a></div>  --}}
                             </div>
                         </li>
-                        <!-- #comment-## -->
-                        <li>
-                            <div class="comment-body">
-                                <div class="comment-author">
-                                    <span class="icon-comment">?</span>
-                                    <cite class="fn">رضا</cite>
-                                    <span class="says">گفت:</span>
-                                    <div class="commentmetadata">
-                                        <a href="#">
-                                            اسفند ۲۰, ۱۳۹۶ در ۹:۴۲ ب.ظ
-                                        </a>
-                                    </div>
-                                </div>
-                                <p>
-                                    لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از
-                                    صنعت چاپ و با استفاده از طراحان گرافیک است.
-                                </p>
+                        @endforeach
 
-                                <div class="reply"><a class="comment-reply-link" href="#">پاسخ</a></div>
-                            </div>
-                            <ol class="children">
-                                <li>
-                                    <div class="comment-body">
-                                        <div class="comment-author">
-                                            <span
-                                                class="icon-comment mdi mdi-lightbulb-on-outline"></span>
-                                            <cite class="fn">بهرامی راد</cite> <span
-                                                class="says">گفت:</span>
-                                            <div class="commentmetadata">
-                                                <a href="#">
-                                                    اسفند ۲۰, ۱۳۹۶ در ۹:۴۷ ب.ظ
-                                                </a>
-                                            </div>
-                                        </div>
-                                        <p>لورم ایپسوم متن ساختگی با تولید سادگی
-                                            نامفهوم از صنعت چاپ و با استفاده از
-                                            طراحان گرافیک است.
-                                            چاپگرها و متون بلکه روزنامه و مجله در
-                                            ستون و سطرآنچنان که لازم است و برای
-                                            شرایط فعلی تکنولوژی
-                                            مورد نیاز و کاربردهای متنوع با هدف بهبود
-                                            ابزارهای کاربردی می باشد.</p>
-
-                                        <div class="reply"><a class="comment-reply-link"
-                                                href="#">پاسخ</a></div>
-                                    </div>
-                                    <ol class="children">
-                                        <li>
-                                            <div class="comment-body">
-                                                <div class="comment-author">
-                                                    <span class="icon-comment">?</span>
-                                                    <cite class="fn">محمد</cite>
-                                                    <span class="says">گفت:</span>
-                                                    <div class="commentmetadata">
-                                                        <a href="#">
-                                                            خرداد ۳۰, ۱۳۹۷ در ۸:۵۳ ق.ظ
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                                <p>عالیه</p>
-
-                                                <div class="reply"><a class="comment-reply-link"
-                                                        href="#">پاسخ</a></div>
-                                            </div>
-                                            <ol class="children">
-                                                <li>
-                                                    <div class="comment-body">
-                                                        <div class="comment-author">
-                                                            <span
-                                                                class="icon-comment mdi mdi-lightbulb-on-outline"></span>
-                                                            <cite class="fn">اشکان</cite>
-                                                            <span class="says">گفت:</span>
-                                                            <div class="commentmetadata">
-                                                                <a href="#">
-                                                                    خرداد ۳۰, ۱۳۹۷ در ۸:۵۳ ق.ظ
-                                                                </a>
-                                                            </div>
-                                                        </div>
-                                                        <p>لورم ایپسوم متن ساختگی با
-                                                            تولید سادگی نامفهوم از
-                                                            صنعت چاپ و با استفاده از
-                                                            طراحان
-                                                            گرافیک است. چاپگرها و
-                                                            متون بلکه روزنامه و مجله
-                                                            در ستون و سطرآنچنان که
-                                                            لازم است و
-                                                            برای شرایط فعلی تکنولوژی
-                                                            مورد نیاز و کاربردهای
-                                                            متنوع با هدف بهبود
-                                                            ابزارهای
-                                                            کاربردی می باشد.</p>
-
-                                                        <div class="reply"><a class="comment-reply-link"
-                                                                href="#">پاسخ</a>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                                <!-- #comment-## -->
-                                            </ol>
-                                            <!-- .children -->
-                                        </li>
-                                        <!-- #comment-## -->
-                                    </ol>
-                                    <!-- .children -->
-                                </li>
-                                <!-- #comment-## -->
-                            </ol>
-                            <!-- .children -->
-                        </li>
                     </ol>
                 </div>
             </div>
@@ -1110,9 +973,10 @@
             </div>
         </div>
 
-        <!-- Start Product-Slider -->
+        {{--  Start Suggest Product-Slider  --}}
         <div class="col-12">
             <div class="product-carousel carousel-lg owl-carousel owl-theme">
+                @foreach ($products_suggest as $product_suggest)
                 <div class="item">
                     <div class="product-card mb-3">
                         <div class="product-head">
@@ -1123,166 +987,26 @@
                                 <i class="mdi mdi-star active"></i>
                                 <i class="mdi mdi-star active"></i>
                             </div>
-                            <div class="discount">
+                            {{--  <div class="discount">
                                 <span>20%</span>
-                            </div>
+                            </div>  --}}
                         </div>
                         <a class="product-thumb" href="shop-single.html">
-                            <img src="./assets/img/products/07.jpg" alt="Product Thumbnail">
+                            <img src="{{ url('/upload/products/' . $product_suggest->image) }}" alt="Product Thumbnail">
                         </a>
                         <div class="product-card-body">
                             <h5 class="product-title">
-                                <a href="shop-single.html">مانتو زنانه</a>
+                                <a href="shop-single.html">{{ $product_suggest->title }}</a>
                             </h5>
-                            <a class="product-meta" href="shop-categories.html">لباس زنانه</a>
-                            <span class="product-price">157,000 تومان</span>
+                            {{--  <a class="product-meta" href="shop-categories.html">لباس زنانه</a>  --}}
+                            <span class="product-price">{{ $product_suggest->price }} تومان</span>
                         </div>
                     </div>
                 </div>
-                <div class="item">
-                    <div class="product-card mb-3">
-                        <div class="product-head">
-                            <div class="rating-stars">
-                                <i class="mdi mdi-star active"></i>
-                                <i class="mdi mdi-star active"></i>
-                                <i class="mdi mdi-star active"></i>
-                                <i class="mdi mdi-star active"></i>
-                                <i class="mdi mdi-star active"></i>
-                            </div>
-                        </div>
-                        <a class="product-thumb" href="shop-single.html">
-                            <img src="./assets/img/products/017.jpg" alt="Product Thumbnail">
-                        </a>
-                        <div class="product-card-body">
-                            <h5 class="product-title">
-                                <a href="shop-single.html">کت مردانه</a>
-                            </h5>
-                            <a class="product-meta" href="shop-categories.html">لباس مردانه</a>
-                            <span class="product-price">199,000 تومان</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="product-card mb-3">
-                        <div class="product-head">
-                            <div class="rating-stars">
-                                <i class="mdi mdi-star active"></i>
-                                <i class="mdi mdi-star active"></i>
-                                <i class="mdi mdi-star active"></i>
-                                <i class="mdi mdi-star active"></i>
-                                <i class="mdi mdi-star"></i>
-                            </div>
-                        </div>
-                        <a class="product-thumb" href="shop-single.html">
-                            <img src="./assets/img/products/013.jpg" alt="Product Thumbnail">
-                        </a>
-                        <div class="product-card-body">
-                            <h5 class="product-title">
-                                <a href="shop-single.html">مانتو زنانه مدل هودی تیک تین</a>
-                            </h5>
-                            <a class="product-meta" href="shop-categories.html">لباس زنانه</a>
-                            <span class="product-price">135,000 تومان</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="product-card mb-3">
-                        <div class="product-head">
-                            <div class="rating-stars">
-                                <i class="mdi mdi-star active"></i>
-                                <i class="mdi mdi-star active"></i>
-                                <i class="mdi mdi-star active"></i>
-                                <i class="mdi mdi-star active"></i>
-                                <i class="mdi mdi-star"></i>
-                            </div>
-                        </div>
-                        <a class="product-thumb" href="shop-single.html">
-                            <img src="./assets/img/products/09.jpg" alt="Product Thumbnail">
-                        </a>
-                        <div class="product-card-body">
-                            <h5 class="product-title">
-                                <a href="shop-single.html">مانتو زنانه</a>
-                            </h5>
-                            <a class="product-meta" href="shop-categories.html">لباس زنانه</a>
-                            <span class="product-price">145,000 تومان</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="product-card mb-3">
-                        <div class="product-head">
-                            <div class="rating-stars">
-                                <i class="mdi mdi-star active"></i>
-                                <i class="mdi mdi-star active"></i>
-                                <i class="mdi mdi-star active"></i>
-                                <i class="mdi mdi-star active"></i>
-                                <i class="mdi mdi-star active"></i>
-                            </div>
-                        </div>
-                        <a class="product-thumb" href="shop-single.html">
-                            <img src="./assets/img/products/010.jpg" alt="Product Thumbnail">
-                        </a>
-                        <div class="product-card-body">
-                            <h5 class="product-title">
-                                <a href="shop-single.html">مانتو زنانه</a>
-                            </h5>
-                            <a class="product-meta" href="shop-categories.html">لباس زنانه</a>
-                            <span class="product-price">170,000 تومان</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="product-card mb-3">
-                        <div class="product-head">
-                            <div class="rating-stars">
-                                <i class="mdi mdi-star active"></i>
-                                <i class="mdi mdi-star active"></i>
-                                <i class="mdi mdi-star active"></i>
-                                <i class="mdi mdi-star active"></i>
-                                <i class="mdi mdi-star"></i>
-                            </div>
-                            <div class="discount">
-                                <span>20%</span>
-                            </div>
-                        </div>
-                        <a class="product-thumb" href="shop-single.html">
-                            <img src="./assets/img/products/011.jpg" alt="Product Thumbnail">
-                        </a>
-                        <div class="product-card-body">
-                            <h5 class="product-title">
-                                <a href="shop-single.html">مانتو زنانه</a>
-                            </h5>
-                            <a class="product-meta" href="shop-categories.html">لباس زنانه</a>
-                            <span class="product-price">185,000 تومان</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="product-card mb-3">
-                        <div class="product-head">
-                            <div class="rating-stars">
-                                <i class="mdi mdi-star active"></i>
-                                <i class="mdi mdi-star active"></i>
-                                <i class="mdi mdi-star active"></i>
-                                <i class="mdi mdi-star active"></i>
-                                <i class="mdi mdi-star"></i>
-                            </div>
-                        </div>
-                        <a class="product-thumb" href="shop-single.html">
-                            <img src="./assets/img/products/019.jpg" alt="Product Thumbnail">
-                        </a>
-                        <div class="product-card-body">
-                            <h5 class="product-title">
-                                <a href="shop-single.html">تیشرت مردانه</a>
-                            </h5>
-                            <a class="product-meta" href="shop-categories.html">لباس مردانه</a>
-                            <span class="product-price">54,000 تومان</span>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
-        <!-- End Product-Slider -->
+        {{--  End Suggest Product-Slider  --}}
 
     </div>
 </section>

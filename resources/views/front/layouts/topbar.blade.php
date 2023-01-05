@@ -10,11 +10,10 @@
             </div>
             <div class="col-lg-6 col-md-5 hidden-sm">
                 <div class="search-area dt-sl">
-                    <form action="" class="search">
-                        <input type="text"
-                            placeholder="نام کالا، برند و یا دسته مورد نظر خود را جستجو کنید…">
+                    <form action="{{ route('search') }}" class="search" method="GET">
+                        <input type="text" name="search" placeholder="نام کالا مورد نظر خودرا جستجو کنید ...">
                         <i class="far fa-search search-icon"></i>
-                        <button class="close-search-result" type="button"><i
+                        {{--  <button class="close-search-result" type="button"><i
                                 class="mdi mdi-close"></i></button>
                         <div class="search-result">
                             <ul>
@@ -31,7 +30,7 @@
                                     <a href="#">میز تلویزیون</a>
                                 </li>
                             </ul>
-                        </div>
+                        </div>  --}}
                     </form>
                 </div>
             </div>

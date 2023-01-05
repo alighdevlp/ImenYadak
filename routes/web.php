@@ -20,7 +20,10 @@ use App\Http\Controllers\back\SliderController;
 use App\Http\Controllers\back\SubmenuController;
 use App\Http\Controllers\back\UserController;
 use App\Http\Controllers\front\AccountController;
+use App\Http\Controllers\front\CartController;
+use App\Http\Controllers\front\CommentController as FrontCommentController;
 use App\Http\Controllers\front\HomeController;
+use App\Http\Controllers\front\PaymentController;
 use App\Http\Controllers\front\ProductController as FrontProductController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -166,8 +169,15 @@ Route::prefix('/admin/attributes')->middleware('checkrole')->group(function () {
 
 // Start Front Route
 
+
+// Home Route
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
+//Search Route
+Route::get('/search', [FrontProductController::class, 'search'])->name('search');
+
+
+// Dashboard Route
 Route::prefix('/account')->middleware('checkrole')->group(function() {
     Route::get('/', [AccountController::class, 'index'])->name('account.index');
     Route::get('/orders', [AccountController::class, 'OrderList'])->name('account.orders');
@@ -176,21 +186,26 @@ Route::prefix('/account')->middleware('checkrole')->group(function() {
     Route::put('/update', [AccountController::class, 'update'])->name('account.update');
 });
 
+// Cart Route
 Route::prefix('/cart')->middleware('checkrole')->group(function() {
-    Route::get('/checkout', [AccountController::class, 'index'])->name('cart.index');
-    // Route::get('/orders', [AccountController::class, 'OrderList'])->name('account.orders');
-    // Route::get('/order/{order:code}', [AccountController::class, 'OrderDetails'])->name('account.order.details');
-    // Route::get('/edit', [AccountController::class, 'edit'])->name('account.edit');
-    // Route::put('/update', [AccountController::class, 'update'])->name('account.update');
+    Route::get('/checkout', [CartController::class, 'index'])->name('cart.index');
+    Route::delete('/delete/{cart}', [CartController::class, 'destroy'])->name('cart.destroy');
 });
 
+//Product Routes
+Route::get('/category-products/{cat}', [FrontProductController::class, 'ShowByCategory'])->name('product.show.by.category');
+Route::get('/product/{product:slug}', [FrontProductController::class, 'show'])->name('product.show');
+Route::get('/product/add-to-cart/{product}', [FrontProductController::class, 'AddToCart'])->name('product.add.to.cart');
+Route::post('/comment/store/{product}' , [FrontCommentController::class, 'store'])->name('comment.store');
 
-Route::get('/category-products', [FrontProductController::class, 'ShowByCategory'])->name('product.show.by.category');
-Route::get('/product', [FrontProductController::class, 'show'])->name('product.show');
+
+//Payment Route
+
 
 
 // End Front Route
-
+Route::get('/pay', [PaymentController::class, 'pay'])->name('pay');
+Route::get('/checkout', [PaymentController::class, 'checkout'])->name('checkout');
 
 
 Auth::routes();

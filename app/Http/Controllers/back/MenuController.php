@@ -16,7 +16,7 @@ class MenuController extends Controller
      */
     public function index()
     {
-        $menus = Menu::where('id','!=',1)->get();
+        $menus = Menu::all();
         return view('back.menus.index', compact('menus'));
     }
 
@@ -43,7 +43,6 @@ class MenuController extends Controller
             'menu_name' => $request->menu_name,
             'menu_url' => $request->menu_url,
             'menu_order' => $request->menu_order,
-            'menu_mode' => $request->menu_mode
         ]);
 
         return redirect()->route('admin.menus.index');
@@ -85,7 +84,6 @@ class MenuController extends Controller
             'menu_name' => $request->menu_name,
             'menu_url' => $request->menu_url,
             'menu_order' => $request->menu_order,
-            'menu_mode' => $request->menu_mode
         ]);
 
         return redirect()->route('admin.menus.index');

@@ -66,7 +66,7 @@
                                             <td>پایین</td>
                                             @break
                                         @endswitch
-                                        <td>{{ $banner->priority }}</td>
+                                        <td>{{ $banner->order }}</td>
                                         <td>
                                             {{--  <a href="{{ route('admin.options.show') }}" class="btn btn-sm btn-primary">
                                                 <i class="las la-eye"></i>

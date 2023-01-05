@@ -6,36 +6,14 @@
     <div class="container main-container">
         <div class="footer-services">
             <div class="row">
-                <div class="service-item col">
-                    <a href="#" target="_blank">
-                        <img src="{{ url('/front/img/svg/delivery.svg') }}">
-                    </a>
-                    <p>تحویل اکسپرس</p>
-                </div>
-                <div class="service-item col">
-                    <a href="#" target="_blank">
-                        <img src="{{ url('/front/img/svg/contact-us.svg') }}">
-                    </a>
-                    <p>پشتیبانی 24 ساعته</p>
-                </div>
-                <div class="service-item col">
-                    <a href="#" target="_blank">
-                        <img src="{{ url('/front/img/svg/payment-terms.svg') }}">
-                    </a>
-                    <p>پرداخت درمحل</p>
-                </div>
-                <div class="service-item col">
-                    <a href="#" target="_blank">
-                        <img src="{{ url('/front/img/svg/return-policy.svg') }}">
-                    </a>
-                    <p>۷ روز ضمانت بازگشت</p>
-                </div>
-                <div class="service-item col">
-                    <a href="#" target="_blank">
-                        <img src="{{ url('/front/img/svg/origin-guarantee.svg') }}">
-                    </a>
-                    <p>ضمانت اصل بودن کالا</p>
-                </div>
+                @foreach ($attributes as $attribute)
+                    <div class="service-item col">
+                        <a href="#" target="_blank">
+                            <img src="{{ url('/upload/attributes/' . $attribute->icon) }}">
+                        </a>
+                        <p>{{ $attribute->title }}</p>
+                    </div>
+                @endforeach
             </div>
         </div>
 
@@ -143,15 +121,9 @@
         <div class="container main-container">
             <div class="row">
                 <div class="site-description col-12 col-lg-7">
-                    <h1 class="site-title">فروشگاه اینترنتی تاپ کالا، بررسی، انتخاب و خرید آنلاین</h1>
+                    <h1 class="site-title">{{ $option->footer_title }}</h1>
                     <p>
-                        تاپ کالا به عنوان یکی از قدیمی‌ترین فروشگاه های اینترنتی با بیش از یک دهه تجربه، با
-                        پایبندی به سه اصل کلیدی، پرداخت در
-                        محل، 7 روز ضمانت بازگشت کالا و تضمین اصل‌بودن کالا، موفق شده تا همگام با فروشگاه‌های
-                        معتبر جهان، به بزرگ‌ترین فروشگاه
-                        اینترنتی ایران تبدیل شود. به محض ورود به تاپ کالا با یک سایت پر از کالا رو به رو
-                        می‌شوید! هر آنچه که نیاز دارید و به
-                        ذهن شما خطور می‌کند در اینجا پیدا خواهید کرد.
+                        {!! $option->footer_description !!}
                     </p>
                 </div>
                 <div class="symbol col-12 col-lg-5">
@@ -164,9 +136,7 @@
     <div class="copyright">
         <div class="container main-container">
             <p>
-                استفاده از مطالب فروشگاه اینترنتی تاپ کالا فقط برای مقاصد غیرتجاری و با ذکر منبع بلامانع است.
-                کلیه حقوق این سایت متعلق
-                به شرکت نوآوران فن آوازه (فروشگاه آنلاین تاپ کالا) می‌باشد.
+                {{ $option->footer_copyright }}
             </p>
         </div>
     </div>

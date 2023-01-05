@@ -11,10 +11,10 @@
 
                         @foreach ($menu_categories as $menu_category)                            
                         <li>
-                            <a href="#">{{ $menu_category->menucategory_name }}</a>
+                            <a href="{{ route('product.show.by.category',str_replace(' ', '-', $menu_category->menucategory_name)) }}">{{ $menu_category->menucategory_name }}</a>
                             <ul class="row">
                                 @foreach ($menu_category->menuitems as $menu_item)
-                                <li class="sublist{{ $menu_item->menu_class }}"><a href="#">{{ $menu_item->menuitem_name }}</a></li>
+                                <li class="sublist{{ $menu_item->menu_class }}"><a href="{{ route('product.show.by.category',str_replace(' ', '-', $menu_item->menuitem_name)) }}">{{ $menu_item->menuitem_name }}</a></li>
                                 {{--  <li class="sublist--item"><a href="#">کیف و کاور گوشی</a></li>
                                 <li class="sublist--item"><a href="#">پاور بانک (شارژر همراه)</a></li>
                                 <li class="sublist--item"><a href="#">پایه نگهدارنده گوشی</a></li>  --}}
@@ -30,7 +30,7 @@
 
                 @foreach ($menus as $menu)
                     <li class="list-item">
-                        <a class="nav-link" href="#">{{ $menu->menu_name }}</a>
+                        <a class="nav-link" href="{{ $menu->menu_url }}">{{ $menu->menu_name }}</a>
                     </li>
                 @endforeach
             </ul>
@@ -39,25 +39,17 @@
                     <a class="nav-link" href="#">
                         <span class="label-dropdown">سبد خرید</span>
                         <i class="mdi mdi-cart-outline"></i>
-                        <span class="count">2</span>
+                        <span class="count">{{ $carts_count }}</span>
                     </a>
 
                     @auth
-                    @empty(auth()->user()->carts)
-                    <div class="header-cart-info">
-                        <div class="header-cart-info-header">
-                            <a href="#" class="header-cart-info-link">
-                                <span>سبد خرید شما خالی است</span>
-                            </a>
-                        </div>
-                    </div>
-                        @else
+                     @if(count(auth()->user()->carts) > 0)
                         <div class="header-cart-info">
                             <div class="header-cart-info-header">
                                 <div class="header-cart-info-count">
-                                    3 کالا
+                                    {{ $carts_count }} کالا
                                 </div>
-                                <a href="#" class="header-cart-info-link">
+                                <a href="{{ route('cart.index') }}" class="header-cart-info-link">
                                     <span>مشاهده سبد خرید</span>
                                 </a>
                             </div>
@@ -78,34 +70,47 @@
                                                         قیمت: {{ $item->product->price }}
                                                     </span>
                                                 </div>
-                                                <button class="header-basket-list-item-remove">
-                                                    <i class="far fa-trash-alt"></i>
-                                                </button>
+                                                <form action="{{ route('cart.destroy',$item->id) }}" method="POST">
+                                                    @csrf
+                                                    @method('DELETE')
+                                                    <button class="header-basket-list-item-remove">
+                                                        <i class="far fa-trash-alt"></i>
+                                                    </button>
+                                                </form>
                                             </div>
                                         </div>
                                     </a>
                                 </li>
                                 @endforeach
                             </ul>
-                            {{--  <div class="header-cart-info-footer">
+                            <div class="header-cart-info-footer">
                                 <div class="header-cart-info-total">
                                     <span class="header-cart-info-total-text">مبلغ قابل پرداخت:</span>
                                     <p class="header-cart-info-total-amount">
                                         <span class="header-cart-info-total-amount-number">
-                                            9,500,000 <span>تومان</span></span>
+                                            {{ $carts_price }} <span>تومان</span></span>
                                     </p>
                                 </div>
     
                                 <div>
-                                    <a href="#" class="header-cart-info-submit">
+                                    <a href="{{ route('pay') }}" class="header-cart-info-submit">
                                         ثبت سفارش
                                     </a>
                                 </div>
-                            </div>  --}}
+                            </div>
+                        </div>
+                        @else
+                        <div class="header-cart-info">
+                            <div class="header-cart-info-header">
+                                <a href="#" class="header-cart-info-link">
+                                    <span>سبد خرید شما خالی است</span>
+                                </a>
+                            </div>
                         </div>
                     @endempty
+                    @endauth
 
-                    @else
+                    @guest                        
                     <div class="header-cart-info">
                         <div class="header-cart-info-header">
                             <a href="#" class="header-cart-info-link">
@@ -113,7 +118,7 @@
                             </a>
                         </div>
                     </div>
-                    @endauth
+                    @endguest
                 </div>
             </div>
             <button class="btn-menu">
@@ -126,7 +131,7 @@
             <div class="side-menu">
                 <div class="logo-nav-res dt-sl text-center">
                     <a href="#">
-                        <img src="{{ url('/front/img/logo.png') }}" alt="">
+                        <img src="{{ url('/upload/options/' . $option->logo) }}" alt="">
                     </a>
                 </div>
                 <div class="search-box-side-menu dt-sl text-center mt-2 mb-3">
@@ -136,191 +141,29 @@
                     </form>
                 </div>
                 <ul class="navbar-nav dt-sl">
+                    @foreach ($menus as $menu)
+                    <li>
+                        <a href="{{ $menu->menu_urk }}">{{ $menu->menu_name }}</a>
+                    </li>
+                    @endforeach
+                    
                     <li class="sub-menu">
                         <a href="#">کالای دیجیتال</a>
                         <ul>
+                            @foreach ($menu_categories as $menu_category)
                             <li class="sub-menu">
-                                <a href="#">عنوان دسته</a>
+                                <a href="#">{{ $menu_category->menucategory_name }}</a>
                                 <ul>
+                                    @foreach ($menu_category->menuitems as $menu_item)
                                     <li>
-                                        <a href="#">زیر منو یک</a>
+                                        <a href="#">{{ $menu_item->menuitem_name }}</a>
                                     </li>
-                                    <li>
-                                        <a href="#">زیر منو دو</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">زیر منو سه</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">زیر منو چهار</a>
-                                    </li>
+                                    @endforeach
                                 </ul>
                             </li>
-                            <li class="sub-menu">
-                                <a href="#">عنوان دسته</a>
-                                <ul>
-                                    <li>
-                                        <a href="#">زیر منو یک</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">زیر منو دو</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">زیر منو سه</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="#">عنوان دسته</a>
-                            </li>
-                            <li>
-                                <a href="#">عنوان دسته</a>
-                            </li>
-                            <li class="sub-menu">
-                                <a href="#">عنوان دسته</a>
-                                <ul>
-                                    <li>
-                                        <a href="#">زیر منو یک</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">زیر منو دو</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">زیر منو سه</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">زیر منو چهار</a>
-                                    </li>
-                                </ul>
-                            </li>
+                            @endforeach
+                            
                         </ul>
-                    </li>
-                    <li class="sub-menu">
-                        <a href="#">بهداشت و سلامت</a>
-                        <ul>
-                            <li class="sub-menu">
-                                <a href="#">عنوان دسته</a>
-                                <ul>
-                                    <li>
-                                        <a href="#">زیر منو یک</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">زیر منو دو</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">زیر منو سه</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">زیر منو چهار</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="sub-menu">
-                                <a href="#">عنوان دسته</a>
-                                <ul>
-                                    <li>
-                                        <a href="#">زیر منو یک</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">زیر منو دو</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">زیر منو سه</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="#">عنوان دسته</a>
-                            </li>
-                            <li>
-                                <a href="#">عنوان دسته</a>
-                            </li>
-                            <li class="sub-menu">
-                                <a href="#">عنوان دسته</a>
-                                <ul>
-                                    <li>
-                                        <a href="#">زیر منو یک</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">زیر منو دو</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">زیر منو سه</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">زیر منو چهار</a>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="sub-menu">
-                        <a href="#">ابزار و اداری</a>
-                        <ul>
-                            <li class="sub-menu">
-                                <a href="#">عنوان دسته</a>
-                                <ul>
-                                    <li>
-                                        <a href="#">زیر منو یک</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">زیر منو دو</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">زیر منو سه</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">زیر منو چهار</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="sub-menu">
-                                <a href="#">عنوان دسته</a>
-                                <ul>
-                                    <li>
-                                        <a href="#">زیر منو یک</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">زیر منو دو</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">زیر منو سه</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="#">عنوان دسته</a>
-                            </li>
-                            <li>
-                                <a href="#">عنوان دسته</a>
-                            </li>
-                            <li class="sub-menu">
-                                <a href="#">عنوان دسته</a>
-                                <ul>
-                                    <li>
-                                        <a href="#">زیر منو یک</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">زیر منو دو</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">زیر منو سه</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">زیر منو چهار</a>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="#">مد و پوشاک</a>
-                    </li>
-                    <li>
-                        <a href="#">خانه و آشپزخانه</a>
-                    </li>
-                    <li>
-                        <a href="#">ورزش و سفر</a>
                     </li>
                 </ul>
             </div>

@@ -49,7 +49,7 @@ class BannerController extends Controller
         Banner::create([
             'image' => $ImageUrl,
             'status' => $request->status,
-            'priority' => $request->priority,
+            'order' => $request->order,
             'position' => $request->position
         ]);
 
@@ -97,7 +97,7 @@ class BannerController extends Controller
         $banner->update([
             'image' => $ImageUrl,
             'status' => $request->status,
-            'priority' => $request->priority,
+            'order' => $request->order,
             'position' => $request->position
         ]);
 

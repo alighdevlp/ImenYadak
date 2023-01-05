@@ -3,16 +3,15 @@
 @section('title', 'سبد خرید')
 
 @section('content')
+
+    @if(count(auth()->user()->carts) > 0)
     <div class="row mx-0">
         <div class="col-xl-9 col-lg-8 col-md-12 col-sm-12 mb-2">
             <nav class="tab-cart-page">
                 <div class="nav nav-tabs border-bottom" id="nav-tab" role="tablist">
                     <a class="nav-item nav-link d-inline-flex w-auto active" id="nav-home-tab" data-toggle="tab"
                         href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">سبد خرید<span
-                            class="count-cart">1</span></a>
-                    <a class="nav-item nav-link d-inline-flex w-auto" id="nav-profile-tab" data-toggle="tab"
-                        href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">لیست خرید
-                        بعدی</a>
+                            class="count-cart">{{ $carts_count }}</span></a>
                 </div>
             </nav>
         </div>
@@ -22,25 +21,25 @@
                     <div class="row">
                         <div class="col-xl-9 col-lg-8 col-12 px-0">
                             <div class="table-responsive checkout-content dt-sl">
-                                <div class="checkout-header checkout-header--express">
-                                    <span class="checkout-header-title">ارسال عادی</span>
-                                    <span class="checkout-header-extra-info">(2 کالا)</span>
-                                </div>
                                 <table class="table table-cart">
                                     <tbody>
+                                        @foreach (auth()->user()->carts as $item)
                                         <tr class="checkout-item border-bottom">
                                             <td>
-                                                <img src="./assets/img/cart/03.jpg" alt="">
+                                                <img src="{{ url('/upload/products/' . $item->product->image) }}" alt="" width="105px" height="105px">
+                                                <form action="{{ route('cart.destroy',$item->id) }}" method="POST">
+                                                    @csrf
+                                                    @method('DELETE')
                                                 <button class="checkout-btn-remove">&times;</button>
+                                                </form>
                                             </td>
                                             <td class="text-right">
                                                 <a href="#">
                                                     <h3 class="checkout-title">
-                                                        گوشی موبایل سامسونگ مدل Galaxy A70 SM-A705FN/DS دو
-                                                        سیم‌کارت ظرفیت 128 گیگابایت
+                                                        {{ $item->product->title }}
                                                     </h3>
                                                 </a>
-                                                <p class="checkout-dealer">
+                                                {{--  <p class="checkout-dealer">
                                                     فروشنده: ایرانیان قائم همراه(کاوش تیم)
                                                 </p>
                                                 <p class="checkout-guarantee">گارانتی 18 ماهه کاوش تیم</p>
@@ -51,11 +50,9 @@
                                                         <div class="checkout-variant-shape"
                                                             style="background-color:#212121"></div>
                                                     </span>
-                                                </div>
-                                                <a class="checkout-save-for-later">انتقال به لیست خرید
-                                                    بعدی</a>
-                                            </td>
-                                            <td>
+                                                </div>  --}}
+
+                                            {{--  <td>
                                                 <p class="mb-0">تعداد</p>
                                                 <div class="number-input">
                                                     <button
@@ -66,50 +63,10 @@
                                                         onclick="this.parentNode.querySelector('input[type=number]').stepUp()"
                                                         class="plus"></button>
                                                 </div>
-                                            </td>
-                                            <td><strong>۴,۴۹۷,۰۰۰ تومان</strong></td>
+                                            </td>  --}}
+                                            <td><strong>{{ $item->product->price }} تومان</strong></td>
                                         </tr>
-                                        <tr class="checkout-item border-bottom">
-                                            <td>
-                                                <img src="./assets/img/cart/04.jpg" alt="">
-                                                <button class="checkout-btn-remove">&times;</button>
-                                            </td>
-                                            <td class="text-right">
-                                                <a href="#">
-                                                    <h3 class="checkout-title">
-                                                        گوشی موبایل اپل مدل iPhone X ظرفیت 256 گیگابایت
-                                                    </h3>
-                                                </a>
-                                                <p class="checkout-dealer">
-                                                    فروشنده: آیش شبکه
-                                                </p>
-                                                <p class="checkout-guarantee">گارانتی 18 ماهه آیش
-                                                </p>
-                                                <div class="checkout-variant checkout-variant--color">
-                                                    <span class="checkout-variant-title">رنگ :</span>
-                                                    <span class="checkout-variant-value">
-                                                        مشکی
-                                                        <div class="checkout-variant-shape"
-                                                            style="background-color:#212121"></div>
-                                                    </span>
-                                                </div>
-                                                <a class="checkout-save-for-later">انتقال به لیست خرید
-                                                    بعدی</a>
-                                            </td>
-                                            <td>
-                                                <p class="mb-0">تعداد</p>
-                                                <div class="number-input">
-                                                    <button
-                                                        onclick="this.parentNode.querySelector('input[type=number]').stepDown()"></button>
-                                                    <input class="quantity" min="0" name="quantity" value="1"
-                                                        type="number">
-                                                    <button
-                                                        onclick="this.parentNode.querySelector('input[type=number]').stepUp()"
-                                                        class="plus"></button>
-                                                </div>
-                                            </td>
-                                            <td><strong>۱۲,۲۰۰,۰۰۰ تومان</strong></td>
-                                        </tr>
+                                        @endforeach
                                     </tbody>
                                 </table>
                             </div>
@@ -118,13 +75,13 @@
                             <div class="dt-sn dt-sn--box border mb-2">
                                 <ul class="checkout-summary-summary">
                                     <li>
-                                        <span>مبلغ کل (۲ کالا)</span><span>۱۶,۸۹۷,۰۰۰ تومان</span>
+                                        <span>مبلغ کل ({{ $carts_count }} کالا)</span><span>{{ $carts_price }} تومان</span>
                                     </li>
-                                    <li class="checkout-summary-discount">
+                                    {{--  <li class="checkout-summary-discount">
                                         <span>سود شما از خرید</span><span><span>(۱٪)</span>۲۰۰,۰۰۰
                                             تومان</span>
-                                    </li>
-                                    <li>
+                                    </li>  --}}
+                                    {{--  <li>
                                         <span>هزینه ارسال<span class="help-sn" data-toggle="tooltip" data-html="true"
                                                 data-placement="bottom"
                                                 title="<div class='help-container is-right'><div class='help-arrow'></div><p class='help-text'>هزینه ارسال مرسولات می‌تواند وابسته به شهر و آدرس گیرنده متفاوت باشد. در صورتی که هر یک از مرسولات حداقل ارزشی برابر با ۱۵۰هزار تومان داشته باشد، آن مرسوله بصورت رایگان ارسال می‌شود.<br>'حداقل ارزش هر مرسوله برای ارسال رایگان، می تواند متغیر باشد.'</p></div>">
@@ -137,7 +94,7 @@
                                                 title="<div class='help-container is-right'><div class='help-arrow'></div><p class='help-text'>با امتیازهای خود در باشگاه مشتریان دیجی کالا (دیجی کلاب) از بین جوایز متنوع انتخاب کنید.</p></div>">
                                                 <span class="mdi mdi-information-outline"></span>
                                             </span></span><span><span>۱۵۰+</span><span> امتیاز</span></span>
-                                    </li>
+                                    </li>  --}}
                                 </ul>
                                 <div class="checkout-summary-devider">
                                     <div></div>
@@ -148,7 +105,7 @@
                                         <span class="checkout-summary-price-value-amount">۱۶,۶۹۷,۰۰۰</span>
                                         تومان
                                     </div>
-                                    <a href="#" class="mb-2 d-block">
+                                    <a href="{{ route('pay') }}" class="mb-2 d-block">
                                         <button class="btn-primary-cm btn-with-icon w-100 text-center pr-0">
                                             <i class="mdi mdi-arrow-left"></i>
                                             ادامه ثبت سفارش
@@ -216,4 +173,25 @@
             </div>
         </div>
     </div>
+    @else
+    <div class="row">
+        <div class="col-12">
+            <div class="dt sl dt-sn dt-sn--box border pt-3 pb-5">
+                <div class="cart-page cart-empty">
+                    <div class="circle-box-icon">
+                        <i class="mdi mdi-cart-remove"></i>
+                    </div>
+                    <p class="cart-empty-title">سبد خرید شما خالیست!</p>
+                    {{--  <p>می‌توانید برای مشاهده محصولات بیشتر به صفحات زیر بروید:</p>
+                    <div class="cart-empty-links mb-5">
+                        <a href="#" class="border-bottom-dt">لیست مورد علاقه من</a>
+                        <a href="#" class="border-bottom-dt">محصولات شگفت‌انگیز</a>
+                        <a href="#" class="border-bottom-dt">محصولات پرفروش روز</a>
+                    </div>  --}}
+                    <a href="{{ route('home') }}" class="btn-primary-cm">صفحه اصلی</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    @endif
 @endsection

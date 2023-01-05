@@ -54,7 +54,7 @@
                     </div>
                     <div class="form-group">
                         <label class="form-label">عکس تخفیف: <span class="tx-danger">*</span></label>
-                        <input type="hidden" name="logo" value="@if($option->discount_image != null){{ $option->discount_image }}@endif">
+                        <input type="hidden" name="discount_image" value="@if($option->discount_image != null){{ $option->discount_image }}@endif">
                         <input type="file" class="form-control" name="discount_image">
                     </div>                    
                     <div class="form-group">

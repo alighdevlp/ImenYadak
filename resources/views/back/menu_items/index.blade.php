@@ -32,6 +32,7 @@
                             <thead>
                                 <tr>
                                     <th class="wd-lg-8p"><span>نام ایتم منو</span></th>
+                                    <th class="wd-lg-8p"><span>نام دسته بندی منو</span></th>
                                     <th class="wd-lg-8p"><span>نوع</span></th>
                                     <th class="wd-lg-20p"><span>عمل</span></th>
                                 </tr>

@@ -66,14 +66,15 @@
                                         src="{{ url('/upload/users/' . $comment->profile) }}"></div>
                                 <a href="{{ route('admin.comments.show', $comment->id) }}">
                                     <div class="main-mail-body">
-                                        <div class="main-mail-from text-dark">
+                                        <div class="main-mail-from">
                                             {{ $comment->name }}
                                         </div>
+                                    </a>
                                         <div class="main-mail-subject">
                                             <span>{{ str()->limit($comment->message, 60) }}</span>
                                         </div>
                                     </div>
-                                </a>
+
                                 <div class="main-mail-attachment">
                                     <a href="#"><i class="typcn typcn-ti"></i></a>
                                 </div>
@@ -89,50 +90,6 @@
                 </div>
             </div>
         </div>
-        <div class="main-mail-compose">
-            <div>
-                <div class="container">
-                    <div class="main-mail-compose-box">
-                        <div class="main-mail-compose-header">
-                            <span>پیام جدید</span>
-                            <nav class="nav">
-                                <a class="nav-link" href="#"><i class="fas fa-minus"></i></a> <a class="nav-link"
-                                    href="#"><i class="fas fa-compress"></i></a> <a class="nav-link" href="#"><i
-                                        class="fas fa-times"></i></a>
-                            </nav>
-                        </div>
-                        <div class="main-mail-compose-body">
-                            <div class="form-group">
-                                <label class="form-label">به</label>
-                                <div>
-                                    <input class="form-control" placeholder="آدرس ایمیل گیرنده را وارد کنید" type="text">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="form-label">موضوع</label>
-                                <div>
-                                    <input class="form-control" type="text">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <textarea class="form-control" placeholder="پیام خود را اینجا بنویسید ..." rows="8"></textarea>
-                            </div>
-                            <div class="form-group mg-b-0">
-                                <nav class="nav">
-                                    <a class="nav-link" data-toggle="tooltip" href="#" title="پیوست را اضافه کنید"><i
-                                            class="fas fa-paperclip"></i></a> <a class="nav-link" data-toggle="tooltip"
-                                        href="#" title="عکس اضافه کنید"><i class="far fa-image"></i></a> <a
-                                        class="nav-link" data-toggle="tooltip" href="#" title="پیوند اضافه کنید"><i
-                                            class="fas fa-link"></i></a> <a class="nav-link" data-toggle="tooltip"
-                                        href="#" title="شکلک ها"><i class="far fa-smile"></i></a> <a class="nav-link"
-                                        data-toggle="tooltip" href="#" title="دور انداختن"><i
-                                            class="far fa-trash-alt"></i></a>
-                                </nav><button class="btn btn-primary">ارسال</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+
     </div>
 @endsection

@@ -35,7 +35,7 @@
                                 alt="آواتار">
                             <div class="media-body">
                                 <div class="float-left d-none d-md-flex fs-15">
-                                    <span class="ms-3">{{ jdate()->forge('today')->format('%A, %d %B %Y') }}</span>
+                                    <span class="ms-3">{{ jdate()->forge($comment->created_at)->format('%A, %d %B %Y') }}</span>
 
 
                                     <small class="ms-3"><i class="bx bx-reply tx-18" data-toggle="tooltip" title=""

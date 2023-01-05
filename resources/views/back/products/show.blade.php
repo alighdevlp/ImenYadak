@@ -28,7 +28,7 @@
                             <div class="preview-pic tab-content">
                                 <div class="tab-pane active"><img
                                         src="{{ url('/upload/products/' . $product->image) }}" alt="image" /></div>
-                                @foreach ($product->product_images as $productimage)
+                                @foreach ($product->products_image as $productimage)
                                     <div class="tab-pane" id="pic-{{ $productimage->id }}"><img
                                             src="{{ url('/upload/product-images/' . $productimage->image) }}"
                                             alt="image" /></div>
@@ -36,7 +36,7 @@
                             </div>
 
                             <ul class="preview-thumbnail nav nav-tabs">
-                                @foreach ($product->product_images as $productimage)
+                                @foreach ($product->products_image as $productimage)
                                 <li class="active"><a data-bs-target="#pic-{{ $productimage->id }}" data-bs-toggle="tab"><img
                                             src="{{ url('/upload/product-images/' . $productimage->image) }}" alt="image" /></a>
                                 </li>

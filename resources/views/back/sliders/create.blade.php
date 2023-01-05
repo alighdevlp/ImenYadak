@@ -50,7 +50,7 @@
                             </select>
                         </div>
                         <div class="form-group">
-                            <label class="form-label">اولویت اسلایدر: <span class="tx-danger">*</span></label>
+                            <label class="form-label">ترتیب اسلایدر: <span class="tx-danger">*</span></label>
                             <input type="text" class="form-control" name="order">
                             @error('order')
                                 <div class="alert alert-danger">

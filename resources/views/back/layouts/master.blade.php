@@ -319,6 +319,14 @@
 
     <script src="{{ url('/back/js/check-all-mail.js') }}"></script>
 
+    {{--  <script>
+        $('#slug').on('input',function(){
+            var title = $('#slug').val();
+            var slug = title.replace(/\s+/g, '-')';
+            $('#slug_hidden').val(slug);
+        });                                
+    </script>  --}}
+
     {{--  End Scripts  --}}
 
     @livewireScripts

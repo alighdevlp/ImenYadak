@@ -44,7 +44,8 @@
                         </div>
                         <div class="form-group">
                             <label class="form-label">نام مستعار دسته بندی: </label>
-                            <input type="text" class="form-control" name="slug" value="{{ $category->slug }}">
+                            <input type="text" class="form-control" id="slug" name="slug" value="{{ $category->slug }}">
+                            <input type="hidden" class="form-control" id="slug_hidden" name="slug_hidden">
                             @error('slug')
                             <div class="alert alert-danger">
                                 {{ $message }}

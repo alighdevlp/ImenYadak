@@ -62,7 +62,15 @@ class ProductController extends Controller
             $ImageUrl = $request->image;
         }
 
-        $product = Product::create(array_merge($request->all(),['image' => $ImageUrl]));
+       $product = Product::create([
+            'user_id' => Auth::user()->id,
+            'title' => $request->title,
+            'slug' => $request->slug,
+            'image' => $ImageUrl,
+            'price' => $request->price,
+            'count' => $request->count,
+            'description' => $request->description
+        ]);
 
         $product->categories()->attach($request->categories);
 
@@ -111,7 +119,15 @@ class ProductController extends Controller
             $ImageUrl = $request->image;
         }
 
-        $product = Product::create(array_merge($request->all(),['image' => $ImageUrl]));
+        $product->update([
+            'user_id' => Auth::user()->id,
+            'title' => $request->title,
+            'slug' => $request->slug,
+            'image' => $ImageUrl,
+            'price' => $request->price,
+            'count' => $request->count,
+            'description' => $request->description
+        ]);
 
         $product->categories()->sync($request->categories);
 

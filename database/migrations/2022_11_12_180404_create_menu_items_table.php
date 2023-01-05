@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('menu_items', function (Blueprint $table) {
             $table->id();
             $table->string('menuitem_name');
-            $table->integer('menu_class');
+            $table->string('menu_class');
             $table->integer('menu_category_id');
             $table->foreign('menu_category_id')->references('id')->on('menu_categories')->onDelete('cascade');
             $table->timestamps();

@@ -24,6 +24,8 @@
     {{--  <!-- Main CSS File -->  --}}
     <link rel="stylesheet" href="{{ url('/front/css/main.css') }}">
     <link rel="stylesheet" href="{{ url('/front/css/colors/default.css') }}" id="colorswitch">
+
+    @livewireStyles
 </head>
 
 <body>
@@ -108,6 +110,32 @@
     <script src="{{ url('/front/js/vendor/theia-sticky-sidebar.min.js') }}"></script>
     {{--  <!-- Main JS File -->  --}}
     <script src="{{ url('/front/js/main.js') }}"></script>
+    
+    <script>
+        $(document).ready(function () {
+            var nonLinearStepSlider = document.getElementById('slider-non-linear-step');
+            noUiSlider.create(nonLinearStepSlider, {
+                start: [0, 20000],
+                connect: true,
+                direction: 'rtl',
+                format: wNumb({
+                    decimals: 0,
+                    thousand: ','
+                }),
+                range: {
+                    'min': [0],
+                    '10%': [500, 500],
+                    '50%': [40000, 1000],
+                    'max': [100000]
+                }
+            });
+            var nonLinearStepSliderValueElement = document.getElementById('slider-non-linear-step-value');
+            nonLinearStepSlider.noUiSlider.on('update', function (values) {
+                nonLinearStepSliderValueElement.innerHTML = values.join(' - ');
+            });
+        });
+    </script>
+    @livewireScripts
 </body>
 
 </html>
