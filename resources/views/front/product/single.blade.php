@@ -128,8 +128,8 @@
                 <div class="product-params dt-sl">
                     <ul data-title="ویژگی‌های محصول">
                         <li>
-                            <span>حافظه داخلی: </span>
-                            <span> 256 گیگابایت </span>
+                            <span>حافظه داخلی:</span>
+                            <span> test </span>
                         </li>
                         <li>
                             <span>شبکه های ارتباطی: </span>

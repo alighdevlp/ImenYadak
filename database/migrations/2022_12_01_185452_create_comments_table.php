@@ -19,9 +19,10 @@ return new class extends Migration
             $table->string('email');
             $table->string('profile')->default("users-default.png");
             $table->text('message');
-            $table->integer('product_id');
             $table->integer('status')->default(0);
             $table->integer('read')->default(0);
+            $table->integer('product_id');
+            $table->foreign('product_id')->references('id')->on('products')->onDelete('cascade');
             $table->timestamps();
         });
     }

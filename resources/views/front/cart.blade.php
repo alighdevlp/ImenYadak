@@ -102,7 +102,7 @@
                                 <div class="checkout-summary-content">
                                     <div class="checkout-summary-price-title">مبلغ قابل پرداخت:</div>
                                     <div class="checkout-summary-price-value">
-                                        <span class="checkout-summary-price-value-amount">۱۶,۶۹۷,۰۰۰</span>
+                                        <span class="checkout-summary-price-value-amount">{{ $carts_price }}</span>
                                         تومان
                                     </div>
                                     <a href="{{ route('pay') }}" class="mb-2 d-block">
@@ -125,18 +125,12 @@
                             </div>
                             <div class="dt-sn dt-sn--box checkout-feature-aside pt-4">
                                 <ul>
+                                    @foreach ($attributes as $attribute)
                                     <li class="checkout-feature-aside-item">
-                                        <img src="./assets/img/svg/return-policy.svg" alt="">
-                                        هفت روز ضمانت تعویض
+                                        <img src="{{ url('/upload/attributes/' . $attribute->icon) }}" alt="">
+                                        {{ $attribute->title }}
                                     </li>
-                                    <li class="checkout-feature-aside-item">
-                                        <img src="./assets/img/svg/payment-terms.svg" alt="">
-                                        پرداخت در محل با کارت بانکی
-                                    </li>
-                                    <li class="checkout-feature-aside-item">
-                                        <img src="./assets/img/svg/delivery.svg" alt="">
-                                        تحویل اکسپرس
-                                    </li>
+                                    @endforeach
                                 </ul>
                             </div>
                         </div>

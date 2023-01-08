@@ -15,7 +15,6 @@ return new class extends Migration
     {
         Schema::create('products', function (Blueprint $table) {
             $table->id();
-            $table->integer('user_id');
             $table->string('title');
             $table->string('slug');
             $table->string('image');
@@ -24,6 +23,7 @@ return new class extends Migration
             $table->integer('popular')->default(1);
             $table->integer('suggest')->default(0);
             $table->text('description');
+            $table->integer('user_id');
             $table->timestamps();
         });
     }
